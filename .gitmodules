@@ -1,0 +1,4 @@
+[submodule "include/Plutonium"]
+	path = include/Plutonium
+	url = https://github.com/HookedBehemoth/Plutonium
+	branch = mem
