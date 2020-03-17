@@ -1,0 +1,153 @@
+{
+    "main":{
+        "menu": {
+            "sd": "Von SD-Karte installieren",
+            "net": "Über LAN oder Internet installieren",
+            "usb": "Über USB installieren",
+            "set": "Einstellungen",
+            "exit": "Beenden"
+        },
+        "net": {
+            "title": "Netzwerk Verbindung nicht verfügbar",
+            "desc": "Überprüfe ob der Flugzeug-Modus deaktiviert ist und ob du mit einem lokalen Netzwerk verbunden bist"
+        },
+        "usb": {
+            "warn": {
+                "title": "Warnung!",
+                "desc": "USB-Installationen funktionieren möglicherweise mit manchen Geräten und\nKonfigurationen nicht. Falls du Probleme mit USB-Installationen hast,\nreiß dir nicht die Haare aus! Wir empfehlen NS-USBloader für USB-Installationen\noder stattdessen LAN/Internet Installationen,\nam besten über einen Ethernet-Adapter verbunden.\n\nWir haben dich gewarnt...",
+                "opt1": "Warnt mich nicht nochmal"
+            },
+            "error": {
+                "title": "Keine USB-Verbindung erkannt",
+                "desc": "Verbinde dich für USB-Installationen mit einem kompatiblen Gerät"
+            }
+        },
+        "applet": {
+            "title": "Applet-Modus wird nicht unterstützt",
+            "desc": "Es kann zu Problemen bei der Verwendung des AtmoXL-Titel-Installer im Applet-Modus kommen.\nWenn du Probleme hast, starte den AtmoXL-Titel-Installer über einen installierten Titel (halte R gedrückt, während du ein Spiel startest)!"
+        },
+        "buttons": "\ue0e0 Auswählen    \ue0e1 Beenden"
+    },
+    "inst": {
+        "net": {
+            "help": {
+                "title": "Hilfe",
+                "desc": "Dateien können von anderen Geräten aus mit Tools wie NS-USBloader im\nTinfoil-Modus installiert werden. Um Dateien an deine Switch zu senden, öffne\neins dieser Programme auf deinem PC oder mobilen Gerät. Gebe die IP-Adresse\ndeiner Switches ein (auf dem Bildschirm aufgelistet), wähle die Dateien\naus und lade sie dann auf die Konsole hoch! Wenn die von dir verwendete\nSoftware dir nicht erlaubt, bestimmte Dateitypen auszuwählen.\nVersuche die Dateiendung in etwas umzubenennen, dass sie akzeptiert. Der AtmoXL-Titel-Installer\nprüft keine Dateiendungen bei Netzinstallationen!\n\nFalls das nicht klappt, kopiere einfach deine Dateien auf die SD-Karte\nund versuche die Option \"Von SD-Karte installieren\" im Hauptmenü!"
+            },
+            "src": {
+                "title": "Von wo aus willst du installieren?",
+                "opt0": "URL",
+                "opt1": "Google Drive"
+            },
+            "url": {
+                "hint": "Gebe eine URL zu einer Datei ein",
+                "invalid": "Die eingegebene URL ist ungültig",
+                "source_string": " per URL"
+            },
+            "gdrive": {
+                "hint": "Gebe die ID einer öffentlichen Google Drive Datei ein",
+                "alt_name": "Google Drive Datei",
+                "source_string": " von Google Drive"
+            },
+            "top_info": "Wähle Dateien zur Installation vom Server aus und drücke dann \ue0b3 !",
+            "top_info1": "Warte auf eine Verbindung... Die IP Adresse deiner Switch ist: ",
+            "failed": "Ferninstallation fehlgeschlagen!",
+            "transfer_interput": "Bei der Dateiübertragung ist ein Fehler aufgetreten.",
+            "source_string": " über das lokale Netzwerk",
+            "buttons": "\ue0e3 Installation über das Internet    \ue0e2 Hilfe    \ue0e1 Abbrechen",
+            "buttons1": "\ue0e0 Datei auswählen    \ue0e3 Alle auswählen    \ue0ef Datei(en) installieren    \ue0e1 Abbrechen"
+        },
+        "sd": {
+            "help": {
+                "title": "Hilfe",
+                "desc": "Kopiere NSP, NSZ, XCI oder XCZ Dateien auf deine SD Karte,\nsuche nach ihnen und wähle die zu installierenden Titel aus und drücke dann \ue0b3."
+            },
+            "top_info": "Wähle Dateien zur Installation vom Server aus und drücke dann \ue0b3!",
+            "source_string": " von der SD Karte",
+            "delete_info": " installiert! Soll es von der SD-Karte gelöscht werden?",
+            "delete_info_multi": " Dateien erfolgreich installiert! Sollen diese von der SD-Karte gelöscht werden?",
+            "delete_desc": "Die originalen Dateien werden nach der Installation nicht mehr benötigt",
+            "buttons": "\ue0e0 Datei auswählen    \ue0e3 Alle auswählen    \ue0ef Datei(en) installieren    \ue0e1 Abbrechen"
+        },
+        "usb": {
+            "help": {
+                "title": "Hilfe",
+                "desc": "Dateien können mit Tools, wie NS-USBloader im Tinfoil-Modus\nvon anderen Geräten aus installiert werden.\nUm Dateien an deine Switch zu senden, öffne\neins dieser Programme auf deinem PC oder mobilen Gerät, wähle die Dateien\naus und lade sie dann auf die Konsole hoch!\n\nLeider erfordern USB-Installationen auf einigen Plattformen ein spezielles\nSetup und können manchmal ziemlich fehlerhaft sein. Falls das nicht klappt,\nversuche es mit LAN/Internet Installation oder kopiere deine Dateien auf\ndeine SD-Karte und versuche die Option \"Von SD-Karte installieren\" im Hauptmenü!"
+            },
+            "top_info": "USB verbunden! Warte auf die Dateiliste...",
+            "top_info2": "Wähle Dateien zur Installation aus und drücke dann \ue0b3 !",
+            "error": "USB Übertragung ist zeitlich abgelaufen oder fehlgeschlagen",
+            "source_string": " über USB",
+            "buttons": "\ue0e2 (Halten) Hilfe    \ue0e1 (Halte) Abbrechen",
+            "buttons2": "\ue0e0 Datei auswählen    \ue0e3 Alle auswählen    \ue0ef Datei(en) installieren    \ue0e1 Abbrechen"
+        },
+        "target": {
+            "desc0": "Wo soll ",
+            "desc1": " installiert werden?",
+            "desc00": "Wo sollen die ",
+            "desc01": " Dateien installiert werden?",
+            "opt0": "SD Karte",
+            "opt1": "Interner Speicher"
+        },
+        "info_page": {
+            "top_info0": "Installiere ",
+            "preparing": "Bereite Installation vor...",
+            "failed": "Installation fehlgeschlagen ",
+            "failed_desc": "Teilweise installierte Inhalte können in den Einstellungen entfernt werden.",
+            "complete": "Installation abgeschlossen",
+            "desc0": " Dateien erfolgreich installiert!",
+            "desc1": " installiert!",
+            "downloading": "Lädt ",
+            "at": " herunter von "
+        },
+        "nca_verify": {
+            "title": "Ungültige NCA-Signatur erkannt!",
+            "desc": "Unsachgemäß signierte Software sollte nur von vertrauenswürdigen Quellen\ninstalliert werden. Dateien von gepackten Spiele Modulen und DLC-Freischaltung enthalten,\nwerden immer diese Warnung anzeigen. Sie können diese Prüfung in den Einstellungen des AtmoXL-Titel-Installer deaktivieren.\nSind Sie sicher, dass Sie die Installation fortsetzen möchten?",
+            "opt1": "Ja, ich verstehe die Risiken",
+            "error": "Die gewünschte NCA ist nicht richtig signiert: "
+        },
+        "finished": [
+            "Genieße deine \"legalen Sicherheitskopien\"!",
+            "Ich bin mir sicher nachdem du das Spiel probiert hast wirst du Spaß dabei haben das Spiel tatsächlich zu kaufen!",
+            "Du hast das Spiel sicher gekauft? Nintendo sagt danke für deinen Kauf!",
+            "DRM zu umgehen ist toll, stimmt es?",
+            "Du hast wahrscheinlich sechs Bäume gerettet. Dadurch dass du das Spiel nicht gekauft hast!\nAll das Plastik geht irgendwo hin!",
+            "Nintendo Ninjas wurden zu deinem Standort gesendet.",
+            "Und wir mussten dir nicht mal politische Ideologien in den Rachen stopfen!"
+        ]
+    },
+    "options": {
+        "menu_items": {
+            "ignore_firm": "Ignoriere minimale Firmware Version des Titels",
+            "nca_verify": "Verifiziere NCA Signatur vor der Installation",
+            "boost_mode": "Aktiviere \"Boost-Modus\" während der Installation",
+            "ask_delete": "Frage ob installierte Titel gelöscht werden sollen",
+            "language": "Sprache: ",
+            "credits": "Anerkennung"
+        },
+        "nca_warn": {
+            "title": "Warnung!",
+            "desc": "Einige installierbare Dateien können bösartige Inhalte enthalten! Deaktiviere\ndiese Funktion nur, wenn du absolut sicher bist, dass die zu installierende\nSoftware vertrauenswürdig ist! Willst du die NCA-Signaturprüfung immer noch deaktivieren?",
+            "opt1": "Ja, ich möchte mein Gerät bricken"
+        },
+        "credits": {
+            "title": "Vielen Dank an die folgenden Leute!",
+            "desc": "- Huntereb für Awoo Installer\n- HookedBehemoth für viele Beiträge\n- Adubbz und andere Mitwirkende für Tinfoil\n- XorTroll für Plutonium und Goldleaf\n- blawar (Frauenwürger) und nicoboss für NSZ Unterstützung\n- Die netten Leute auf AtlasNX Discuck (Immerhin ein paar davon)\n- Die netten Leute auf RetroNX Discuck (ohne direkte Beteiligung)\n- namako8982 für die Momiji-Kunst\n- TheXzoron dafür das er ein baka ist"
+        },
+        "language": {
+            "title": "Wähle AtmoXL-Titel-Installer Sprache",
+            "desc": "Die Software wird danach beendet. Drücke B um den Vorgang abzubrechen.",
+            "system_language": "System"
+        },
+        "title": "Ändere AtmoXL-Titel-Installer Einstellungen!",
+        "buttons": "\ue0e0 Auswählen/Ändern    \ue0e1 Abbrechen "
+    },
+    "common": {
+        "ok": "OK",
+        "cancel": "Abbrechen",
+        "close": "Schließen",
+        "yes": "Ja",
+        "no": "Nein",
+        "cancel_desc": "Drücke \ue0e1 zum Abbrechen "
+    }
+}
