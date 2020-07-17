@@ -24,7 +24,7 @@
         },
         "applet": {
             "title": "不支援Applet模式",
-            "desc": "您可以嘗試在“Applet模式”下使用本程式,但如果出現問題請切換到“非Applet模式”再運行。\n切換方法：\n 退回系統桌面選中任意一個遊戲，按住\ue0e5後點\ue0e0進入遊戲，直到跳回hbmenu界面再鬆開按鈕!\n然後再選擇Awoo Installer，屆時將不會彈出此對話框！"
+            "desc": "您可以嘗試在“Applet模式”下使用本程式,但如果出現問題請切換到“非Applet模式”再運行。\n切換方法：\n 退回系統桌面選中任意一個遊戲，按住\ue0e5後點\ue0e0進入遊戲，直到跳回hbmenu界面再鬆開按鈕!\n然後再選擇AtmoXL-Titel-Installer，屆時將不會彈出此對話框！"
         },
         "buttons": "\ue0e0 選擇 \ue0e1 退出"
     },
@@ -32,7 +32,7 @@
         "net": {
             "help": {
                 "title": "幫助",
-                "desc": "文件可以通過NS-USBloader遠程安裝。\n也可以選擇輸入URL地址安裝。\n如果您的遠程工具對某種文件格式不支援，您可以嘗試修改文件的擴展名再選擇它，安裝的時候Awoo並不在意擴展名！\n如果還是搞不懂，那就使用SD卡安裝方式吧！"
+                "desc": "文件可以通過NS-USBloader遠程安裝。\n也可以選擇輸入URL地址安裝。\n如果您的遠程工具對某種文件格式不支援，您可以嘗試修改文件的擴展名再選擇它，安裝的時候AtmoXL-Titel-Installer並不在意擴展名！\n如果還是搞不懂，那就使用SD卡安裝方式吧！"
             },
             "src": {
                 "title": "您想要通過哪種方式安裝",
@@ -72,7 +72,7 @@
         "usb": {
             "help": {
                 "title": "幫助",
-                "desc": "文件可以通過NS-USBloader遠程安裝。\n也可以選擇輸入URL地址安裝。\n如果您的遠程工具對某種文件格式不支援，您可以嘗試修改文件的擴展名再選擇它，安裝的時候Awoo並不在意擴展名！\n如果還是搞不懂，那就使用SD卡安裝方式吧！"
+                "desc": "文件可以通過NS-USBloader遠程安裝。\n也可以選擇輸入URL地址安裝。\n如果您的遠程工具對某種文件格式不支援，您可以嘗試修改文件的擴展名再選擇它，安裝的時候AtmoXL-Titel-Installer並不在意擴展名！\n如果還是搞不懂，那就使用SD卡安裝方式吧！"
             },
             "top_info": "USB連接成功! 正在接收文件列表...",
             "top_info2": "選擇您想通過USB安裝的文件, 然後按 \ue0ef 安裝",
@@ -132,14 +132,14 @@
         },
         "credits": {
             "title": "感謝下列人士",
-            "desc": "- 來自HookedBehemoth 的巨大貢獻\n- Adubbz 以及其他為Tinfoil貢獻過的人\n- XorTroll 強大的Plutonium庫和金葉子工具\n- blawar (wife strangulator)和nicoboss 對NSZ 格式的支持\n- 來自AtlasNX Discuck的好心人 (至少其中一部分)\n- 來自RetroNX Discuck的好心人 (雖然沒直接參與)\n- 來自namako8982的Momiji美術\n- 也特別感謝TheXzoron"
+            "desc": "-Huntereb Awoo Installer\n- 來自HookedBehemoth 的巨大貢獻\n- Adubbz 以及其他為Tinfoil貢獻過的人\n- XorTroll 強大的Plutonium庫和金葉子工具\n- blawar (wife strangulator)和nicoboss 對NSZ 格式的支持\n- 來自AtlasNX Discuck的好心人 (至少其中一部分)\n- 來自RetroNX Discuck的好心人 (雖然沒直接參與)\n- 來自namako8982的Momiji美術\n- 也特別感謝TheXzoron"
         },
         "language": {
             "title": "選擇語言",
             "desc": "更改語言後本程式將關閉，請重新打開， 或按 \ue0e1 返回。",
             "system_language": "系統默認"
         },
-        "title": "更改 Awoo 安裝器的設置！",
+        "title": "更改 AtmoXL-Titel 安裝器的設置！",
         "buttons": "\ue0e0 選擇/更改 \ue0e1 取消"
     },
     "common": {
