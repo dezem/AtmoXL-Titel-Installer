@@ -91,11 +91,6 @@ namespace tin::install::xci
             contentStorage->DeletePlaceholder(*(NcmPlaceHolderId*)&ncaId);
         }
         catch (...) {}
-        // Attempt to delete leftover ncas
-        try {
-            contentStorage->Delete(ncaId);
-        }
-        catch (...) {}
 
         LOG_DEBUG("Size: 0x%lx\n", ncaSize);
 
@@ -112,7 +107,9 @@ namespace tin::install::xci
 
             if (!Crypto::rsa2048PssVerify(&header->magic, 0x200, header->fixed_key_sig, Crypto::NCAHeaderSignature))
             {
-                std::thread audioThread(inst::util::playAudio,"romfs:/audio/achtung.wav");
+                std::string audioPath = "romfs:/audio/achtung.wav";
+                if (std::filesystem::exists(inst::config::appDir + "/achtung.wav")) audioPath = inst::config::appDir + "/achtung.wav";
+                std::thread audioThread(inst::util::playAudio,audioPath);
                 int rc = inst::ui::mainApp->CreateShowDialog("inst.nca_verify.title"_lang, "inst.nca_verify.desc"_lang, {"common.cancel"_lang, "inst.nca_verify.opt1"_lang}, false);
                 audioThread.join();
                 if (rc != 1)

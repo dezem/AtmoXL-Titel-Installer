@@ -108,6 +108,17 @@ namespace netInstStuff{
         curl_global_cleanup();
     }
 
+    void sendExitCommands()
+    {
+        LOG_DEBUG("Telling the server we're done installing\n");
+        // Send 1 byte ack to close the server, OG tinfoil compatibility
+        u8 ack = 0;
+        tin::network::WaitSendNetworkData(m_clientSocket, &ack, sizeof(u8));
+        // Send 'DEAD\r\n' so ns-usbloader knows we're done
+        u8 nsUsbAck [6] = {0x44,0x45,0x41,0x44,0x0D,0x0A};
+        tin::network::WaitSendNetworkData(m_clientSocket, &nsUsbAck, sizeof(u8) * 6);
+    }
+
     void installTitleNet(std::vector<std::string> ourUrlList, int ourStorage, std::vector<std::string> urlListAltNames, std::string ourSource)
     {
         inst::util::initInstallServices();
@@ -163,7 +174,9 @@ namespace netInstStuff{
             fprintf(stdout, "%s", e.what());
             inst::ui::instPage::setInstInfoText("inst.info_page.failed"_lang + urlNames[urlItr]);
             inst::ui::instPage::setInstBarPerc(0);
-            std::thread audioThread(inst::util::playAudio,"romfs:/audio/achtung.wav");
+            std::string audioPath = "romfs:/audio/achtung.wav";
+            if (std::filesystem::exists(inst::config::appDir + "/achtung.wav")) audioPath = inst::config::appDir + "/achtung.wav";
+            std::thread audioThread(inst::util::playAudio,audioPath);
             inst::ui::mainApp->CreateShowDialog("inst.info_page.failed"_lang + urlNames[urlItr] + "!", "inst.info_page.failed_desc"_lang + "\n\n" + (std::string)e.what(), {"common.ok"_lang}, true);
             audioThread.join();
             nspInstalled = false;
@@ -175,15 +188,15 @@ namespace netInstStuff{
             inst::util::setClockSpeed(2, previousClockValues[2]);
         }
 
-        LOG_DEBUG("Telling the server we're done installing\n");
-        // Send 1 byte ack to close the server
-        u8 ack = 0;
-        tin::network::WaitSendNetworkData(m_clientSocket, &ack, sizeof(u8));
+        sendExitCommands();
+        OnUnwound();
 
         if(nspInstalled) {
             inst::ui::instPage::setInstInfoText("inst.info_page.complete"_lang);
             inst::ui::instPage::setInstBarPerc(100);
-            std::thread audioThread(inst::util::playAudio,"romfs:/audio/fertig.wav");
+            std::string audioPath = "romfs:/audio/fertig.wav";
+            if (std::filesystem::exists(inst::config::appDir + "/fertig.wav")) audioPath = inst::config::appDir + "/fertig.wav";
+            std::thread audioThread(inst::util::playAudio,audioPath);
             if (ourUrlList.size() > 1) inst::ui::mainApp->CreateShowDialog(std::to_string(ourUrlList.size()) + "inst.info_page.desc0"_lang, Language::GetRandomMsg(), {"common.ok"_lang}, true);
             else inst::ui::mainApp->CreateShowDialog(urlNames[0] + "inst.info_page.desc1"_lang, Language::GetRandomMsg(), {"common.ok"_lang}, true);
             audioThread.join();
@@ -199,8 +212,6 @@ namespace netInstStuff{
     {
         u64 freq = armGetSystemTickFreq();
         u64 startTime = armGetSystemTick();
-
-        OnUnwound();
 
         try
         {

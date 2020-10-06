@@ -12,6 +12,8 @@ namespace inst::ui {
             TextBlock::Ref pageInfoText;
             TextBlock::Ref installInfoText;
             pu::ui::elm::ProgressBar::Ref installBar;
+            Image::Ref titleImage;
+            TextBlock::Ref appVersionText;
             static void setTopInstInfoText(std::string ourText);
             static void setInstInfoText(std::string ourText);
             static void setInstBarPerc(double ourPercent);
@@ -20,7 +22,5 @@ namespace inst::ui {
         private:
             Rectangle::Ref infoRect;
             Rectangle::Ref topRect;
-            Image::Ref titleImage;
-            TextBlock::Ref appVersionText;
     };
 }

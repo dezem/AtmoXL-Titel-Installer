@@ -9,13 +9,13 @@ namespace inst::ui {
             optionsPage();
             PU_SMART_CTOR(optionsPage)
             void onInput(u64 Down, u64 Up, u64 Held, pu::ui::Touch Pos);
+            Image::Ref titleImage;
+            TextBlock::Ref appVersionText;
         private:
             TextBlock::Ref butText;
             Rectangle::Ref topRect;
             Rectangle::Ref infoRect;
             Rectangle::Ref botRect;
-            Image::Ref titleImage;
-            TextBlock::Ref appVersionText;
             TextBlock::Ref pageInfoText;
             pu::ui::elm::Menu::Ref menu;
             void setMenuText();
