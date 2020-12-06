@@ -60,12 +60,17 @@ namespace usbInstStuff {
 
     std::vector<std::string> OnSelected() {
         TUSHeader header;
+        padConfigureInput(8, HidNpadStyleSet_NpadStandard);
+
+        PadState pad;
+        padInitializeAny(&pad);
         while(true) {
             if (bufferData(&header, sizeof(TUSHeader), 500000000) != 0) break;
-            hidScanInput();
-            u64 kDown = hidKeysDown(CONTROLLER_P1_AUTO);
-            if (kDown & KEY_B) return {};
-            if (kDown & KEY_X) inst::ui::mainApp->CreateShowDialog("inst.usb.help.title"_lang, "inst.usb.help.desc"_lang, {"common.ok"_lang}, true);
+            padUpdate(&pad);
+            u64 kDown = padGetButtonsDown(&pad);
+            
+            if (kDown & HidNpadButton_B) return {};
+            if (kDown & HidNpadButton_X) inst::ui::mainApp->CreateShowDialog("inst.usb.help.title"_lang, "inst.usb.help.desc"_lang, {"common.ok"_lang}, true);
             if (inst::util::getUsbState() != 5) return {};
         }
 

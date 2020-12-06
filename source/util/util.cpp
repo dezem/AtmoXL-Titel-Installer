@@ -259,9 +259,9 @@ namespace inst::util {
     }
     
     int getUsbState() {
-        u32 usbState = 0;
-        usbDsGetState(&usbState);
-        return usbState;
+        UsbState usbStateN = UsbState_Detached;
+        usbDsGetState(&usbStateN);
+        return usbStateN;
     }
 
     void playAudio(std::string audioPath) {

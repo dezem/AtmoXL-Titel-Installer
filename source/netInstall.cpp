@@ -212,7 +212,11 @@ namespace netInstStuff{
     {
         u64 freq = armGetSystemTickFreq();
         u64 startTime = armGetSystemTick();
+        padConfigureInput(8, HidNpadStyleSet_NpadStandard);
 
+        PadState pad;
+        padInitializeAny(&pad);
+        
         try
         {
             ASSERT_OK(curl_global_init(CURL_GLOBAL_ALL), "Curl failed to initialized");
@@ -247,18 +251,18 @@ namespace netInstStuff{
                 }
 
                 // Break on input pressed
-                hidScanInput();
-                u64 kDown = hidKeysDown(CONTROLLER_P1_AUTO);
+                padUpdate(&pad);
+                u64 kDown = padGetButtonsDown(&pad);
 
-                if (kDown & KEY_B)
+                if (kDown & HidNpadButton_B)
                 {
                     break;
                 }
-                if (kDown & KEY_Y)
+                if (kDown & HidNpadButton_Y)
                 {
                     return {"supplyUrl"};
                 }
-                if (kDown & KEY_X)
+                if (kDown & HidNpadButton_X)
                 {
                     inst::ui::mainApp->CreateShowDialog("inst.net.help.title"_lang, "inst.net.help.desc"_lang, {"common.ok"_lang}, true);
                 }
