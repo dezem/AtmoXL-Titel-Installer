@@ -91,7 +91,7 @@ namespace inst::ui {
                 inst::config::setConfig();
             }
         }
-        if (inst::util::getUsbState() == 5) mainApp->usbinstPage->startUsb();
+        if (inst::util::usbIsConnected()) mainApp->usbinstPage->startUsb();
         else mainApp->CreateShowDialog("main.usb.error.title"_lang, "main.usb.error.desc"_lang, {"common.ok"_lang}, false);
     }
 
@@ -105,11 +105,11 @@ namespace inst::ui {
     }
 
     void MainPage::onInput(u64 Down, u64 Up, u64 Held, pu::ui::Touch Pos) {
-        if (((Down & KEY_PLUS) || (Down & KEY_MINUS) || (Down & KEY_B)) && mainApp->IsShown()) {
+        if (((Down & HidNpadButton_Plus) || (Down & HidNpadButton_Minus) || (Down & HidNpadButton_B)) && mainApp->IsShown()) {
             mainApp->FadeOut();
             mainApp->Close();
         }
-        if ((Down & KEY_A) || (Up & KEY_TOUCH)) {
+        if ((Down & HidNpadButton_A) || (Up & KEY_TOUCH)) {
             switch (this->optionMenu->GetSelectedIndex()) {
                 case 0:
                     this->installMenuItem_Click();

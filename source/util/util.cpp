@@ -38,7 +38,6 @@ namespace inst::util {
 
     void initInstallServices() {
         ncmInitialize();
-        nsInitialize();
         nsextInitialize();
         esInitialize();
         splCryptoInitialize();
@@ -47,7 +46,6 @@ namespace inst::util {
 
     void deinitInstallServices() {
         ncmExit();
-        nsExit();
         nsextExit();
         esExit();
         splCryptoExit();
@@ -138,6 +136,14 @@ namespace inst::util {
         curl_easy_cleanup(curl);
 
         return finalString;
+    }
+
+    std::string formatUrlLink(std::string ourString){
+        std::string::size_type pos = ourString.find('/');
+        if (pos != std::string::npos)
+            return ourString.substr(0, pos);
+        else
+            return ourString;
     }
 
     std::string shortenString(std::string ourString, int ourLength, bool isFile) {
@@ -258,10 +264,10 @@ namespace inst::util {
         return inet_ntoa(addr);
     }
     
-    int getUsbState() {
-        UsbState usbStateN = UsbState_Detached;
-        usbDsGetState(&usbStateN);
-        return usbStateN;
+    bool usbIsConnected() {
+        UsbState state = UsbState_Detached;
+        usbDsGetState(&state);
+        return state == UsbState_Configured;
     }
 
     void playAudio(std::string audioPath) {

@@ -44,7 +44,7 @@ DATA		:=	data
 INCLUDES	:=	include include/ui include/data include/install include/nx include/nx/ipc include/util include/Plutonium/Plutonium/Output-switch/include
 APP_TITLE	:=	AtmoXL Titel Installer
 APP_AUTHOR	:=	AtmoXL - forked from Awoo Installer by Huntereb & Behemoth
-APP_VERSION	:=	1.3.4
+APP_VERSION	:=	1.3.5
 ROMFS		:=	romfs
 
 #---------------------------------------------------------------------------------
@@ -54,16 +54,21 @@ ARCH	:=	-march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -fPIE
 
 CFLAGS	:=	-g -Wall -O2 -ffunction-sections \
 			$(ARCH) $(DEFINES)
+CFLAGS	+=	 `curl-config --cflags`
+CFLAGS	+=	 `sdl2-config --cflags` `freetype-config --cflags`
 
-CFLAGS	+=	$(INCLUDE) -D__SWITCH__ -Wall -Werror #-D__DEBUG__ -DNXLINK_DEBUG
+CFLAGS	+=	$(INCLUDE) -D__SWITCH__ -Wall #-Werror -D__DEBUG__ -DNXLINK_DEBUG
 
-CXXFLAGS	:= $(CFLAGS) -fno-rtti -std=gnu++17 -Wall -Werror
+CXXFLAGS	:= $(CFLAGS) -fno-rtti -std=gnu++17
 
 
 ASFLAGS	:=	-g $(ARCH)
 LDFLAGS	=	-specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
 
-LIBS	:=  -lcurl -lz -lmbedtls -lmbedcrypto -lmbedx509 -lminizip -lnx -lstdc++fs -lz -lpu -lfreetype -lSDL2_mixer -lopusfile -lopus -lmodplug -lmpg123 -lvorbisidec -lSDL2 -lc -logg -lSDL2_ttf -lSDL2_gfx -lSDL2_image -lwebp -lpng -ljpeg `sdl2-config --libs` `freetype-config --libs` -lzstd
+LIBS	:=  `curl-config --libs` # Networking
+LIBS	+=	-lSDL2_mixer -lopusfile -lopus -lmodplug -lmpg123 -lvorbisidec -logg # Audio
+LIBS	+=	-lpu -lSDL2_gfx -lSDL2_image -lwebp -lpng -ljpeg `sdl2-config --libs` `freetype-config --libs` # Graphics
+LIBS	+=	-lmbedtls -lmbedcrypto -lminizip -lzstd # Memes
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing

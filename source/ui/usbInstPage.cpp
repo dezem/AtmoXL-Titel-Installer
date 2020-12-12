@@ -102,17 +102,17 @@ namespace inst::ui {
     }
 
     void usbInstPage::onInput(u64 Down, u64 Up, u64 Held, pu::ui::Touch Pos) {
-        if (Down & KEY_B) {
+        if (Down & HidNpadButton_B) {
             tin::util::USBCmdManager::SendExitCmd();
             mainApp->LoadLayout(mainApp->mainPage);
         }
-        if ((Down & KEY_A) || (Up & KEY_TOUCH)) {
+        if ((Down & HidNpadButton_A) || (Up & KEY_TOUCH)) {
             this->selectTitle(this->menu->GetSelectedIndex());
             if (this->menu->GetItems().size() == 1 && this->selectedTitles.size() == 1) {
                 this->startInstall();
             }
         }
-        if ((Down & KEY_Y)) {
+        if ((Down & HidNpadButton_Y)) {
             if (this->selectedTitles.size() == this->menu->GetItems().size()) this->drawMenuItems(true);
             else {
                 for (long unsigned int i = 0; i < this->menu->GetItems().size(); i++) {
@@ -122,7 +122,7 @@ namespace inst::ui {
                 this->drawMenuItems(false);
             }
         }
-        if (Down & KEY_PLUS) {
+        if (Down & HidNpadButton_Plus) {
             if (this->selectedTitles.size() == 0) {
                 this->selectTitle(this->menu->GetSelectedIndex());
                 this->startInstall();

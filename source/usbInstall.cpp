@@ -60,10 +60,11 @@ namespace usbInstStuff {
 
     std::vector<std::string> OnSelected() {
         TUSHeader header;
+        
         padConfigureInput(8, HidNpadStyleSet_NpadStandard);
-
         PadState pad;
         padInitializeAny(&pad);
+        
         while(true) {
             if (bufferData(&header, sizeof(TUSHeader), 500000000) != 0) break;
             padUpdate(&pad);
@@ -71,7 +72,7 @@ namespace usbInstStuff {
             
             if (kDown & HidNpadButton_B) return {};
             if (kDown & HidNpadButton_X) inst::ui::mainApp->CreateShowDialog("inst.usb.help.title"_lang, "inst.usb.help.desc"_lang, {"common.ok"_lang}, true);
-            if (inst::util::getUsbState() != 5) return {};
+            if (!inst::util::usbIsConnected()) return {};
         }
 
         if (header.magic != 0x304C5554) return {};

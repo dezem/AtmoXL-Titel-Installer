@@ -12,12 +12,13 @@ namespace inst::util {
     bool removeDirectory(std::string dir);
     bool copyFile(std::string inFile, std::string outFile);
     std::string formatUrlString(std::string ourString);
+    std::string formatUrlLink(std::string ourString);
     std::string shortenString(std::string ourString, int ourLength, bool isFile);
     std::string readTextFromFile(std::string ourFile);
     std::string softwareKeyboard(std::string guideText, std::string initialText, int LenMax);
     std::string getDriveFileName(std::string fileId);
     std::vector<uint32_t> setClockSpeed(int deviceToClock, uint32_t clockSpeed);
     std::string getIPAddress();
-    int getUsbState();
+    bool usbIsConnected();
     void playAudio(std::string audioPath);
 }
