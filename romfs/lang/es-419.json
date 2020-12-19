@@ -4,9 +4,14 @@
             "sd": "Instalar desde tarjeta SD",
             "net": "Instalar a través de red local o Internet",
             "usb": "Instalar por USB",
+			"hdd": "Instalar a través de USB HDD",
             "set": "Ajustes",
             "exit": "Salir"
         },
+		"hdd": {
+			"title": "USB HDD",
+			"notfound": "El disco duro USB no está conectado."
+		},
         "net": {
             "title": "Conexión de red no disponible",
             "desc": "Verifica que el modo avión esté deshabilitado y que estés conectado a una red."
@@ -62,7 +67,7 @@
                 "title": "Ayuda",
                 "desc": "Copia los archivos NSP, NSZ, XCI o XCZ a tu tarjeta SD, navega hacia ellos,\nselecciona los que quires instalar y luego pulsa el botón +."
             },
-            "top_info": "¡Selecciona los archivos que quieres instalar, y pulsa el botón +!",
+            "top_info": "¡Selecciona los archivos que quieres instalar desde la tarjeta SD, y pulsa el botón +!",
             "source_string": " desde la tarjeta SD",
             "delete_info": " instalado. ¿Borrarlo de la tarjeta SD?",
 	    "delete_info_multi": " archivos instalados con éxito. ¿Borrarlos de la tarjeta SD?",
@@ -80,6 +85,18 @@
             "source_string": " por USB",
             "buttons": "\ue0e2 (Mantener) Ayuda    \ue0e1 (Mantener) Cancelar",
             "buttons2": "\ue0e0 Selecionar Archivo    \ue0e3 Seleccionar Todo    \ue0ef Instalar Archivo(s)    \ue0e1 Cancelar"
+        },
+        "hdd": {
+            "help": {
+                "title": "Ayuda",
+                "desc": "Copia los archivos NSP, NSZ, XCI o XCZ a tu USB HDD, navega hacia ellos,\nselecciona los que quires instalar y luego pulsa el botón +."
+            },
+            "top_info": "¡Selecciona los archivos que quieres instalar desde la USB HDD, y pulsa el botón +!",
+            "source_string": " desde la USB HDD",
+            "delete_info": " instalado. ¿Borrarlo de la USB HDD?",
+	    "delete_info_multi": " archivos instalados con éxito. ¿Borrarlos de la USB HDD?",
+            "delete_desc": "Los archivos originales no hacen falta después de ser instalados",
+            "buttons": "\ue0e0 Selecionar Archivo    \ue0e3 Seleccionar Todo    \ue0ef Instalar Archivo(s)    \ue0e2 Ayuda    \ue0e1 Cancelar"
         },
         "target": {
             "desc0": "¿Dónde debería instalarse ",

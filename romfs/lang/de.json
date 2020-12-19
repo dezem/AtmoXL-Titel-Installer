@@ -4,9 +4,14 @@
             "sd": "Von SD-Karte installieren",
             "net": "Über LAN oder Internet installieren",
             "usb": "Über USB installieren",
+			"hdd": "Über USB HDD installieren",
             "set": "Einstellungen",
             "exit": "Beenden"
         },
+		"hdd": {
+			"title": "USB HDD",
+			"notfound": "USB HDD ist nicht angeschlossen."
+		},
         "net": {
             "title": "Netzwerk Verbindung nicht verfügbar",
             "desc": "Überprüfe ob der Flugzeug-Modus deaktiviert ist und ob du mit einem lokalen Netzwerk verbunden bist"
@@ -62,7 +67,7 @@
                 "title": "Hilfe",
                 "desc": "Kopiere NSP, NSZ, XCI oder XCZ Dateien auf deine SD Karte,\nsuche nach ihnen und wähle die zu installierenden Titel aus und drücke dann \ue0b3."
             },
-            "top_info": "Wähle Dateien zur Installation vom Server aus und drücke dann \ue0b3!",
+            "top_info": "Wähle Dateien zur Installation von der SD-Karte aus und drücke dann \ue0b3!",
             "source_string": " von der SD Karte",
             "delete_info": " installiert! Soll es von der SD-Karte gelöscht werden?",
             "delete_info_multi": " Dateien erfolgreich installiert! Sollen diese von der SD-Karte gelöscht werden?",
@@ -80,6 +85,18 @@
             "source_string": " über USB",
             "buttons": "\ue0e2 (Halten) Hilfe    \ue0e1 (Halte) Abbrechen",
             "buttons2": "\ue0e0 Datei auswählen    \ue0e3 Alle auswählen    \ue0ef Datei(en) installieren    \ue0e1 Abbrechen"
+        },
+        "hdd": {
+            "help": {
+                "title": "Hilfe",
+                "desc": "Kopiere NSP, NSZ, XCI oder XCZ Dateien auf deine USB HDD,\nsuche nach ihnen und wähle die zu installierenden Titel aus und drücke dann \ue0b3."
+            },
+            "top_info": "Wähle Dateien zur Installation von der USB HDD aus und drücke dann \ue0b3!",
+            "source_string": " von der USB HDD",
+            "delete_info": " installiert! Soll es von der USB HDD gelöscht werden?",
+            "delete_info_multi": " Dateien erfolgreich installiert! Sollen diese von der USB HDD gelöscht werden?",
+            "delete_desc": "Die originalen Dateien werden nach der Installation nicht mehr benötigt",
+            "buttons": "\ue0e0 Datei auswählen    \ue0e3 Alle auswählen    \ue0ef Datei(en) installieren    \ue0e1 Abbrechen"
         },
         "target": {
             "desc0": "Wo soll ",

@@ -4,9 +4,14 @@
             "sd": "Installer à partir de la carte SD",
             "net": "Installer à partir d'un LAN ou d'internet",
             "usb": "Installer à partir d'un périphèrique USB",
+			"hdd": "Installer sur un disque dur USB",
             "set": " Paramètres",
             "exit": " Quitter"
         },
+		"hdd": {
+			"title": "Disque dur USB",
+			"notfound": "Le disque dur USB n'est pas connecté."
+		},
         "net": {
             "title": "Connection au réseau impossible",
             "desc": "Vérifiez que le mode avion est désactivé et que vous êtes connecté à un réseau local."
@@ -62,7 +67,7 @@
                 "title": "Aide",
                 "desc": "Copiez vos fichiers NSP, NSZ, XCI ou XCZ sur votre carte SD, recherchez et\nsélectionnez ceux que vous voulez installer, puis appuyez sur le bouton Plus."
             },
-            "top_info": "Sélectionnez les fichiers que vous voulez installer, puis appuyez sur le bouton Plus !",
+            "top_info": "Sélectionnez les fichiers que vous voulez installer à partir de la carte SD, puis appuyez sur le bouton Plus !",
             "source_string": " à partir de la carte SD",
             "delete_info": " Installation réussie! Supprimer de la carte SD?",
             "delete_info_multi": " fichiers installés avec succès ! Les supprimer de la carte SD ?",
@@ -80,6 +85,18 @@
             "source_string": " à partir d'un périphèrique USB",
             "buttons": "\ue0e2 (Maintenir) Aide    \ue0e1 (Maintenir) Annuler",
             "buttons2": "\ue0e0 Sélectionnez un fichier    \ue0e3 Tout sélectionner    \ue0ef Installer un/des fichier(s)    \ue0e1 Annuler"
+        },
+        "hdd": {
+            "help": {
+                "title": "Aide",
+                "desc": "Copiez vos fichiers NSP, NSZ, XCI ou XCZ sur votre disque dur USB, recherchez et\nsélectionnez ceux que vous voulez installer, puis appuyez sur le bouton Plus."
+            },
+            "top_info": "Sélectionnez les fichiers que vous voulez installer à partir de la disque dur USB, puis appuyez sur le bouton Plus !",
+            "source_string": " à partir de la disque dur USB",
+            "delete_info": " Installation réussie! Supprimer de la disque dur USB?",
+            "delete_info_multi": " fichiers installés avec succès ! Les supprimer de la disque dur USB ?",
+            "delete_desc": "Les fichiers originaux ne sont plus nécessaires une fois qu'ils ont été installés.",
+            "buttons": "\ue0e0 Sélectionnez un fichier    \ue0e3 Tout sélectionner    \ue0ef Installer un/des fichier(s)    \ue0e2 Aide    \ue0e1 Annuler"
         },
         "target": {
             "desc0": "Où ",

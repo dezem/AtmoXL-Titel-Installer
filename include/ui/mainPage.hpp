@@ -12,6 +12,7 @@ namespace inst::ui {
             void netInstallMenuItem_Click();
             void usbInstallMenuItem_Click();
             void settingsMenuItem_Click();
+            void usbHDDInstallMenuItem_Click();
             void exitMenuItem_Click();
             void onInput(u64 Down, u64 Up, u64 Held, pu::ui::Touch Pos);
             Image::Ref titleImage;
@@ -25,6 +26,7 @@ namespace inst::ui {
             pu::ui::elm::MenuItem::Ref installMenuItem;
             pu::ui::elm::MenuItem::Ref netInstallMenuItem;
             pu::ui::elm::MenuItem::Ref usbInstallMenuItem;
+            pu::ui::elm::MenuItem::Ref usbHDDInstallMenuItem;
             pu::ui::elm::MenuItem::Ref settingsMenuItem;
             pu::ui::elm::MenuItem::Ref exitMenuItem;
     };

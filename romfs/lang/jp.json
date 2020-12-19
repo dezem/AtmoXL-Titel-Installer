@@ -4,9 +4,14 @@
             "sd": "SDカードからインストール",
             "net": "ネットワーク経由でインストール",
             "usb": "USB経由でインストール",
+			"hdd": "USBHDD経由でインストール",
             "set": "設定",
             "exit": "終了"
         },
+		"hdd": {
+			"title": "USB HDD",
+			"notfound": "USBHDDが接続されていません."
+		},
         "net": {
             "title": "ネットワーク接続は利用できません",
             "desc": "機内モードが無効になっていて、ローカルネットワークに接続していることを確認してください。"
@@ -80,6 +85,18 @@
             "source_string": " USB経由",
             "buttons": "\ue0e2 (押す) ヘルプ    \ue0e1 (押す) キャンセル",
             "buttons2": "\ue0e0 ファイルを選択    \ue0e3 すべて選択    \ue0ef ファイルをインストール    \ue0e1 キャンセル"
+        },
+        "hdd": {
+            "help": {
+                "title": "ヘルプ",
+                "desc": "NSP、NSZ、XCI、またはXCZファイルをUSBHDDにコピーし、\nインストールするファイルを参照して選択し、＋ボタンを押します。"
+            },
+            "top_info": "インストールするファイルを選択し、＋ボタンを押してください！",
+            "source_string": " USBHDDから",
+            "delete_info": " インストール完了！ USBHDDから削除しますか？",
+            "delete_info_multi": " ファイルが正常にインストールされました！ USBHDDから削除しますか？",
+            "delete_desc": "元のファイルはインストール後に不要になりました",
+            "buttons": "\ue0e0 ファイルを選択    \ue0e3 すべて選択    \ue0ef ファイルをインストール    \ue0e2 ヘルプ    \ue0e1 キャンセル"
         },
         "target": {
             "desc0": "どこに ",

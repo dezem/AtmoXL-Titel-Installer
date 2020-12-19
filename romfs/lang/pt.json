@@ -4,9 +4,14 @@
             "sd": "Instalar através do cartão SD",
             "net": "Instalar através da LAN ou da Internet",
             "usb": "Instalar atráves do USB",
+			"hdd": "Instalar via USB HDD",
             "set": "Definições",
             "exit": "Sair"
         },
+		"hdd": {
+			"title": "USB HDD",
+			"notfound": "HDD USB não está conectado."
+		},
         "net": {
             "title": "Ligação à rede indisponível",
             "desc": "Verifique se o modo avião está desligado e se está ligado à rede local."
@@ -62,7 +67,7 @@
                 "title": "Ajuda",
                 "desc": "Copie os ficheiros NSP, NSZ, XCI, ou XCZ para o cartão SD, explore e\nselecione os ficheiros que deseja instalar, depois pressione o botão Mais."
             },
-            "top_info": "Selecione os ficheiros que deseja instalar, depois pressione o botão Mais!",
+            "top_info": "Selecione os ficheiros que deseja instalar através do cartão SD, depois pressione o botão Mais!",
             "source_string": " através do cartão SD",
             "delete_info": " instalado! Eliminar do cartão SD?",
             "delete_info_multi": " instalados com sucesso! Eliminar do cartão SD?",
@@ -80,6 +85,18 @@
             "source_string": " através do USB",
             "buttons": "\ue0e2 (Manter primido) Ajuda    \ue0e1 (Manter primido) Cancelar",
             "buttons2": "\ue0e0 Selecionar Ficheiro    \ue0e3 Selecionar Todos    \ue0ef Instalar Ficheiro(s)    \ue0e1 Cancelar"
+        },
+        "hdd": {
+            "help": {
+                "title": "Ajuda",
+                "desc": "Copie os ficheiros NSP, NSZ, XCI, ou XCZ para o USB HDD, explore e\nselecione os ficheiros que deseja instalar, depois pressione o botão Mais."
+            },
+            "top_info": "Selecione os ficheiros que deseja instalar através do USB HDD, depois pressione o botão Mais!",
+            "source_string": " através do USB HDD",
+            "delete_info": " instalado! Eliminar do USB HDD?",
+            "delete_info_multi": " instalados com sucesso! Eliminar do USB HDD?",
+            "delete_desc": "Os ficheiros originais não são necessários depois de instalados",
+            "buttons": "\ue0e0 Selecionar Ficheiro    \ue0e3 Selecionar Todos    \ue0ef Instalar Ficheiro(s)    \ue0e2 Ajuda    \ue0e1 Cancelar"
         },
         "target": {
             "desc0": "Onde será o ",

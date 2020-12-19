@@ -4,9 +4,14 @@
             "sd": "通过 SD 卡安装",
             "net": "通过局域网或网络安装",
             "usb": "通过 USB 安装",
+			"hdd": "通过 USB HDD 安装",
             "set": "设置",
             "exit": "退出"
         },
+		"hdd": {
+			"title": "USB 硬盘",
+			"notfound": "未连接 USB HDD."
+		},
         "net": {
             "title": "网络连接不可用",
             "desc": "请确认飞行模式已关闭，且主机已连接到本地网络。"
@@ -80,6 +85,18 @@
             "source_string": " 通过 USB",
             "buttons": "\ue0e2 (按住) 帮助    \ue0e1 (按住) 取消",
             "buttons2": "\ue0e0 选择    \ue0e3 全选    \ue0ef 安装    \ue0e1 取消"
+        },
+        "hdd": {
+            "help": {
+                "title": "帮助",
+                "desc": "复制 NSP、NSZ、XCI 或 XCZ 文件到 USB HDD，\n浏览并选择将要安装的文件，然后按 \ue0ef 以安装。"
+            },
+            "top_info": "选择将要安装的文件，然后按 \ue0ef 以安装！",
+            "source_string": " 通过 USB HDD",
+            "delete_info": " 安装完成！是否从 USB HDD 中删除安装文件？",
+            "delete_info_multi": " 文件安装成功！是否从 USB HDD 中删除安装文件？",
+            "delete_desc": "安装完成后不再需要安装文件",
+            "buttons": "\ue0e0 选择    \ue0e3 全选    \ue0ef 安装    \ue0e2 帮助    \ue0e1 取消"
         },
         "target": {
             "desc0": "请选择 ",

@@ -1,12 +1,17 @@
 {
     "main":{
         "menu": {
-            "sd": "通過SD卡安裝",
+            "sd": "通過 SD卡安裝",
             "net": "通過網路安裝",
-            "usb": "通過USB安裝",
+            "usb": "通過 USB 安裝",
+			"hdd": "通過 USB 硬碟安裝",
             "set": "設置",
             "exit": "退出"
         },
+		"hdd": {
+			"title": "USB 硬碟",
+			"notfound": "USB 硬碟未連接."
+		},
         "net": {
             "title": "連接錯誤",
             "desc": "請確認關閉飛行模式，並確保網路連接暢通。"
@@ -80,6 +85,18 @@
             "source_string": " 通過USB",
             "buttons": "\ue0e2 (按住) 幫助 \ue0e1 (按住) 取消",
             "buttons2": "\ue0e0 選擇文件 \ue0e3 全選 \ue0ef 安裝文件 \ue0e1 取消"
+        },
+        "hdd": {
+            "help": {
+                "title": "幫助",
+                "desc": "複製您的 NSP, NSZ, XCI, XCZ 文件到USB 硬碟, \n選擇想要安裝的文件，然後按 \ue0ef 安裝！"
+            },
+            "top_info": "選擇想要安裝的文件，然後按 \ue0ef 安裝！",
+            "source_string": " 從USB 硬碟",
+            "delete_info": " 安裝完成！要將原文件從USB 硬碟刪除嗎？",
+            "delete_info_multi": " 所有文件已安裝！要把所有原文件從USB 硬碟刪除嗎？",
+            "delete_desc": "安裝成功後已經不需要原文件。",
+            "buttons": "\ue0e0 選擇文件 \ue0e3 全選 \ue0ef 安裝 \ue0e2 幫助 \ue0e1 取消"
         },
         "target": {
             "desc0": "將 ",

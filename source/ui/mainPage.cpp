@@ -6,6 +6,7 @@
 #include "util/config.hpp"
 #include "util/lang.hpp"
 #include "data/buffered_placeholder_writer.hpp"
+#include "nx/usbhdd.h"
 
 #define COLOR(hex) pu::ui::Color::FromHex(hex)
 
@@ -50,6 +51,9 @@ namespace inst::ui {
         this->usbInstallMenuItem = pu::ui::elm::MenuItem::New("main.menu.usb"_lang);
         this->usbInstallMenuItem->SetColor(COLOR("#FFFFFFFF"));
         this->usbInstallMenuItem->SetIcon("romfs:/images/icons/usb-port.png");
+        this->usbHDDInstallMenuItem = pu::ui::elm::MenuItem::New("main.menu.hdd"_lang);
+        this->usbHDDInstallMenuItem->SetColor(COLOR("#FFFFFFFF"));
+        this->usbHDDInstallMenuItem->SetIcon("romfs:/images/icons/usb-port.png");
         this->settingsMenuItem = pu::ui::elm::MenuItem::New("main.menu.set"_lang);
         this->settingsMenuItem->SetColor(COLOR("#FFFFFFFF"));
         this->settingsMenuItem->SetIcon("romfs:/images/icons/settings.png");
@@ -64,6 +68,7 @@ namespace inst::ui {
         this->optionMenu->AddItem(this->installMenuItem);
         this->optionMenu->AddItem(this->netInstallMenuItem);
         this->optionMenu->AddItem(this->usbInstallMenuItem);
+        this->optionMenu->AddItem(this->usbHDDInstallMenuItem);
         this->optionMenu->AddItem(this->settingsMenuItem);
         this->optionMenu->AddItem(this->exitMenuItem);
         this->Add(this->optionMenu);
@@ -95,6 +100,16 @@ namespace inst::ui {
         else mainApp->CreateShowDialog("main.usb.error.title"_lang, "main.usb.error.desc"_lang, {"common.ok"_lang}, false);
     }
 
+    void MainPage::usbHDDInstallMenuItem_Click() {
+		if(nx::hdd::count() && nx::hdd::rootPath()) {
+			mainApp->usbhddinstPage->drawMenuItems(true, nx::hdd::rootPath());
+			mainApp->usbhddinstPage->menu->SetSelectedIndex(0);
+			mainApp->LoadLayout(mainApp->usbhddinstPage);
+		} else {
+			inst::ui::mainApp->CreateShowDialog("main.hdd.title"_lang, "main.hdd.notfound"_lang, {"common.ok"_lang}, true);
+		}
+    }
+
     void MainPage::exitMenuItem_Click() {
         mainApp->FadeOut();
         mainApp->Close();
@@ -121,9 +136,12 @@ namespace inst::ui {
                     MainPage::usbInstallMenuItem_Click();
                     break;
                 case 3:
-                    MainPage::settingsMenuItem_Click();
+                    MainPage::usbHDDInstallMenuItem_Click();
                     break;
                 case 4:
+                    MainPage::settingsMenuItem_Click();
+                    break;
+                case 5:
                     MainPage::exitMenuItem_Click();
                     break;
                 default:

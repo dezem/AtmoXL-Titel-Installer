@@ -4,9 +4,14 @@
             "sd": "Installa dalla SD",
             "net": "Installa via LAN o da internet",
             "usb": "Installa via USB",
+			"hdd": "Installa tramite USB HDD",
             "set": "Impostazioni",
             "exit": "Esci"
         },
+		"hdd": {
+			"title": "USB HDD",
+			"notfound": "USB HDD non è collegato."
+		},
         "net": {
             "title": "Connessione alla rete non disponibile",
             "desc": "Controlla che la modalità aereo sia disattivata e che tu sia connesso ad una rete."
@@ -62,7 +67,7 @@
                 "title": "Aiuto",
                 "desc": "Copia i tuoi file NSP, NSZ, XCI, o XCZ nella SD, cercali e\nseleziona quelli che vuoi installare, poi premi Il tasto Più."
             },
-            "top_info": "Seleziona quali file vuoi installare, poi premi Il tasto Più!",
+            "top_info": "Seleziona quali file vuoi installare dalla SD, poi premi Il tasto Più!",
             "source_string": " dalla SD",
             "delete_info": " installato! Cancellarlo dalla SD?",
             "delete_info_multi": " file installati correttamente! Cancellarli dalla SD?",
@@ -80,6 +85,18 @@
             "source_string": " via USB",
             "buttons": "\ue0e2 (Tieni premuto) Aiuto    \ue0e1 (Tieni premuto) Annulla",
             "buttons2": "\ue0e0 Seleziona File    \ue0e3 Seleziona tutto    \ue0ef Installa i File    \ue0e1 Annulla"
+        },
+        "hdd": {
+            "help": {
+                "title": "Aiuto",
+                "desc": "Copia i tuoi file NSP, NSZ, XCI, o XCZ nella USB HDD, cercali e\nseleziona quelli che vuoi installare, poi premi Il tasto Più."
+            },
+            "top_info": "Seleziona quali file vuoi installare dalla USB HDD, poi premi Il tasto Più!",
+            "source_string": " dalla USB HDD",
+            "delete_info": " installato! Cancellarlo dalla USB HDD?",
+            "delete_info_multi": " file installati correttamente! Cancellarli dalla USB HDD?",
+            "delete_desc": "I file originali non sono più necessari dopo averli installati",
+            "buttons": "\ue0e0 Seleziona File    \ue0e3 Seleziona tutto    \ue0ef Installa i File    \ue0e2 Aiuto    \ue0e1 Annulla"
         },
         "target": {
             "desc0": "Dove vuoi installare ",

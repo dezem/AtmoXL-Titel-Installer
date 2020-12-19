@@ -4,9 +4,14 @@
             "sd": "Install from SD card",
             "net": "Install over LAN or internet",
             "usb": "Install over USB",
+			"hdd": "Install over USB HDD",
             "set": "Settings",
             "exit": "Exit"
         },
+		"hdd": {
+			"title": "USB HDD",
+			"notfound": "USB HDD is not connected."
+		},
         "net": {
             "title": "Network connection not available",
             "desc": "Check that airplane mode is disabled and you're connected to a local network."
@@ -62,7 +67,7 @@
                 "title": "Help",
                 "desc": "Copy your NSP, NSZ, XCI, or XCZ files to your SD card, browse to and\nselect the ones you want to install, then press the Plus button."
             },
-            "top_info": "Select what files you want to install, then press the Plus button!",
+            "top_info": "Select what files you want to install from SD card, then press the Plus button!",
             "source_string": " from SD card",
             "delete_info": " installed! Delete it from the SD card?",
             "delete_info_multi": " files installed successfully! Delete them from the SD card?",
@@ -80,6 +85,18 @@
             "source_string": " over USB",
             "buttons": "\ue0e2 (Hold) Help    \ue0e1 (Hold) Cancel",
             "buttons2": "\ue0e0 Select File    \ue0e3 Select All    \ue0ef Install File(s)    \ue0e1 Cancel"
+        },
+        "hdd": {
+            "help": {
+                "title": "Help",
+                "desc": "Copy your NSP, NSZ, XCI, or XCZ files to your USB HDD, browse to and\nselect the ones you want to install, then press the Plus button."
+            },
+            "top_info": "Select what files you want to install from USB HDD, then press the Plus button!",
+            "source_string": " from USB HDD",
+            "delete_info": " installed! Delete it from the USB HDD?",
+            "delete_info_multi": " files installed successfully! Delete them from the USB HDD?",
+            "delete_desc": "The original files aren't needed anymore after they've been installed",
+            "buttons": "\ue0e0 Select File    \ue0e3 Select All    \ue0ef Install File(s)    \ue0e2 Help    \ue0e1 Cancel"
         },
         "target": {
             "desc0": "Where should ",
