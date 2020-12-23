@@ -5,7 +5,7 @@ A No-Bullshit NSP, NSZ, XCI, and XCZ Installer for Nintendo Switch
 
 ## Features
 - Installs NSP/NSZ/XCI/XCZ files and split NSP/XCI files from your SD card
-- Installs NSP/NSZ/XCI/XCZ files and split NSP/XCI files from your USB HDD exFAT and NTFS (NTFS currently works only with AMS)
+- Installs NSP/NSZ/XCI/XCZ files and split NSP/XCI files from your USB HDD exFAT, NTFS and EXT2/3/4 (NTFS and EXT2/3/4 currently works only with AMS)
 - Installs NSP/NSZ/XCI/XCZ files over LAN or USB from tools such as [NS-USBloader](https://github.com/developersu/ns-usbloader)
 - Installs NSP/NSZ/XCI/XCZ files over the internet by URL or Google Drive
 - Verifies NCAs by header signature before they're installed
