@@ -68,7 +68,7 @@ LDFLAGS	=	-specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*
 LIBS	:=  `curl-config --libs` # Networking
 LIBS	+=	-lSDL2 -lc -lSDL2_ttf -lSDL2_mixer -lopusfile -lopus -lmodplug -lmpg123 -lvorbisidec -logg # Audio
 LIBS	+=	-lpu -lSDL2_gfx -lSDL2_image -lwebp -lpng -ljpeg `sdl2-config --libs` `freetype-config --libs` # Graphics
-LIBS	+=	-lz -lssh2 -lusbhsfs -lntfs-3g -lmbedtls -lmbedcrypto -lmbedx509 -lminizip -lnx -lstdc++fs -lzzip -lzstd # Memes
+LIBS	+=	-lz -lssh2 -lusbhsfs -lntfs-3g -llwext4 -lmbedtls -lmbedcrypto -lmbedx509 -lminizip -lnx -lstdc++fs -lzzip -lzstd # Memes
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
