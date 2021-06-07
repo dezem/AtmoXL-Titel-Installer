@@ -139,13 +139,29 @@
             "nca_verify": "安裝前驗證NCA簽名",
             "boost_mode": "安裝過程中開啟“超頻”模式",
             "ask_delete": "安裝後詢問是否刪除原文件",
+            "auto_update": "自動更新",
             "language": "語言： ",
+            "check_update": "檢測更新",
             "credits": "致谢"
         },
         "nca_warn": {
             "title": "警告！",
             "desc": "有些可安裝文件可能存在木馬！\n您要非常信任這個文件才能關閉此驗證\n您是否確定要關閉NCA簽名驗證？",
             "opt1": "是的，我不怕Switch變磚！"
+        },
+        "update": {
+            "title": "有新版本可以更新",
+            "desc0": "AtmoXL-Titel-Installer ",
+            "desc1": " 新的更新！ 要繼續嗎？",
+            "opt0": "更新",
+            "top_info": "正在更新 ...",
+            "bot_info": "正在下載 ...",
+            "bot_info2": "正在解壓 ...",
+            "complete": "更新完成！",
+            "failed": "更新失敗！",
+            "end_desc": "本程式將關閉！",
+            "title_check_fail": "找不到更新",
+            "desc_check_fail": "已更新到最新版！"
         },
         "credits": {
             "title": "感謝下列人士",

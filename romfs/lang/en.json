@@ -139,13 +139,29 @@
             "nca_verify": "Verify NCA signatures before installation",
             "boost_mode": "Enable \"boost mode\" during installations",
             "ask_delete": "Ask to delete original files after installation",
+            "auto_update": "Check for updates to AtmoXL-Titel-Installer automatically",
             "language": "Language: ",
+            "check_update": "Check for updates to AtmoXL-Titel-Installer",
             "credits": "Credits"
         },
         "nca_warn": {
             "title": "Warning!",
             "desc": "Some installable files may contain malicious contents! Only disable this\nfeature if you are absolutely certain the software you will be installing\nis trustworthy!\n\nDo you still want to disable NCA signature verification?",
             "opt1": "Yes, I want a brick"
+        },
+        "update": {
+            "title": "Update available",
+            "desc0": "AtmoXL-Titel-Installer ",
+            "desc1": " is available now! Ready to update?",
+            "opt0": "Update",
+            "top_info": "Updating to AtmoXL-Titel-Installer ",
+            "bot_info": "Downloading AtmoXL-Titel-Installer ",
+            "bot_info2": "Extracting AtmoXL-Titel-Installer ",
+            "complete": "Update complete!",
+            "failed": "Update failed!",
+            "end_desc": "The software will now be closed.",
+            "title_check_fail": "No updates found",
+            "desc_check_fail": "You are on the latest version of AtmoXL-Titel-Installer!"
         },
         "credits": {
             "title": "Thanks to the following people!",

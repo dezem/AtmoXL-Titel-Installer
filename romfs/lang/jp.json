@@ -139,13 +139,29 @@
             "nca_verify": "インストール前にNCA署名を検証する",
             "boost_mode": "インストール中に「ブーストモード」を有効にする",
             "ask_delete": "インストール後に元のファイルを削除するか尋ねる",
+            "auto_update": "AtmoXL-Titel-Installerのアップデートを自動的に確認する",
             "language": "言語: ",
+            "check_update": "AtmoXL-Titel-Installerのアップデートを確認",
             "credits": "クレジット"
         },
         "nca_warn": {
             "title": "警告!",
             "desc": "一部のインストール可能なファイルには悪意のあるコンテンツが含まれている場合があります!\nこの機能は、インストールするソフトウェアが信頼できると確信している場合にのみ無効にしてください!\n\nそれでもNCA署名検証を無効にしますか?",
             "opt1": "はい、故障しても大丈夫です"
+        },
+        "update": {
+            "title": "更新可能",
+            "desc0": "AtmoXL-Titel-Installer ",
+            "desc1": " 現在入手可能です！更新する準備ができましたか?",
+            "opt0": "アップデート",
+            "top_info": "AtmoXL-Titel-Installerを更新 ",
+            "bot_info": "AtmoXL-Titel-Installerをダウンロード中 ",
+            "bot_info2": "AtmoXL-Titel-Installerを展開中 ",
+            "complete": "更新完了!",
+            "failed": "更新失敗!",
+            "end_desc": "これでソフト​​ウェアが閉じられます。",
+            "title_check_fail": "更新が見つかりません",
+            "desc_check_fail": "既にAtmoXL-Titel-Installerの最新バージョンを使用しています!"
         },
         "credits": {
             "title": "以下の方々に感謝します!",

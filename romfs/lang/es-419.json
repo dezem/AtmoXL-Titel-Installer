@@ -139,7 +139,9 @@
             "nca_verify": "Verificar las firmas NCA antes de la instalación",
             "boost_mode": "Habilitar el «modo Turbo» durante las instalaciones",
             "ask_delete": "Preguntar si borrar los archivos originales, luego de una instalación satisfactoria",
+            "auto_update": "Buscar actualizaciones de AtmoXL-Titel-Installer automaticamente",
             "language": "Idioma: ",
+            "check_update": "Buscar actualizaciones de AtmoXL-Titel-Installer",
             "credits": "Créditos"
         },
         "nca_warn": {
@@ -147,9 +149,23 @@
             "desc": "¡Algunos archivos instalables, pueden tener contenido malicioso!\n¡Habilita esta opción sólo, si estás completamente seguro de que\nel software que estás instalando es de confianza!\n\n¿Seguro que desea deshabilitar la verificación de firmas NCA?",
             "opt1": "Si, quiero un brick"
         },
+        "update": {
+            "title": "Actualización disponible",
+            "desc0": "¡AtmoXL-Titel-Installer ",
+            "desc1": " está disponible! ¿Listo para actualizar?",
+            "opt0": "Actualizar",
+            "top_info": "Actualizando a AtmoXL-Titel-Installer ",
+            "bot_info": "Descargando AtmoXL-Titel-Installer ",
+            "bot_info2": "Extrayendo AtmoXL-Titel-Installer ",
+            "complete": "¡Actualización completada!",
+            "failed": "¡Actualización fallida!",
+            "end_desc": "Ahora se cerrará el programa.",
+            "title_check_fail": "No se encontraron actualizaciones",
+            "desc_check_fail": "¡Tienes la versión más reciente de AtmoXL-Titel-Installer!"
+        },
         "credits": {
             "title": "Gracias a las siguientes personas:",
-            "desc": "- HookedBehemoth por UN MONTÓN de contribuciones\n- Adubbz y otros contributores por Tinfoil\n- XorTroll por Plutonium y Goldleaf\n- blawar (el estrangulador de esposas) y nicoboss por el soporte de NSZ\n- Los amables amigos del Discord AtlasNX (o por lo menos algunos de ellos)\n- Los también amables amigos del Discord RetroNX (sin participación directa)\n- namako8982 por la obra de Momiji\n- TheXzoron por ser un baka"
+            "desc": "- Huntereb por Awoo Installer\n- HookedBehemoth por UN MONTÓN de contribuciones\n- Adubbz y otros contributores por Tinfoil\n- XorTroll por Plutonium y Goldleaf\n- blawar (el estrangulador de esposas) y nicoboss por el soporte de NSZ\n- Los amables amigos del Discord AtlasNX (o por lo menos algunos de ellos)\n- Los también amables amigos del Discord RetroNX (sin participación directa)\n- namako8982 por la obra de Momiji\n- TheXzoron por ser un baka"
         },
         "language": {
             "title": "Selecciona el idioma de AtmoXL-Titel-Installer",

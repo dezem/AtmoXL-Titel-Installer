@@ -139,13 +139,29 @@
             "nca_verify": "安装前验证 NCA 签名",
             "boost_mode": "安装时启用\"增强模式\"",
             "ask_delete": "安装后询问文件删除",
+            "auto_update": "自动检查 AtmoXL-Titel-Installer 更新",
             "language": "语言：",
+            "check_update": "检查 AtmoXL-Titel-Installer 更新",
             "credits": "致谢"
         },
         "nca_warn": {
             "title": "警告！",
             "desc": "一些安装文件可能包含恶意内容！\n只有在您确信安装文件绝对可靠的情况下\n才可以禁用此功能！\n\n是否仍然禁用 NCA 签名验证？",
             "opt1": "是的，我不怕变砖"
+        },
+        "update": {
+            "title": "有更新可用",
+            "desc0": "AtmoXL-Titel-Installer ",
+            "desc1": " 存在可用更新！是否更新？",
+            "opt0": "更新",
+            "top_info": "正在更新 AtmoXL-Titel-Installer ",
+            "bot_info": "正在下载 AtmoXL-Titel-Installer ",
+            "bot_info2": "正在解压 AtmoXL-Titel-Installer ",
+            "complete": "更新完成！",
+            "failed": "更新失败！",
+            "end_desc": "软件即将被关闭。",
+            "title_check_fail": "没有发现更新",
+            "desc_check_fail": "当前 AtmoXL-Titel-Installer 已是最新版！"
         },
         "credits": {
             "title": "致谢以下朋友！",

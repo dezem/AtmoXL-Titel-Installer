@@ -139,13 +139,29 @@
             "nca_verify": "Verificar a assinatura NCA antes da instalação",
             "boost_mode": "Ativar \"boost mode\" durante as instalações",
             "ask_delete": "Questionar a eliminação dos ficheiros orginais depois da instalação",
+            "auto_update": "Procurar atualizações do AtmoXL-Titel-Installer automaticamente",
             "language": "Idioma: ",
+            "check_update": "Procurar atualizações do AtmoXL-Titel-Installer",
             "credits": "Créditos"
         },
         "nca_warn": {
             "title": "Aviso!",
             "desc": "Alguns ficheiros instaláveis podem conter conteúdo malicioso! Apenas desligue esta\nfuncionalidade se tiver a certeza que o software que instala\né fidedigno!\n\nTem a certeza que deseja desativar a verificação NCA?",
             "opt1": "Sim, Eu quero um tijolo"
+        },
+        "update": {
+            "title": "Atualização disponível",
+            "desc0": "AtmoXL-Titel-Installer ",
+            "desc1": " está disponível! Pronto para atualizar?",
+            "opt0": "Atualizar",
+            "top_info": "A atualizar o AtmoXL-Titel-Installer ",
+            "bot_info": "A transferir o AtmoXL-Titel-Installer ",
+            "bot_info2": "A extrair o AtmoXL-Titel-Installer ",
+            "complete": "Atulização completa!",
+            "failed": "Atualização falhada!",
+            "end_desc": "O software será encerrado.",
+            "title_check_fail": "Sem atualizações",
+            "desc_check_fail": "Esta é a versão mais recente do AtmoXL-Titel-Installer!"
         },
         "credits": {
             "title": "Agradecimentos às seguintes pessoas!",

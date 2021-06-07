@@ -21,4 +21,5 @@ namespace inst::util {
     std::string getIPAddress();
     bool usbIsConnected();
     void playAudio(std::string audioPath);
+    std::vector<std::string> checkForAppUpdate();
 }

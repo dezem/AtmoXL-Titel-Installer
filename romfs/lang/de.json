@@ -139,7 +139,9 @@
             "nca_verify": "Verifiziere NCA Signatur vor der Installation",
             "boost_mode": "Aktiviere \"Boost-Modus\" während der Installation",
             "ask_delete": "Frage ob installierte Titel gelöscht werden sollen",
+            "auto_update": "Suche automatisch nach Updates für AtmoXL-Titel-Installer",
             "language": "Sprache: ",
+            "check_update": "Suche nach Updates für AtmoXL-Titel-Installer",
             "credits": "Anerkennung"
         },
         "nca_warn": {
@@ -147,9 +149,23 @@
             "desc": "Einige installierbare Dateien können bösartige Inhalte enthalten! Deaktiviere\ndiese Funktion nur, wenn du absolut sicher bist, dass die zu installierende\nSoftware vertrauenswürdig ist! Willst du die NCA-Signaturprüfung immer noch deaktivieren?",
             "opt1": "Ja, ich möchte mein Gerät bricken"
         },
+        "update": {
+            "title": "Neue Version verfügbar",
+            "desc0": "AtmoXL-Titel-Installer ",
+            "desc1": " ist jetzt verfügbar! Bereit zu aktualisieren?",
+            "opt0": "Aktualisieren",
+            "top_info": "Aktualisierung zu AtmoXL-Titel-Installer ",
+            "bot_info": "Beziehe AtmoXL-Titel-Installer ",
+            "bot_info2": "Extrahiere AtmoXL-Titel-Installer ",
+            "complete": "Aktualisierung vollständig!",
+            "failed": "Aktualisierung fehlgeschlagen!",
+            "end_desc": "Die Software wird nun beendet.",
+            "title_check_fail": "Keine Aktualisierungen gefunden",
+            "desc_check_fail": "Du bist auf der aktuellsten Version des AtmoXL-Titel-Installer!"
+        },
         "credits": {
             "title": "Vielen Dank an die folgenden Leute!",
-            "desc": "- Huntereb für AtmoXL-Titel-Installer\n- HookedBehemoth für viele Beiträge\n- Adubbz und andere Mitwirkende für Tinfoil\n- XorTroll für Plutonium und Goldleaf\n- blawar (Frauenwürger) und nicoboss für NSZ Unterstützung\n- Die netten Leute auf AtlasNX Discuck (Immerhin ein paar davon)\n- Die netten Leute auf RetroNX Discuck (ohne direkte Beteiligung)\n- namako8982 für die Momiji-Kunst\n- TheXzoron dafür das er ein baka ist"
+            "desc": "- Huntereb für Awoo Installer\n- HookedBehemoth für viele Beiträge\n- Adubbz und andere Mitwirkende für Tinfoil\n- XorTroll für Plutonium und Goldleaf\n- blawar (Frauenwürger) und nicoboss für NSZ Unterstützung\n- Die netten Leute auf AtlasNX Discuck (Immerhin ein paar davon)\n- Die netten Leute auf RetroNX Discuck (ohne direkte Beteiligung)\n- namako8982 für die Momiji-Kunst\n- TheXzoron dafür das er ein baka ist"
         },
         "language": {
             "title": "Wähle AtmoXL-Titel-Installer Sprache",

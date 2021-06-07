@@ -14,6 +14,7 @@ int main(int argc, char* argv[])
             RendererInitOptions::RendererNoSound, RendererHardwareFlags);
         auto main = inst::ui::MainApplication::New(renderer);
         std::thread updateThread;
+        if (inst::config::autoUpdate && inst::util::getIPAddress() != "1.0.0.127") updateThread = std::thread(inst::util::checkForAppUpdate);
         main->Prepare();
         main->ShowWithFadeIn();
         updateThread.join();

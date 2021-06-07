@@ -139,13 +139,29 @@
             "nca_verify": "Vérifier les signatures des NCA avant l'installation",
             "boost_mode": "Activer le  \"boost mode\" pendant l'installation",
             "ask_delete": "Demande de suppression des fichiers originaux après l'installation",
+            "auto_update": "Vérifier les mises à jour de AtmoXL-Titel-Installer automatiquement",
             "language": "Langage: ",
+            "check_update": "Vérifiez les mises à jour de l'installateur AtmoXL-Titel-Installer",
             "credits": "Crédits"
         },
         "nca_warn": {
             "title": "Avertissement!",
             "desc": "Certains fichiers installables peuvent contenir des contenus malveillants ! Ne désactivez cette fonction\nque si vous êtes absolument certain que le logiciel que vous allez installer est digne de confiance !\n\nVoulez-vous toujours désactiver la vérification de la signature des NCA ?",
             "opt1": "Oui, je suis inconscient et je veux brick ma Switch"
+        },
+        "update": {
+            "title": "Mise à jour disponible",
+            "desc0": "AtmoXL-Titel-Installer ",
+            "desc1": " est disponible dès maintenant ! Prêt à mettre à jour ?",
+            "opt0": "Mise à jour",
+            "top_info": "Mise à jour de AtmoXL-Titel-Installer ",
+            "bot_info": "Téléchargement de AtmoXL-Titel-Installer ",
+            "bot_info2": "Extraction de AtmoXL-Titel-Installer ",
+            "complete": "Mise à jour complète !",
+            "failed": "La mise à jour a échoué !",
+            "end_desc": "Le logiciel sera maintenant fermé.",
+            "title_check_fail": "Aucune mise à jour trouvée",
+            "desc_check_fail": "Vous êtes sur la dernière version de AtmoXL-Titel-Installer !"
         },
         "credits": {
             "title": "Merci aux personnes suivantes !",

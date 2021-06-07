@@ -13,6 +13,7 @@
 namespace inst::ui {
     extern MainApplication *mainApp;
     bool appletFinished = false;
+    bool updateFinished = false;
 
     void mainMenuThread() {
         bool menuLoaded = mainApp->IsShown();
@@ -25,6 +26,11 @@ namespace inst::ui {
         } else if (!appletFinished) {
             inst::ui::appletFinished = true;
             tin::data::NUM_BUFFER_SEGMENTS = 128;
+        }
+        if (!updateFinished && (!inst::config::autoUpdate || inst::util::getIPAddress() == "1.0.0.127")) updateFinished = true;
+        if (!updateFinished && menuLoaded && inst::config::updateInfo.size()) {
+            updateFinished = true;
+            optionsPage::askToUpdate(inst::config::updateInfo);
         }
     }
 
