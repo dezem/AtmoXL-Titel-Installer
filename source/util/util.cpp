@@ -70,6 +70,7 @@ namespace inst::util {
         std::vector<std::filesystem::path> files;
         for(auto & p: std::filesystem::directory_iterator(dir))
         {
+            try {
             if (std::filesystem::is_regular_file(p))
             {
                 std::string ourExtension = p.path().extension().string();
@@ -79,6 +80,7 @@ namespace inst::util {
                     files.push_back(p.path());
                 }
             }
+         } catch (std::filesystem::filesystem_error & e) {}
         }
         std::sort(files.begin(), files.end(), ignoreCaseCompare);
         return files;
@@ -88,10 +90,12 @@ namespace inst::util {
         std::vector<std::filesystem::path> files;
         for(auto & p: std::filesystem::directory_iterator(dir))
         {
+         try {
             if (std::filesystem::is_directory(p))
             {
                     files.push_back(p.path());
             }
+         } catch (std::filesystem::filesystem_error & e) {}
         }
         std::sort(files.begin(), files.end(), ignoreCaseCompare);
         return files;
