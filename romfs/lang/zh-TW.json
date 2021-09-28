@@ -1,179 +1,179 @@
 {
     "main":{
         "menu": {
-            "sd": "通過 SD卡安裝",
-            "net": "通過網路安裝",
-            "usb": "通過 USB 安裝",
-			"hdd": "通過 USB 硬碟安裝",
-            "set": "設置",
+            "sd": "使用SD記憶卡進行安裝",
+            "net": "使用網路進行安裝",
+            "usb": "使用USB進行安裝",
+			"hdd": "使用USB HDD行動硬碟進行安裝",
+            "set": "設定",
             "exit": "退出"
         },
 		"hdd": {
-			"title": "USB 硬碟",
-			"notfound": "USB 硬碟未連接."
-		},
+            "title": "USB HDD",
+            "notfound": "沒有偵測到USB HDD行動硬碟"
+        },
         "net": {
-            "title": "連接錯誤",
-            "desc": "請確認關閉飛行模式，並確保網路連接暢通。"
+            "title": "網路連線錯誤",
+            "desc": "請檢查已關閉飛航模式，並確認目前連線的網路狀態是否正常。"
         },
         "usb": {
             "warn": {
-                "title": "警告！",
-                "desc": "USB安裝方式不一定能“正常工作”。\n如果您不幸遇到這樣的情況，那就用力扯自己的頭髮吧！\n推薦在PC端使用NS-USBloader配合安裝。\n還是不行就通過網路安裝吧...",
-                "opt1": "不再對此進行警告"
+                "title": "注意！",
+                "desc": "使用USB進行安裝時，在部分型號設備或少數軟體可能無法\"正確執行\"。\n如果使用USB安裝失敗時，可以改用NS-USBloader來進行USB安裝；\n如果有配置高速網卡建構的網路環境，也可以透過NAS區網/WiFi無線網路來進行遠端安裝。\n\n嘗試其他安裝方式，大部分的狀況都可以迎刃而解。",
+                "opt1": "不再顯示此提醒訊息"
             },
             "error": {
-                "title": "USB未連接",
-                "desc": "請通過USB線連接您的遠程設備"
+                "title": "沒有偵測到USB裝置",
+                "desc": "請用USB線將主機連接到電腦"
             }
         },
         "applet": {
             "title": "不支援Applet模式",
-            "desc": "您可以嘗試在“Applet模式”下使用本程式,但如果出現問題請切換到“非Applet模式”再運行。\n切換方法：\n 退回系統桌面選中任意一個遊戲，按住\ue0e5後點\ue0e0進入遊戲，直到跳回hbmenu界面再鬆開按鈕!\n然後再選擇AtmoXL-Titel-Installer，屆時將不會彈出此對話框！"
+            "desc": "在Applet模式下執行AtmoXL-Titel-Installer可能會產生安裝錯誤。\n請在hbmenu模式(啟動任何一個遊戲時按住R)，再執行AtmoXL-Titel-Installer！"
         },
-        "buttons": "\ue0e0 選擇 \ue0e1 退出"
-    },
+        "buttons": "\ue0e0 選擇    \ue0e1 退出"
+    },   
     "inst": {
         "net": {
             "help": {
-                "title": "幫助",
-                "desc": "文件可以通過NS-USBloader遠程安裝。\n也可以選擇輸入URL地址安裝。\n如果您的遠程工具對某種文件格式不支援，您可以嘗試修改文件的擴展名再選擇它，安裝的時候AtmoXL-Titel-Installer並不在意擴展名！\n如果還是搞不懂，那就使用SD卡安裝方式吧！"
+                "title": "說明",
+                "desc": "在Tinfoil模式下，檔案可透過NS-USBloader這類工具來進行遠端安裝。\n要將檔案上傳到你的Switch，請輸入Switch的IP位址 (按照畫面上顯示)，\n並從電腦或手機上選定要傳輸的檔案，點擊等待檔案傳輸完成即可。\n如果遠端傳輸工具不支援某些檔案格式，可以嘗試修改為可接受的副檔名，\n透過網路遠端進行安裝時，AtmoXL-Titel-Installer並不會檢查副檔名。\n\n如果不確定如何遠端操作，可以將檔案複製到記憶卡，從程式主畫面執行\"使用SD記憶卡進行安裝\""
             },
             "src": {
-                "title": "您想要通過哪種方式安裝",
-                "opt0": "URL",
-                "opt1": "谷歌網盤（Google Drive）"
+                "title": "要從什麼路徑來源進行安裝？",
+                "opt0": "URL網路位址",
+                "opt1": "Google網路硬碟"
             },
             "url": {
-                "hint": "輸入文件的URL地址",
-                "invalid": "URL地址無效！",
-                "source_string": " 通過URL"
+                "hint": "請輸入檔案的URL網路位址",
+                "invalid": "URL網路位址無效！",
+                "source_string": "來源為URL"
             },
             "gdrive": {
-                "hint": "請輸入一個谷歌網盤文件的ID",
-                "alt_name": "谷歌網盤文件",
-                "source_string": " 從谷歌網盤"
+                "hint": "請輸入Google網路硬碟的共享檔案ID",
+                "alt_name": "Google網路硬碟檔案",
+                "source_string": "來源為Google網路硬碟"
             },
-            "top_info": "選擇您要安裝的文件，然後按下 \ue0ef 號",
-            "top_info1": "等待連接中... 您的Switch主機IP是: ",
-            "failed": "遠程安裝失敗！",
-            "transfer_interput": "傳輸過程中產生了一個錯誤，請您檢查網路連接是否正常！",
-            "source_string": " 通過局域網安裝",
-            "buttons": "\ue0e3 通過Internet \ue0e2 幫助 \ue0e1 取消",
-            "buttons1": "\ue0e0 選擇文件 \ue0e3 全選 \ue0ef 安裝選中的文件 \ue0e1 返回"
+            "top_info": "選定要從伺服器安裝的檔案後，請按+鈕",
+            "top_info1": "正在等待連線中... 你的Switch主機IP是: ",
+            "failed": "遠端安裝失敗！",
+            "transfer_interput": "檔案傳輸時發生錯誤，請檢查網路連線狀態是否正常",
+            "source_string": " 透過區網進行安裝",
+            "buttons": "\ue0e3 透過網路安裝    \ue0e2 說明    \ue0e1 取消",
+            "buttons1": "\ue0e0 選擇檔案    \ue0e3 全選    \ue0ef 安裝所選的檔案    \ue0e1 取消"
         },
         "sd": {
             "help": {
-                "title": "幫助",
-                "desc": "複製您的 NSP, NSZ, XCI, XCZ 文件到SD卡, \n選擇想要安裝的文件，然後按 \ue0ef 安裝！"
+                "title": "說明",
+                "desc": "請先將NSP、NSZ、XCI或XCZ檔案複製到SD記憶卡，\n選定要進行安裝的檔案後，請按+鈕"
             },
-            "top_info": "選擇想要安裝的文件，然後按 \ue0ef 安裝！",
-            "source_string": " 從SD卡",
-            "delete_info": " 安裝完成！要將原文件從SD卡刪除嗎？",
-            "delete_info_multi": " 所有文件已安裝！要把所有原文件從SD卡刪除嗎？",
-            "delete_desc": "安裝成功後已經不需要原文件。",
-            "buttons": "\ue0e0 選擇文件 \ue0e3 全選 \ue0ef 安裝 \ue0e2 幫助 \ue0e1 取消"
+            "top_info": "從記憶卡內選定要進行安裝的檔案後，請按+鈕",
+            "source_string": " 從SD記憶卡",
+            "delete_info": " 安裝完成！是否將檔案從SD記憶卡刪除？",
+            "delete_info_multi": " 所選的檔案均安裝完成！是否將所選的檔案從SD記憶卡刪除？",
+            "delete_desc": "安裝完成後，不會再使用到原始檔案",
+            "buttons": "\ue0e0 選擇檔案    \ue0e3 全選    \ue0ef 安裝所選的檔案    \ue0e2 說明    \ue0e1 取消"
         },
         "usb": {
             "help": {
-                "title": "幫助",
-                "desc": "文件可以通過NS-USBloader遠程安裝。\n也可以選擇輸入URL地址安裝。\n如果您的遠程工具對某種文件格式不支援，您可以嘗試修改文件的擴展名再選擇它，安裝的時候AtmoXL-Titel-Installer並不在意擴展名！\n如果還是搞不懂，那就使用SD卡安裝方式吧！"
+                "title": "說明",
+                "desc": "在Tinfoil模式下，檔案也可透過NS-USBloader這類工具來進行USB安裝。\n要將檔案上傳到你的Switch，在電腦或手機上選定要傳輸的檔案，點擊等待完成即可。\n\n然而透過USB安裝時，在某些平台上需要特定的設備，可能衍生更多的問題。\n如果不確定如何使用USB安裝，可以改為嘗試透過區網或網路遠端安裝，\n或者將檔案複製到記憶卡，從程式主畫面執行\"使用SD記憶卡進行安裝\""
             },
-            "top_info": "USB連接成功! 正在接收文件列表...",
-            "top_info2": "選擇您想通過USB安裝的文件, 然後按 \ue0ef 安裝",
-            "error": "USB傳輸超時...",
-            "source_string": " 通過USB",
-            "buttons": "\ue0e2 (按住) 幫助 \ue0e1 (按住) 取消",
-            "buttons2": "\ue0e0 選擇文件 \ue0e3 全選 \ue0ef 安裝文件 \ue0e1 取消"
+            "top_info": "USB連接成功！正在接收檔案列表...",
+            "top_info2": "選定要從USB安裝的檔案後，請按+鈕",
+            "error": "USB傳輸逾時或失敗",
+            "source_string": " 透過USB",
+            "buttons": "\ue0e2 (長按) 說明    \ue0e1 (長按) 取消",
+            "buttons2": "\ue0e0 選擇檔案    \ue0e3 全選    \ue0ef 安裝所選的檔案    \ue0e1 取消"
         },
-        "hdd": {
+		"hdd": {
             "help": {
-                "title": "幫助",
-                "desc": "複製您的 NSP, NSZ, XCI, XCZ 文件到USB 硬碟, \n選擇想要安裝的文件，然後按 \ue0ef 安裝！"
+                "title": "說明",
+                "desc": "請先將NSP、NSZ、XCI或XCZ檔案複製到USB HDD行動硬碟，\n選定要進行安裝的檔案後，請按+鈕"
             },
-            "top_info": "選擇想要安裝的文件，然後按 \ue0ef 安裝！",
-            "source_string": " 從USB 硬碟",
-            "delete_info": " 安裝完成！要將原文件從USB 硬碟刪除嗎？",
-            "delete_info_multi": " 所有文件已安裝！要把所有原文件從USB 硬碟刪除嗎？",
-            "delete_desc": "安裝成功後已經不需要原文件。",
-            "buttons": "\ue0e0 選擇文件 \ue0e3 全選 \ue0ef 安裝 \ue0e2 幫助 \ue0e1 取消"
-        },
+            "top_info": "從USB HDD行動硬碟內選定要進行安裝的檔案後，請按+鈕",
+            "source_string": " 從USB HDD行動硬碟",
+            "delete_info": " 安裝完成！\n是否將檔案從行動硬碟刪除？",
+            "delete_info_multi": " 所選的檔案均安裝完成！\n是否將所選的檔案從行動硬碟刪除？",
+            "delete_desc": "安裝完成後，不會再使用到原始檔案",
+            "buttons": "\ue0e0 選擇檔案    \ue0e3 全選    \ue0ef 安裝所選的檔案    \ue0e2 說明    \ue0e1 取消"
+	    },
         "target": {
-            "desc0": "將 ",
-            "desc1": " 安裝到哪？",
-            "desc00": "將已選擇的 ",
-            "desc01": " 文件安裝到哪?",
-            "opt0": "SD卡",
-            "opt1": "內部閃存"
+            "desc0": "要將遊戲",
+            "desc1": "安裝到哪裡？",
+            "desc00": "要將所選的遊戲 ",
+            "desc01": "安裝到哪裡？",
+            "opt0": "SD記憶卡",
+            "opt1": "內部儲存空間"
         },
         "info_page": {
             "top_info0": "正在安裝 ",
-            "preparing": "初始化安裝...",
+            "preparing": "正在初始化安裝程序...",
             "failed": "安裝失敗 ",
-            "failed_desc": "可以從系統設置中刪除部分安裝的內容。",
+            "failed_desc": "請使用主機設定內的資料管理來移除未完整安裝的遊戲",
             "complete": "安裝完成",
-            "desc0": " 安裝成功!",
-            "desc1": " 已安裝!",
-            "downloading": "下載中 ",
+            "desc0": " 所選的檔案已全部安裝！",
+            "desc1": " 已安裝！",
+            "downloading": "正在下載 ",
             "at": " 在 "
         },
         "nca_verify": {
-            "title": "無效的 NCA 簽名！",
-            "desc": "簽名不正確的文件只能自己評估可靠性。\n重新打包的文件或DLC通常會報這樣的警告。 您可以通過設置選項忽略這些警告。\n您確定要繼續安裝嗎？",
-            "opt1": "是的，我知道風險在哪",
-            "error": "NCA沒有正確簽名: "
+            "title": "偵測到無效的NCA簽名！",
+            "desc": "要安裝簽名驗證失敗的遊戲，檔案來源必須為可信任的。\n經過重新封裝或有合併更新檔與DLC的檔案，程序會顯示此訊息提醒。\n如需隱藏此提醒通知，可從AtmoXL-Titel-Installer設定內取消勾選檢查。\n\n是否確認要繼續安裝？",
+            "opt1": "好，我已瞭解可能的風險",
+            "error": "必要的NCA簽名驗證失敗: "
         },
         "finished": [
-            "享受您的“合法版本”吧！",
-            "我敢保證當您玩過之後，更有興趣購買正版遊戲！",
-            "您會買這遊戲的，對吧？任天堂感謝您！",
-            "繞過DRM很棒，不是嗎？",
-            "粗來混，早晚要還的！",
-            "任天堂已經對您派遣了忍者",
-            "您甚至不需要相信民主自由就能拿到這樣的好處了..."
+            "請盡情享受\"合法備份的遊戲\"！",
+            "我敢保證就算是試玩的遊戲，也能跟購買的遊戲帶來相同樂趣！",
+            "買遊戲嗎？任天堂感謝玩家購買支持！",
+            "能繞過DRM驗證，沒錯吧？",
+            "沒有購買實體遊戲，可拯救六棵樹免於被砍伐。所有生產的塑膠製品最後都被集中處理了。",
+            "查驗任天堂遊戲版權的忍者，已經火速前往你所在的位置。",
+            "我們甚至還沒有表達立場傾向就已經完成這整個過程了。"
         ]
     },
     "options": {
         "menu_items": {
-            "ignore_firm": "忽略固件版本要求",
-            "nca_verify": "安裝前驗證NCA簽名",
-            "boost_mode": "安裝過程中開啟“超頻”模式",
-            "ask_delete": "安裝後詢問是否刪除原文件",
-            "auto_update": "自動更新",
-            "language": "語言： ",
-            "check_update": "檢測更新",
-            "credits": "致谢"
+            "ignore_firm": "略過檢查遊戲最低系統版本要求",
+            "nca_verify": "進行安裝前驗證NCA簽名",
+            "boost_mode": "在進行安裝時啟用\"超頻\"模式",
+            "ask_delete": "在安裝完成後，詢問是否刪除原始檔案",
+            "auto_update": "自動檢查AtmoXL-Titel-Installer的更新版本",
+            "language": "介面語系： ",
+            "check_update": "檢查AtmoXL-Titel-Installer的更新版本",
+            "credits": "感謝名單"
         },
         "nca_warn": {
-            "title": "警告！",
-            "desc": "有些可安裝文件可能存在木馬！\n您要非常信任這個文件才能關閉此驗證\n您是否確定要關閉NCA簽名驗證？",
-            "opt1": "是的，我不怕Switch變磚！"
+            "title": "注意！",
+            "desc": "雖然是極少數的情況，但檔案還是有可能會被加入損害主機的惡意代碼！\n除非確保所有檔案都從可信任的來源下載，否則不建議關閉簽名驗證。\n\n是否確認要關閉NCA簽名驗證？",
+            "opt1": "好，我已瞭解可能的風險"
         },
         "update": {
-            "title": "有新版本可以更新",
+            "title": "有可用的更新版本",
             "desc0": "AtmoXL-Titel-Installer ",
-            "desc1": " 新的更新！ 要繼續嗎？",
+            "desc1": " 發佈了新版本！是否立刻進行更新？",
             "opt0": "更新",
-            "top_info": "正在更新 ...",
-            "bot_info": "正在下載 ...",
-            "bot_info2": "正在解壓 ...",
+            "top_info": "正在更新AtmoXL-Titel-Installer",
+            "bot_info": "正在下載AtmoXL-Titel-Installer",
+            "bot_info2": "正在解壓AtmoXL-Titel-Installer",
             "complete": "更新完成！",
             "failed": "更新失敗！",
-            "end_desc": "本程式將關閉！",
-            "title_check_fail": "找不到更新",
-            "desc_check_fail": "已更新到最新版！"
+            "end_desc": "本程式即將關閉！",
+            "title_check_fail": "沒有更新版本",
+            "desc_check_fail": "目前使用的AtmoXL-Titel-Installer是最新版本！"
         },
         "credits": {
-            "title": "感謝下列人士",
-            "desc": "-Huntereb Awoo Installer\n- 來自HookedBehemoth 的巨大貢獻\n- Adubbz 以及其他為Tinfoil貢獻過的人\n- XorTroll 強大的Plutonium庫和金葉子工具\n- blawar (wife strangulator)和nicoboss 對NSZ 格式的支持\n- 來自AtlasNX Discuck的好心人 (至少其中一部分)\n- 來自RetroNX Discuck的好心人 (雖然沒直接參與)\n- 來自namako8982的Momiji美術\n- 也特別感謝TheXzoron"
+            "title": "感謝所有幫助過我們的人",
+            "desc": "- Huntereb for Awoo Installer\n- HookedBehemoth for A LOT of contributions\n- Adubbz and other contributors for Tinfoil\n- XorTroll for Plutonium and Goldleaf\n- blawar (wife strangulator) and nicoboss for NSZ support\n- The kind folks at the AtlasNX Discuck (or at least some of them)\n- The also kind folks at the RetroNX Discuck (of no direct involvement)\n- namako8982 for the Momiji art\n- TheXzoron for being a baka"
         },
         "language": {
-            "title": "選擇語言",
-            "desc": "更改語言後本程式將關閉，請重新打開， 或按 \ue0e1 返回。",
-            "system_language": "系統默認"
+            "title": "設定AtmoXL-Titel-Installer的介面語系",
+            "desc": "當確認變更介面語系後，程式會結束並退出。按B鈕取消變更。",
+            "system_language": "系統預設"
         },
-        "title": "更改 AtmoXL-Titel 安裝器的設置！",
-        "buttons": "\ue0e0 選擇/更改 \ue0e1 取消"
+        "title": "變更AtmoXL-Titel-Installer的設定！",
+        "buttons": "\ue0e0 選擇/變更    \ue0e1 取消"
     },
     "common": {
         "ok": "確定",
@@ -181,6 +181,6 @@
         "close": "關閉",
         "yes": "是",
         "no": "否",
-        "cancel_desc": "按 \ue0e1 取消"
+        "cancel_desc": "按B鈕取消"
     }
 }
