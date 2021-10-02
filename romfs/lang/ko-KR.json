@@ -1,0 +1,186 @@
+{
+    "main":{
+        "menu": {
+            "sd": "SD 메모리 카드를 사용하여 설치",
+            "net": "네트워크를 사용하여 설치",
+            "usb": "USB를 사용하여 설치",
+			"hdd": "USB HDD 하드 드라이브를 사용하여 설치",
+            "set": "설정",
+            "exit": "종료"
+        },
+		"hdd": {
+            "title": "USB HDD",
+            "notfound": "USB HDD 하드 드라이브가 감지되지 않음"
+        },
+        "net": {
+            "title": "인터넷 연결 오류",
+            "desc": "비행 모드가 꺼져 있고 현재 연결 네트워크 상태가 정상인지 확인하세요."
+        },
+        "usb": {
+            "warn": {
+                "title": "경고!",
+                "desc": "USB를 사용하여 설치할 때 일부 장비 또는 일부 소프트웨어가 \"제대로 실행\"되지 않을 수 있습니다.\nUSB 설치에 실패하면 NS-USBloader로 전환하여 USB 설치 가능\nLAN 네트워크 환경이라면 NAS LAN/WiFi 무선 네트워크를 통해 원격으로 설치할 수도 있습니다.\n\n다른 설치 방법을 시도하면 대부분의 상황이 해결될 수 있습니다.",
+                "opt1": "이 알림을 다시 표시하지 않음"
+            },
+            "error": {
+                "title": "USB 장치가 감지되지 않음",
+                "desc": "USB 케이블로 호스트를 컴퓨터에 연결하세요."
+            }
+        },
+        "applet": {
+            "title": "애플릿 모드는 지원되지 않음",
+            "desc": "애플릿 모드에서 AtmoXL-Titel-Installer를 실행하면 설치 오류가 발생할 수 있습니다.\nhbmenu 모드에서 AtmoXL-Titel-Installer를 실행하세요(게임을 시작할 때 R을 길게 누르기)!"
+        },
+        "buttons": "\ue0e0 선택    \ue0e1 취소"
+    },   
+    "inst": {
+        "net": {
+            "help": {
+                "title": "도움말",
+                "desc": "Tinfoil 모드에서는 NS-USBloader와 같은 도구를 통해 원격으로 파일을 설치할 수 있습니다. \n스위치에 파일을 업로드하려면 스위치의 IP 주소(화면에 표시됨)를 입력하고\n컴퓨터 또는 휴대폰에서 전송할 파일을 선택하고 을 클릭하고 파일 전송이 완료될 때까지 기다리세요. \n원격 전송 도구가 특정 파일 형식을 지원하지 않는 경우 허용 가능한 확장자로 수정을 시도할 수 있습니다.\n네트워크를 통해 원격으로 설치할 때 AtmoXL-Titel-Installer는 확장자를 확인하지 않습니다. \n\n원격 조작 방법을 잘 모르겠다면 파일을 메모리 카드에 복사하고 프로그램 메인 화면에서 \"SD 메모리 카드를 사용하여 설치\"를 실행하면 됩니다."
+            },
+            "src": {
+                "title": "어디에서 설치하시겠습니까?",
+                "opt0": "URL",
+                "opt1": "구글 드라이브"
+            },
+            "url": {
+                "hint": "파일의 URL을 입력하세요.",
+                "invalid": "URL 주소가 잘못되었습니다!",
+                "source_string": " URL에서"
+            },
+            "gdrive": {
+                "hint": "구글 드라이브 공유 파일 ID를 입력하세요.",
+                "alt_name": "구글 드라이브",
+                "source_string": " 구글 드라이브에서 "
+            },
+            "top_info": "서버에서 설치할 파일을 선택한 후 + 버튼을 누릅니다.",
+            "top_info1": "연결 대기 중... 스위치 호스트 IP: ",
+            "failed": "원격 설치 실패!",
+            "transfer_interput": "파일 전송 중 오류가 발생했습니다. 네트워크 연결이 정상인지 확인하세요.",
+            "source_string": " 근거리 통신망을 통해 설치",
+            "buttons": "\ue0e3 네트워크를 통해 설치    \ue0e2 도움말    \ue0e1 취소",
+            "buttons1": "\ue0e0 파일 선택    \ue0e3 모두 선택    \ue0ef 선택한 파일 설치    \ue0e1 취소"
+        },
+        "sd": {
+            "help": {
+                "title": "도움말",
+                "desc": "먼저 NSP, NSZ, XCI 또는 XCZ 파일을 SD 메모리 카드에 복사하고,\n설치할 파일을 선택한 후 + 버튼을 누릅니다."
+            },
+            "top_info": "메모리 카드에서 설치할 파일을 선택한 후 + 버튼을 누릅니다.",
+            "source_string": " SD 메모리 카드에서",
+            "delete_info": " 설치가 완료되었습니다! SD 메모리 카드에서 파일을 삭제하시겠습니까?",
+            "delete_info_multi": " 선택한 파일이 모두 설치되었습니다! SD 메모리 카드에서 선택한 파일을 삭제하시겠습니까?",
+            "delete_desc": "설치가 완료되면 원본 파일은 더 이상 사용되지 않습니다.",
+            "buttons": "\ue0e0 파일 선택    \ue0e3 모두 선택    \ue0ef 선택한 파일 설치    \ue0e2 도움말    \ue0e1 취소"
+        },
+        "usb": {
+            "help": {
+                "title": "도움말",
+                "desc": "Tinfoil 모드에서는 NS-USBloader와 같은 도구를 통해 USB를 통해 파일을 설치할 수도 있습니다.\n스위치에 파일을 업로드하려면 컴퓨터 또는 휴대폰에서 전송할 파일을 선택하고 완료 대기를 클릭합니다.\n\n그러나 USB를 통해 설치할 경우 특정 플랫폼에서 특정 장비가 필요하므로 더 많은 문제가 발생할 수 있습니다.\nUSB를 사용하여 설치하는 방법을 잘 모르는 경우 대신 로컬 네트워크 또는 네트워크를 통해 원격으로 설치를 시도할 수 있습니다.\n또는 파일을 메모리 카드에 복사하고 프로그램의 메인 화면에서 \"SD 메모리 카드를 사용하여 설치\"를 실행하세요."
+            },
+            "top_info": "USB 연결 성공! 파일 목록 수신 중...",
+            "top_info2": "USB에서 설치할 파일을 선택한 후 + 버튼을 누릅니다.",
+            "error": "USB 전송 시간 초과 또는 실패",
+            "source_string": " USB를 통해",
+            "buttons": "\ue0e2 (길게) 설명    \ue0e1 (길게) 취소",
+            "buttons2": "\ue0e0 파일 선택    \ue0e3 모두 선택    \ue0ef 선택한 파일 설치    \ue0e1 취소"
+        },
+		"hdd": {
+            "help": {
+                "title": "도움말",
+                "desc": "먼저 NSP, NSZ, XCI 또는 XCZ 파일을 USB HDD 모바일 하드 드라이브에 복사하고,\n설치할 파일을 선택한 후 + 버튼을 누릅니다."
+            },
+            "top_info": "USB HDD 에서 설치할 파일을 선택하고 + 버튼을 눌러주세요!",
+            "source_string": " USB HDD 하드 드라이브를 통해",
+            "delete_info": " 설치되었습니다!\nUSB HDD에서 파일을 삭제하시겠습니까?",
+            "delete_info_multi": " 선택한 파일이 모두 설치되었습니다!\nUSB HDD에서 파일을 삭제하시겠습니까?",
+            "delete_desc": " 설치가 완료되면 원본 파일은 더 이상 사용되지 않습니다. ",
+            "buttons": "\ue0e0 파일 선택    \ue0e3 모두 선택    \ue0ef 선택한 파일 설치    \ue0e2 설명    \ue0e1 취소"
+	    },
+        "target": {
+            "desc0": " ",
+            "desc1": "어디에 설치할까요?",
+            "desc00": "선택한 ",
+            "desc01": " 파일을 어디에 설치할까요?",
+            "opt0": "SD카드",
+            "opt1": "내부 저장 공간"
+        },
+        "info_page": {
+            "top_info0": "설치 중 ",
+            "preparing": "설치 프로그램 준비중...",
+            "failed": "설치 실패 ",
+            "failed_desc": "불완전하게 설치된 게임은 시스템 설정에서 제거할 수 있습니다.",
+            "complete": "설치 완료",
+            "desc0": " 선택한 모든 파일 설치됨!",
+            "desc1": " 설치됨!",
+            "downloading": "다운로드중 ",
+            "at": " 에서 "
+        },
+        "nca_verify": {
+            "title": "잘못된 NCA 서명이 감지되었습니다!",
+            "desc": "서명 확인에 실패한 게임을 설치하려면 파일 소스를 신뢰할 수 있어야 합니다.\n업데이트 파일과 DLC 파일을 재패키징하거나 병합하면 프로그램에서 이 메시지를 표시하여 알려줍니다.\n이 알림 알림을 숨겨야 하는 경우 AtmoXL-Titel-Installer 설정에서 선택을 취소할 수 있습니다.\n\n설치를 계속하시겠습니까?",
+            "opt1": "네. 위험을 이해합니다.",
+            "error": "필요한 NCA 서명 확인 실패: "
+        },
+        "finished": [
+            "즐기세요\"법적으로 백업된 게임\"!",
+            "체험판 게임도 구매한 게임과 같은 재미를 선사할 수 있다고 자신합니다!",
+            "게임을 구매하시겠습니까? Nintendo는 지원을 구매해 준 플레이어에게 감사를 표합니다!",
+            "DRM 검증을 우회할 수 있습니까?",
+            "실제 게임을 구매하지 않고 6그루의 나무가 베어지는 것을 방지할 수 있습니다. 생산된 모든 플라스틱 제품은 최종적으로 중앙 집중식으로 처리됩니다.",
+            "닌텐도 게임의 판권을 확인한 닌자가 당신의 위치로 돌진했습니다.",
+            "입장을 밝히기도 전에 이 모든 과정을 마쳤습니다."
+        ]
+    },
+    "options": {
+        "menu_items": {
+            "ignore_firm": "게임 타이틀에 필요한 최소 펌웨어 버전 무시",
+            "nca_verify": "설치 전 NCA 서명 확인",
+            "boost_mode": "설치 중 \"오버클럭\" 활성화 요청",
+            "ask_delete": "설치 완료 후 원본파일 삭제 요청",
+            "auto_update": "AtmoXL-Titel-Installer 업데이트 자동 확인",
+            "language": "언어: ",
+            "check_update": "AtmoXL-Titel-Installer 업데이트 확인",
+            "credits": "크레딧"
+        },
+        "nca_warn": {
+            "title": "경고!",
+            "desc": "일부 설치 가능한 파일에는 악성 콘텐츠가 포함되어 있을 수 있습니다!\n설치하려는 소프트웨어가 신뢰할 수 있다고 확신하는 경우 에만 이 기능을 비활성화하세요.!\n\nNCA 서명 확인을 끄시겠습니까?",
+            "opt1": "알겠습니다. 가능한 위험을 이해합니다."
+        },
+        "update": {
+            "title": "업데이트 가능",
+            "desc0": "AtmoXL-Titel-Installer ",
+            "desc1": " 새 버전이 발견되었습니다! 지금 업데이트하시겠습니까?",
+            "opt0": "업데이트",
+            "top_info": "AtmoXL-Titel-Installer 업데이트중...",
+            "bot_info": "AtmoXL-Titel-Installer 다운로드중...",
+            "bot_info2": "AtmoXL-Titel-Installer 추출중...",
+            "complete": "업데이트 완료!",
+            "failed": "업데이트 실패!",
+            "end_desc": "프로그램이 종료됩니다.",
+            "title_check_fail": "업데이트를 찾을 수 없습니다.",
+            "desc_check_fail": "최신버전의 AtmoXL-Titel-Installer를 사용중입니다."
+        },
+        "credits": {
+            "title": " 도와주신분들께 감사드립니다! ",
+            "desc": "- Huntereb for Awoo Installer\n- HookedBehemoth for A LOT of contributions\n- Adubbz and other contributors for Tinfoil\n- XorTroll for Plutonium and Goldleaf\n- blawar (wife strangulator) and nicoboss for NSZ support\n- The kind folks at the AtlasNX Discuck (or at least some of them)\n- The also kind folks at the RetroNX Discuck (of no direct involvement)\n- namako8982 for the Momiji art\n- TheXzoron for being a baka"
+        },
+        "language": {
+            "title": "AtmoXL-Titel-Installer 언어 변경",
+            "desc": "언어 변경 후 프로그램이 종료됩니다. 취소하려면 B 버튼을 누르세오.",
+            "system_language": "시스템 기본값"
+        },
+        "title": "AtmoXL-Titel-Installer설정 변경!",
+        "buttons": "\ue0e0 선택/변경    \ue0e1 취소"
+    },
+    "common": {
+        "ok": "확인",
+        "cancel": "취소",
+        "close": "닫기",
+        "yes": "예",
+        "no": "아니오",
+        "cancel_desc": "취소하려면 버튼 B를 누르세요."
+    }
+}

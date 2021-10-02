@@ -46,7 +46,9 @@ namespace Language {
                 pu::ui::render::SetDefaultFontFromShared(pu::ui::render::SharedFont::ChineseSimplified);
                 break;
             case 7:
-                languagePath = "romfs:/lang/ko.json";
+                languagePath = "romfs:/lang/ko-KR.json";
+                // the default font will miss korean character, so use korean font
+                pu::ui::render::SetDefaultFontFromShared(pu::ui::render::SharedFont::Korean);
                 break;
             case 8:
                 languagePath = "romfs:/lang/nl.json";
