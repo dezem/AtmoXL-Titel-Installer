@@ -17,6 +17,11 @@ namespace inst::ui {
 
     void mainMenuThread() {
         bool menuLoaded = mainApp->IsShown();
+        if (!updateFinished && (!inst::config::autoUpdate || inst::util::getIPAddress() == "1.0.0.127")) updateFinished = true;
+        if (!updateFinished && menuLoaded && inst::config::updateInfo.size()) {
+            updateFinished = true;
+            optionsPage::askToUpdate(inst::config::updateInfo);
+        }
         if (!appletFinished && appletGetAppletType() == AppletType_LibraryApplet) {
             tin::data::NUM_BUFFER_SEGMENTS = 2;
             if (menuLoaded) {
@@ -26,11 +31,6 @@ namespace inst::ui {
         } else if (!appletFinished) {
             inst::ui::appletFinished = true;
             tin::data::NUM_BUFFER_SEGMENTS = 128;
-        }
-        if (!updateFinished && (!inst::config::autoUpdate || inst::util::getIPAddress() == "1.0.0.127")) updateFinished = true;
-        if (!updateFinished && menuLoaded && inst::config::updateInfo.size()) {
-            updateFinished = true;
-            optionsPage::askToUpdate(inst::config::updateInfo);
         }
     }
 
