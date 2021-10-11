@@ -288,7 +288,7 @@ namespace inst::util {
 
         Mix_Chunk *sound = NULL;
         sound = Mix_LoadWAV(audioPath.c_str());
-        if(sound == NULL) {
+        if(sound == NULL || !inst::config::enableSound) {
             Mix_FreeChunk(sound);
             Mix_CloseAudio();
             return;

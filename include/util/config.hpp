@@ -15,6 +15,7 @@ namespace inst::config {
     extern bool validateNCAs;
     extern bool overClock;
     extern bool deletePrompt;
+    extern bool enableSound;
     extern bool autoUpdate;
     extern bool usbAck;
 

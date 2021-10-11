@@ -10,6 +10,7 @@ namespace inst::config {
     int languageSetting;
     bool autoUpdate;
     bool deletePrompt;
+    bool enableSound;
     bool ignoreReqVers;
     bool overClock;
     bool usbAck;
@@ -19,6 +20,7 @@ namespace inst::config {
         nlohmann::json j = {
             {"autoUpdate", autoUpdate},
             {"deletePrompt", deletePrompt},
+            {"enableSound", enableSound},
             {"gAuthKey", gAuthKey},
             {"ignoreReqVers", ignoreReqVers},
             {"languageSetting", languageSetting},
@@ -38,6 +40,7 @@ namespace inst::config {
             file >> j;
             autoUpdate = j["autoUpdate"].get<bool>();
             deletePrompt = j["deletePrompt"].get<bool>();
+            enableSound = j["enableSound"].get<bool>();
             gAuthKey = j["gAuthKey"].get<std::string>();
             ignoreReqVers = j["ignoreReqVers"].get<bool>();
             languageSetting = j["languageSetting"].get<int>();
@@ -52,6 +55,7 @@ namespace inst::config {
             languageSetting = 99;
             autoUpdate = true;
             deletePrompt = true;
+            enableSound = true;
             ignoreReqVers = true;
             overClock = false;
             usbAck = false;

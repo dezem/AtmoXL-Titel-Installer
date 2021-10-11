@@ -124,6 +124,10 @@ namespace inst::ui {
         deletePromptOption->SetColor(COLOR("#FFFFFFFF"));
         deletePromptOption->SetIcon(this->getMenuOptionIcon(inst::config::deletePrompt));
         this->menu->AddItem(deletePromptOption);
+        auto enableSoundOption = pu::ui::elm::MenuItem::New("options.menu_items.enableSound"_lang);
+        enableSoundOption->SetColor(COLOR("#FFFFFFFF"));
+        enableSoundOption->SetIcon(this->getMenuOptionIcon(inst::config::enableSound));
+        this->menu->AddItem(enableSoundOption);
         auto autoUpdateOption = pu::ui::elm::MenuItem::New("options.menu_items.auto_update"_lang);
         autoUpdateOption->SetColor(COLOR("#FFFFFFFF"));
         autoUpdateOption->SetIcon(this->getMenuOptionIcon(inst::config::autoUpdate));
@@ -172,11 +176,16 @@ namespace inst::ui {
                     this->setMenuText();
                     break;
                 case 4:
-                    inst::config::autoUpdate = !inst::config::autoUpdate;
+                    inst::config::enableSound = !inst::config::enableSound;
                     inst::config::setConfig();
                     this->setMenuText();
                     break;
                 case 5:
+                    inst::config::autoUpdate = !inst::config::autoUpdate;
+                    inst::config::setConfig();
+                    this->setMenuText();
+                    break;
+                case 6:
                     languageList = languageStrings;
                     languageList.push_back("options.language.system_language"_lang);
                     rc = inst::ui::mainApp->CreateShowDialog("options.language.title"_lang, "options.language.desc"_lang, languageList, false);
@@ -222,7 +231,7 @@ namespace inst::ui {
                     mainApp->FadeOut();
                     mainApp->Close();
                     break;
-                case 6:
+                case 7:
                     if (inst::util::getIPAddress() == "1.0.0.127") {
                         inst::ui::mainApp->CreateShowDialog("main.net.title"_lang, "main.net.desc"_lang, {"common.ok"_lang}, true);
                         break;
@@ -234,7 +243,7 @@ namespace inst::ui {
                     }
                     this->askToUpdate(downloadUrl);
                     break;
-                case 7:
+                case 8:
                     inst::ui::mainApp->CreateShowDialog("options.credits.title"_lang, "options.credits.desc"_lang, {"common.close"_lang}, true);
                     break;
                 default:
