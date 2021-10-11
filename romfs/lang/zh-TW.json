@@ -139,6 +139,7 @@
             "nca_verify": "進行安裝前驗證NCA簽名",
             "boost_mode": "在進行安裝時啟用\"超頻\"模式",
             "ask_delete": "在安裝完成後，詢問是否刪除原始檔案",
+            "enableSound": "信息音頻在最後",
             "auto_update": "自動檢查AtmoXL-Titel-Installer的更新版本",
             "language": "介面語系： ",
             "check_update": "檢查AtmoXL-Titel-Installer的更新版本",

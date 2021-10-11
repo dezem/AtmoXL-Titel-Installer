@@ -139,6 +139,7 @@
             "nca_verify": "インストール前にNCA署名を検証する",
             "boost_mode": "インストール中に「ブーストモード」を有効にする",
             "ask_delete": "インストール後に元のファイルを削除するか尋ねる",
+            "enableSound": "最後に情報オーディオ",
             "auto_update": "AtmoXL-Titel-Installerのアップデートを自動的に確認する",
             "language": "言語: ",
             "check_update": "AtmoXL-Titel-Installerのアップデートを確認",
