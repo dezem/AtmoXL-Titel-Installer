@@ -140,6 +140,7 @@
             "boost_mode": "Habilitar el «modo Turbo» durante las instalaciones",
             "ask_delete": "Preguntar si borrar los archivos originales, luego de una instalación satisfactoria",
             "enableSound": "Audio de información al final",
+            "enableLightning": "Las luces de información parpadean al final",
             "auto_update": "Buscar actualizaciones de AtmoXL-Titel-Installer automaticamente",
             "language": "Idioma: ",
             "check_update": "Buscar actualizaciones de AtmoXL-Titel-Installer",

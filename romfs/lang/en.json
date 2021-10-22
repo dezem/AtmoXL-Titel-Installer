@@ -140,6 +140,7 @@
             "boost_mode": "Enable \"boost mode\" during installations",
             "ask_delete": "Ask to delete original files after installation",
             "enableSound": "Info audio at the end",
+            "enableLightning": "Info lights flash at the end",
             "auto_update": "Check for updates to AtmoXL-Titel-Installer automatically",
             "language": "Language: ",
             "check_update": "Check for updates to AtmoXL-Titel-Installer",

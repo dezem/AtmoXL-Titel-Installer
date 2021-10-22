@@ -140,6 +140,7 @@
             "boost_mode": "설치 중 \"오버클럭\" 활성화 요청",
             "ask_delete": "설치 완료 후 원본파일 삭제 요청",
             "enableSound": "끝에 정보 오디오",
+            "enableLightning": "마지막에 정보 표시등이 깜박입니다.",
             "auto_update": "AtmoXL-Titel-Installer 업데이트 자동 확인",
             "language": "언어: ",
             "check_update": "AtmoXL-Titel-Installer 업데이트 확인",

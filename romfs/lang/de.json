@@ -140,6 +140,7 @@
             "boost_mode": "Aktiviere \"Boost-Modus\" während der Installation",
             "ask_delete": "Frage ob installierte Titel gelöscht werden sollen",
             "enableSound": "Info Audio bei Ende",
+            "enableLightning": "Infolicht blinken bei Ende",
             "auto_update": "Suche automatisch nach Updates für AtmoXL-Titel-Installer",
             "language": "Sprache: ",
             "check_update": "Suche nach Updates für AtmoXL-Titel-Installer",

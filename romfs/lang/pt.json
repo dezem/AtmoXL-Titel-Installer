@@ -139,6 +139,7 @@
             "nca_verify": "Verificar a assinatura NCA antes da instalação",
             "boost_mode": "Ativar \"boost mode\" durante as instalações",
             "enableSound": "Áudio informativo no final",
+            "enableLightning": "Luzes de informações piscam no final",
             "ask_delete": "Questionar a eliminação dos ficheiros orginais depois da instalação",
             "auto_update": "Procurar atualizações do AtmoXL-Titel-Installer automaticamente",
             "language": "Idioma: ",

@@ -140,6 +140,7 @@
             "boost_mode": "インストール中に「ブーストモード」を有効にする",
             "ask_delete": "インストール後に元のファイルを削除するか尋ねる",
             "enableSound": "最後に情報オーディオ",
+            "enableLightning": "最後に情報ライトが点滅します",
             "auto_update": "AtmoXL-Titel-Installerのアップデートを自動的に確認する",
             "language": "言語: ",
             "check_update": "AtmoXL-Titel-Installerのアップデートを確認",

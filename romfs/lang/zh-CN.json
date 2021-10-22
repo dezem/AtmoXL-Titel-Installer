@@ -140,6 +140,7 @@
             "boost_mode": "安装时启用\"增强模式\"",
             "ask_delete": "安装后询问文件删除",
             "enableSound": "信息音频在最后",
+            "enableLightning": "信息灯在最后闪烁",
             "auto_update": "自动检查 AtmoXL-Titel-Installer 更新",
             "language": "语言：",
             "check_update": "检查 AtmoXL-Titel-Installer 更新",
