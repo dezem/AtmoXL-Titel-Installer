@@ -128,6 +128,10 @@ namespace inst::ui {
         enableSoundOption->SetColor(COLOR("#FFFFFFFF"));
         enableSoundOption->SetIcon(this->getMenuOptionIcon(inst::config::enableSound));
         this->menu->AddItem(enableSoundOption);
+        auto enableLightningOption = pu::ui::elm::MenuItem::New("options.menu_items.enableLightning"_lang);
+        enableLightningOption->SetColor(COLOR("#FFFFFFFF"));
+        enableLightningOption->SetIcon(this->getMenuOptionIcon(inst::config::enableLightning));
+        this->menu->AddItem(enableLightningOption);
         auto autoUpdateOption = pu::ui::elm::MenuItem::New("options.menu_items.auto_update"_lang);
         autoUpdateOption->SetColor(COLOR("#FFFFFFFF"));
         autoUpdateOption->SetIcon(this->getMenuOptionIcon(inst::config::autoUpdate));
@@ -181,11 +185,16 @@ namespace inst::ui {
                     this->setMenuText();
                     break;
                 case 5:
-                    inst::config::autoUpdate = !inst::config::autoUpdate;
+                    inst::config::enableLightning = !inst::config::enableLightning;
                     inst::config::setConfig();
                     this->setMenuText();
                     break;
                 case 6:
+                    inst::config::autoUpdate = !inst::config::autoUpdate;
+                    inst::config::setConfig();
+                    this->setMenuText();
+                    break;
+                case 7:
                     languageList = languageStrings;
                     languageList.push_back("options.language.system_language"_lang);
                     rc = inst::ui::mainApp->CreateShowDialog("options.language.title"_lang, "options.language.desc"_lang, languageList, false);
@@ -231,7 +240,7 @@ namespace inst::ui {
                     mainApp->FadeOut();
                     mainApp->Close();
                     break;
-                case 7:
+                case 8:
                     if (inst::util::getIPAddress() == "1.0.0.127") {
                         inst::ui::mainApp->CreateShowDialog("main.net.title"_lang, "main.net.desc"_lang, {"common.ok"_lang}, true);
                         break;
@@ -243,7 +252,7 @@ namespace inst::ui {
                     }
                     this->askToUpdate(downloadUrl);
                     break;
-                case 8:
+                case 9:
                     inst::ui::mainApp->CreateShowDialog("options.credits.title"_lang, "options.credits.desc"_lang, {"common.close"_lang}, true);
                     break;
                 default:

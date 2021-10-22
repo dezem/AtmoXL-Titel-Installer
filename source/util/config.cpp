@@ -11,6 +11,7 @@ namespace inst::config {
     bool autoUpdate;
     bool deletePrompt;
     bool enableSound;
+    bool enableLightning;
     bool ignoreReqVers;
     bool overClock;
     bool usbAck;
@@ -21,6 +22,7 @@ namespace inst::config {
             {"autoUpdate", autoUpdate},
             {"deletePrompt", deletePrompt},
             {"enableSound", enableSound},
+            {"enableLightning", enableLightning},
             {"gAuthKey", gAuthKey},
             {"ignoreReqVers", ignoreReqVers},
             {"languageSetting", languageSetting},
@@ -41,6 +43,7 @@ namespace inst::config {
             autoUpdate = j["autoUpdate"].get<bool>();
             deletePrompt = j["deletePrompt"].get<bool>();
             enableSound = j["enableSound"].get<bool>();
+            enableLightning = j["enableLightning"].get<bool>();
             gAuthKey = j["gAuthKey"].get<std::string>();
             ignoreReqVers = j["ignoreReqVers"].get<bool>();
             languageSetting = j["languageSetting"].get<int>();
@@ -56,6 +59,7 @@ namespace inst::config {
             autoUpdate = true;
             deletePrompt = true;
             enableSound = true;
+            enableLightning = true;
             ignoreReqVers = true;
             overClock = false;
             usbAck = false;

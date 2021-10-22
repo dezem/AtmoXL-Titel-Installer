@@ -309,6 +309,80 @@ namespace inst::util {
         return;
     }
     
+    void lightningStart() {
+        padConfigureInput(8, HidNpadStyleSet_NpadStandard);
+        PadState pad;
+        padInitializeDefault(&pad);
+        padUpdate(&pad);
+
+        Result rc=0;
+        s32 i;
+        s32 total_entries;
+        HidsysUniquePadId unique_pad_ids[2]={0};
+        HidsysNotificationLedPattern pattern;
+
+        rc = hidsysInitialize();
+        if (R_SUCCEEDED(rc)) {
+            memset(&pattern, 0, sizeof(pattern));
+
+            pattern.baseMiniCycleDuration = 0x1;
+            pattern.totalMiniCycles = 0xF;
+            pattern.totalFullCycles = 0x0;
+            pattern.startIntensity = 0x0;
+
+            pattern.miniCycles[0].ledIntensity = 0xF;
+            pattern.miniCycles[0].transitionSteps = 0xF;
+            pattern.miniCycles[0].finalStepDuration = 0x0;
+            pattern.miniCycles[1].ledIntensity = 0x0;
+            pattern.miniCycles[1].transitionSteps = 0xF;
+            pattern.miniCycles[1].finalStepDuration = 0x0;
+            pattern.miniCycles[2].ledIntensity = 0xF;
+            pattern.miniCycles[2].transitionSteps = 0xF;
+            pattern.miniCycles[2].finalStepDuration = 0x0;
+            pattern.miniCycles[3].ledIntensity = 0x0;
+            pattern.miniCycles[3].transitionSteps = 0xF;
+            pattern.miniCycles[3].finalStepDuration = 0x0;
+
+            total_entries = 0;
+            memset(unique_pad_ids, 0, sizeof(unique_pad_ids));
+            rc = hidsysGetUniquePadsFromNpad(padIsHandheld(&pad) ? HidNpadIdType_Handheld : HidNpadIdType_No1, unique_pad_ids, 2, &total_entries);
+
+            if (R_SUCCEEDED(rc)) {
+                for(i=0; i<total_entries; i++) {
+                    rc = hidsysSetNotificationLedPattern(&pattern, unique_pad_ids[i]);
+                }
+            }
+        }
+    }
+    
+    void lightningStop() {
+        padConfigureInput(8, HidNpadStyleSet_NpadStandard);
+        PadState pad;
+        padInitializeDefault(&pad);
+        padUpdate(&pad);
+
+        Result rc=0;
+        s32 i;
+        s32 total_entries;
+        HidsysUniquePadId unique_pad_ids[2]={0};
+        HidsysNotificationLedPattern pattern;
+
+        rc = hidsysInitialize();
+        if (R_SUCCEEDED(rc)) {
+            memset(&pattern, 0, sizeof(pattern));
+            
+            total_entries = 0;
+            memset(unique_pad_ids, 0, sizeof(unique_pad_ids));
+            rc = hidsysGetUniquePadsFromNpad(padIsHandheld(&pad) ? HidNpadIdType_Handheld : HidNpadIdType_No1, unique_pad_ids, 2, &total_entries);
+
+            if (R_SUCCEEDED(rc)) {
+                for(i=0; i<total_entries; i++) {
+                    rc = hidsysSetNotificationLedPattern(&pattern, unique_pad_ids[i]);
+                }
+            }
+        }
+    }
+    
    std::vector<std::string> checkForAppUpdate () {
         try {
             std::string jsonData = inst::curl::downloadToBuffer("https://api.github.com/repos/dezem/AtmoXL-Titel-Installer/releases/latest", 0, 0, 1000L);

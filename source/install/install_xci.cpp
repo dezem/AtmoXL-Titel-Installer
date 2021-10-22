@@ -107,11 +107,17 @@ namespace tin::install::xci
 
             if (!Crypto::rsa2048PssVerify(&header->magic, 0x200, header->fixed_key_sig, Crypto::NCAHeaderSignature))
             {
+                if (inst::config::enableLightning) {
+                    inst::util::lightningStart();
+                }
                 std::string audioPath = "romfs:/audio/achtung.wav";
                 if (std::filesystem::exists(inst::config::appDir + "/achtung.wav")) audioPath = inst::config::appDir + "/achtung.wav";
                 std::thread audioThread(inst::util::playAudio,audioPath);
                 int rc = inst::ui::mainApp->CreateShowDialog("inst.nca_verify.title"_lang, "inst.nca_verify.desc"_lang, {"common.cancel"_lang, "inst.nca_verify.opt1"_lang}, false);
                 audioThread.join();
+                if (inst::config::enableLightning) {
+                    inst::util::lightningStop();
+                }
                 if (rc != 1)
                     THROW_FORMAT(("inst.nca_verify.error"_lang + tin::util::GetNcaIdString(ncaId)).c_str());
                 m_declinedValidation = true;
