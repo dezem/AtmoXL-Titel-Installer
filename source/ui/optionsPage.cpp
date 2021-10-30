@@ -17,6 +17,7 @@ namespace inst::ui {
     extern MainApplication *mainApp;
 
     std::vector<std::string> languageStrings = {"English", "日本語", "Français", "Deutsch", "Italiano", "Español", "한국전통", "Português", "Русский", "簡体中文","繁體中文"};
+    static s32 prev_touchcount = 0;
 
     optionsPage::optionsPage() : Layout::Layout() {
         this->SetBackgroundColor(COLOR("#670000FF"));
@@ -151,7 +152,8 @@ namespace inst::ui {
         if (Down & HidNpadButton_B) {
             mainApp->LoadLayout(mainApp->mainPage);
         }
-        if ((Down & HidNpadButton_A) || (Up & KEY_TOUCH)) {
+        if ((Down & HidNpadButton_A) || (pu::ui::Application::GetTouchState().count == 0 && prev_touchcount == 1)) {
+            prev_touchcount = 0;
             std::string keyboardResult;
             int rc;
             std::vector<std::string> downloadUrl;
@@ -259,5 +261,7 @@ namespace inst::ui {
                     break;
             }
         }
+        if (pu::ui::Application::GetTouchState().count == 1)
+            prev_touchcount = 1;
     }
 }

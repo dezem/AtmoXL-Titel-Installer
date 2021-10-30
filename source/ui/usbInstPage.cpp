@@ -11,6 +11,7 @@
 
 namespace inst::ui {
     extern MainApplication *mainApp;
+    static s32 prev_touchcount = 0;
 
     usbInstPage::usbInstPage() : Layout::Layout() {
         this->SetBackgroundColor(COLOR("#670000FF"));
@@ -106,7 +107,8 @@ namespace inst::ui {
             tin::util::USBCmdManager::SendExitCmd();
             mainApp->LoadLayout(mainApp->mainPage);
         }
-        if ((Down & HidNpadButton_A) || (Up & KEY_TOUCH)) {
+        if ((Down & HidNpadButton_A) || (pu::ui::Application::GetTouchState().count == 0 && prev_touchcount == 1)) {
+            prev_touchcount = 0;
             this->selectTitle(this->menu->GetSelectedIndex());
             if (this->menu->GetItems().size() == 1 && this->selectedTitles.size() == 1) {
                 this->startInstall();
@@ -130,5 +132,7 @@ namespace inst::ui {
             }
             this->startInstall();
         }
+        if (pu::ui::Application::GetTouchState().count == 1)
+            prev_touchcount = 1;
     }
 }

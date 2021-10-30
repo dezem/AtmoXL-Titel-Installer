@@ -13,6 +13,7 @@
 
 namespace inst::ui {
     extern MainApplication *mainApp;
+    static s32 prev_touchcount = 0;
 
     std::string lastFileID = "";
     std::string sourceString = "";
@@ -159,7 +160,8 @@ namespace inst::ui {
             netInstStuff::OnUnwound();
             mainApp->LoadLayout(mainApp->mainPage);
         }
-        if ((Down & HidNpadButton_A) || (Up & KEY_TOUCH)) {
+        if ((Down & HidNpadButton_A) || (pu::ui::Application::GetTouchState().count == 0 && prev_touchcount == 1)) {
+            prev_touchcount = 0;
             this->selectTitle(this->menu->GetSelectedIndex());
             if (this->menu->GetItems().size() == 1 && this->selectedUrls.size() == 1) {
                 this->startInstall(false);
@@ -181,5 +183,7 @@ namespace inst::ui {
             }
             this->startInstall(false);
         }
+        if (pu::ui::Application::GetTouchState().count == 1)
+            prev_touchcount = 1;
     }
 }

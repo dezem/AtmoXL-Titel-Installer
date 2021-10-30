@@ -12,6 +12,7 @@
 
 namespace inst::ui {
     extern MainApplication *mainApp;
+    static s32 prev_touchcount = 0;
     bool appletFinished = false;
     bool updateFinished = false;
 
@@ -130,7 +131,8 @@ namespace inst::ui {
             mainApp->FadeOut();
             mainApp->Close();
         }
-        if ((Down & HidNpadButton_A) || (Up & KEY_TOUCH)) {
+        if ((Down & HidNpadButton_A) || (pu::ui::Application::GetTouchState().count == 0 && prev_touchcount == 1)) {
+            prev_touchcount = 0;
             switch (this->optionMenu->GetSelectedIndex()) {
                 case 0:
                     this->installMenuItem_Click();
@@ -154,5 +156,7 @@ namespace inst::ui {
                     break;
             }
         }
+        if (pu::ui::Application::GetTouchState().count == 1)
+            prev_touchcount = 1;
     }
 }
