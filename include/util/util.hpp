@@ -23,5 +23,6 @@ namespace inst::util {
     void playAudio(std::string audioPath);
     void lightningStart();
     void lightningStop();
+    std::string* getBatteryCharge();
     std::vector<std::string> checkForAppUpdate();
 }

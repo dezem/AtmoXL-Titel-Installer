@@ -96,4 +96,7 @@ namespace nx::fs
             IFile OpenFile(std::string path);
             IDirectory OpenDirectory(std::string path, int flags);
     };
+            
+    std::string GetFreeStorageSpace();
+    std::string convertSize(s64 size);
 }
