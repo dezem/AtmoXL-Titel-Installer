@@ -184,5 +184,9 @@
         "yes": "是",
         "no": "否",
         "cancel_desc": "按B鈕取消"
+    },
+    "misc": {
+        "sd_free": "SD (可用空間)",
+        "battery_charge": "電池"
     }
 }

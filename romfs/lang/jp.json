@@ -184,5 +184,9 @@
         "yes": "はい",
         "no": "いいえ",
         "cancel_desc": "Bを押してキャンセル"
+    },
+    "misc": {
+        "sd_free": "SD (フリースペース)",
+        "battery_charge": "バッテリー"
     }
 }

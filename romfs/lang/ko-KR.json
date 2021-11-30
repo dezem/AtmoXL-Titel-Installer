@@ -184,5 +184,9 @@
         "yes": "예",
         "no": "아니오",
         "cancel_desc": "취소하려면 버튼 B를 누르세요."
+    },
+    "misc": {
+        "sd_free": "SD (자유 공간)",
+        "battery_charge": "배터리"
     }
 }

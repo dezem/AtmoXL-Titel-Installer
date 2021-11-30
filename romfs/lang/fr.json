@@ -184,5 +184,9 @@
         "yes": "Oui",
         "no": "Non",
         "cancel_desc": "Appuyez sur B pour annuler"
+    },
+    "misc": {
+        "sd_free": "SD (espace libre)",
+        "battery_charge": "Batterie"
     }
 }

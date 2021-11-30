@@ -184,5 +184,9 @@
         "yes": "是",
         "no": "否",
         "cancel_desc": "按 \ue0e1 取消"
+    },
+    "misc": {
+        "sd_free": "SD (可用空间)",
+        "battery_charge": "电池"
     }
 }
