@@ -15,8 +15,11 @@ namespace inst::ui {
             void usbHDDInstallMenuItem_Click();
             void exitMenuItem_Click();
             void onInput(u64 Down, u64 Up, u64 Held, pu::ui::Touch Pos);
+            void updateStatsThread();
             Image::Ref titleImage;
             TextBlock::Ref appVersionText;
+            TextBlock::Ref freeSpaceText;
+            TextBlock::Ref batteryValueText;
         private:
             bool appletFinished;
             bool updateFinished;

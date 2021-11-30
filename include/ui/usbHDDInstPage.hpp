@@ -12,10 +12,13 @@ namespace inst::ui {
             pu::ui::elm::Menu::Ref menu;
             void startInstall();
             void onInput(u64 Down, u64 Up, u64 Held, pu::ui::Touch Pos);
+            void updateStatsThread();
             TextBlock::Ref pageInfoText;
             void drawMenuItems(bool clearItems, std::filesystem::path ourPath);
             Image::Ref titleImage;
             TextBlock::Ref appVersionText;
+            TextBlock::Ref freeSpaceText;
+            TextBlock::Ref batteryValueText;
         private:
             std::vector<std::filesystem::path> ourDirectories;
             std::vector<std::filesystem::path> ourFiles;

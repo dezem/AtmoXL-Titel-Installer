@@ -9,9 +9,12 @@ namespace inst::ui {
             optionsPage();
             PU_SMART_CTOR(optionsPage)
             void onInput(u64 Down, u64 Up, u64 Held, pu::ui::Touch Pos);
+            void updateStatsThread();
             static void askToUpdate(std::vector<std::string> updateInfo);
             Image::Ref titleImage;
             TextBlock::Ref appVersionText;
+            TextBlock::Ref freeSpaceText;
+            TextBlock::Ref batteryValueText;
         private:
             TextBlock::Ref butText;
             Rectangle::Ref topRect;

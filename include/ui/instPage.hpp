@@ -9,11 +9,14 @@ namespace inst::ui {
             instPage();
             PU_SMART_CTOR(instPage)
             void onInput(u64 Down, u64 Up, u64 Held, pu::ui::Touch Pos);
+            void updateStatsThread();
             TextBlock::Ref pageInfoText;
             TextBlock::Ref installInfoText;
             pu::ui::elm::ProgressBar::Ref installBar;
             Image::Ref titleImage;
             TextBlock::Ref appVersionText;
+            TextBlock::Ref freeSpaceText;
+            TextBlock::Ref batteryValueText;
             static void setTopInstInfoText(std::string ourText);
             static void setInstInfoText(std::string ourText);
             static void setInstBarPerc(double ourPercent);

@@ -11,9 +11,12 @@ namespace inst::ui {
             void startInstall(bool urlMode);
             void startNetwork();
             void onInput(u64 Down, u64 Up, u64 Held, pu::ui::Touch Pos);
+            void updateStatsThread();
             TextBlock::Ref pageInfoText;
             Image::Ref titleImage;
             TextBlock::Ref appVersionText;
+            TextBlock::Ref freeSpaceText;
+            TextBlock::Ref batteryValueText;
         private:
             std::vector<std::string> ourUrls;
             std::vector<std::string> selectedUrls;
