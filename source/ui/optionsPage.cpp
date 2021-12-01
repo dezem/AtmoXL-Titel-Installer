@@ -10,14 +10,18 @@
 #include "util/unzip.hpp"
 #include "util/lang.hpp"
 #include "ui/instPage.hpp"
+#include "nx/fs.hpp"
 
 #define COLOR(hex) pu::ui::Color::FromHex(hex)
 
 namespace inst::ui {
     extern MainApplication *mainApp;
-
     std::vector<std::string> languageStrings = {"English", "日本語", "Français", "Deutsch", "Italiano", "Español", "한국전통", "Português", "Русский", "簡体中文","繁體中文"};
     static s32 prev_touchcount = 0;
+    static std::string getFreeSpaceText = nx::fs::GetFreeStorageSpace();
+    static std::string getFreeSpaceOldText = getFreeSpaceText;
+    static std::string* getBatteryChargeText = inst::util::getBatteryCharge();
+    static std::string* getBatteryChargeOldText = getBatteryChargeText;
 
     optionsPage::optionsPage() : Layout::Layout() {
         this->SetBackgroundColor(COLOR("#670000FF"));
@@ -29,6 +33,10 @@ namespace inst::ui {
         this->titleImage = Image::New(0, 0, "romfs:/images/logo.png");
         this->appVersionText = TextBlock::New(490, 29, "v" + inst::config::appVersion, 42);
         this->appVersionText->SetColor(COLOR("#FFFFFFFF"));
+        this->batteryValueText = TextBlock::New(700, 9, "misc.battery_charge"_lang+": " + getBatteryChargeText[0], 32);
+        this->batteryValueText->SetColor(COLOR(getBatteryChargeText[1]));
+        this->freeSpaceText = TextBlock::New(700, 49, "misc.sd_free"_lang+": " + getFreeSpaceText, 32);
+        this->freeSpaceText->SetColor(COLOR("#FFFFFFFF"));
         this->pageInfoText = TextBlock::New(10, 109, "options.title"_lang, 30);
         this->pageInfoText->SetColor(COLOR("#FFFFFFFF"));
         this->butText = TextBlock::New(10, 678, "options.buttons"_lang, 24);
@@ -41,10 +49,14 @@ namespace inst::ui {
         this->Add(this->botRect);
         this->Add(this->titleImage);
         this->Add(this->appVersionText);
+        this->Add(this->batteryValueText);
+        this->Add(this->freeSpaceText);
         this->Add(this->butText);
         this->Add(this->pageInfoText);
         this->setMenuText();
         this->Add(this->menu);
+        this->updateStatsThread();
+        this->AddThread(std::bind(&optionsPage::updateStatsThread, this));
     }
 
     void optionsPage::askToUpdate(std::vector<std::string> updateInfo) {
@@ -263,5 +275,40 @@ namespace inst::ui {
         }
         if (pu::ui::Application::GetTouchState().count == 1)
             prev_touchcount = 1;
+    }
+
+    void optionsPage::updateStatsThread() {
+        getFreeSpaceText = nx::fs::GetFreeStorageSpace();
+        if (getFreeSpaceOldText != getFreeSpaceText) {
+            getFreeSpaceOldText = getFreeSpaceText;
+            mainApp->instpage->freeSpaceText->SetText("misc.sd_free"_lang+": " + getFreeSpaceText);
+            mainApp->usbhddinstPage->freeSpaceText->SetText("misc.sd_free"_lang+": " + getFreeSpaceText);
+            mainApp->sdinstPage->freeSpaceText->SetText("misc.sd_free"_lang+": " + getFreeSpaceText);
+            mainApp->netinstPage->freeSpaceText->SetText("misc.sd_free"_lang+": " + getFreeSpaceText);
+            mainApp->usbinstPage->freeSpaceText->SetText("misc.sd_free"_lang+": " + getFreeSpaceText);
+            mainApp->mainPage->freeSpaceText->SetText("misc.sd_free"_lang+": " + getFreeSpaceText);
+            mainApp->optionspage->freeSpaceText->SetText("misc.sd_free"_lang+": " + getFreeSpaceText);
+        }
+
+        getBatteryChargeText = inst::util::getBatteryCharge();
+        if (getBatteryChargeOldText[0] != getBatteryChargeText[0]) {
+            getBatteryChargeOldText = getBatteryChargeText;
+
+            mainApp->instpage->batteryValueText->SetColor(COLOR(getBatteryChargeText[1]));
+            mainApp->usbhddinstPage->batteryValueText->SetColor(COLOR(getBatteryChargeText[1]));
+            mainApp->sdinstPage->batteryValueText->SetColor(COLOR(getBatteryChargeText[1]));
+            mainApp->netinstPage->batteryValueText->SetColor(COLOR(getBatteryChargeText[1]));
+            mainApp->usbinstPage->batteryValueText->SetColor(COLOR(getBatteryChargeText[1]));
+            mainApp->mainPage->batteryValueText->SetColor(COLOR(getBatteryChargeText[1]));
+            mainApp->optionspage->batteryValueText->SetColor(COLOR(getBatteryChargeText[1]));
+
+            mainApp->instpage->batteryValueText->SetText("misc.battery_charge"_lang+": " + getBatteryChargeText[0]);
+            mainApp->usbhddinstPage->batteryValueText->SetText("misc.battery_charge"_lang+": " + getBatteryChargeText[0]);
+            mainApp->sdinstPage->batteryValueText->SetText("misc.battery_charge"_lang+": " + getBatteryChargeText[0]);
+            mainApp->netinstPage->batteryValueText->SetText("misc.battery_charge"_lang+": " + getBatteryChargeText[0]);
+            mainApp->usbinstPage->batteryValueText->SetText("misc.battery_charge"_lang+": " + getBatteryChargeText[0]);
+            mainApp->mainPage->batteryValueText->SetText("misc.battery_charge"_lang+": " + getBatteryChargeText[0]);
+            mainApp->optionspage->batteryValueText->SetText("misc.battery_charge"_lang+": " + getBatteryChargeText[0]);
+        }
     }
 }

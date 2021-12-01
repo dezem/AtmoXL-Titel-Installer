@@ -382,6 +382,37 @@ namespace inst::util {
             }
         }
     }
+
+    std::string* getBatteryCharge() {
+        std::string batColBlue = "#0000FFFF";
+        std::string batColGreen = "#00FF00FF";
+        std::string batColYellow = "#FFFF00FF";
+        std::string batColOrange = "#FF8000FF";
+        std::string batColRed = "#FF0000FF";
+        std::string* batValue = new std::string[2];
+        batValue[0] = "???";
+        batValue[1] = batColBlue;
+        u32 charge;
+
+        Result rc = psmInitialize();
+        if (!R_FAILED(rc)) {
+            rc = psmGetBatteryChargePercentage(&charge);
+            if (!R_FAILED(rc)) {
+            if (charge < 15.0) {
+                batValue[1] = batColRed;
+            } else if (charge < 30.0) {
+                batValue[1] = batColOrange;
+            } else if (charge < 50.0) {
+                batValue[1] = batColYellow;
+            } else {
+                batValue[1] = batColGreen;
+            }
+                batValue[0] = std::to_string(charge) + "%";
+            }
+        }
+        psmExit();
+        return batValue;
+    }
     
    std::vector<std::string> checkForAppUpdate () {
         try {
