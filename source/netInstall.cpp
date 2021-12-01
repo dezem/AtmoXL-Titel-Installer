@@ -131,11 +131,11 @@ namespace netInstStuff{
         std::vector<std::string> urlNames;
         if (urlListAltNames.size() > 0) {
             for (long unsigned int i = 0; i < urlListAltNames.size(); i++) {
-                urlNames.push_back(inst::util::shortenString(urlListAltNames[i], 38, true));
+                urlNames.push_back(inst::util::shortenString(urlListAltNames[i], 28, true));
             }
         } else {
             for (long unsigned int i = 0; i < ourUrlList.size(); i++) {
-                urlNames.push_back(inst::util::shortenString(inst::util::formatUrlString(ourUrlList[i]), 38, true));
+                urlNames.push_back(inst::util::shortenString(inst::util::formatUrlString(ourUrlList[i]), 28, true));
             }
         }
 
@@ -147,9 +147,14 @@ namespace netInstStuff{
         }
 
         try {
-            for (urlItr = 0; urlItr < ourUrlList.size(); urlItr++) {
+            unsigned int urlCount = ourUrlList.size();
+            for (urlItr = 0; urlItr < urlCount; urlItr++) {
                 LOG_DEBUG("%s %s\n", "Install request from", ourUrlList[urlItr].c_str());
-                inst::ui::instPage::setTopInstInfoText("inst.info_page.top_info0"_lang + urlNames[urlItr] + ourSource);
+                if (urlCount > 1) {
+                    inst::ui::instPage::setTopInstInfoText("inst.info_page.top_info0"_lang + "(" + std::to_string(urlItr+1) + "/"  + std::to_string(urlCount) + ") " + urlNames[urlItr] + ourSource);
+                } else {
+                    inst::ui::instPage::setTopInstInfoText("inst.info_page.top_info0"_lang + urlNames[urlItr] + ourSource);
+                }
                 std::unique_ptr<tin::install::Install> installTask;
 
                 if (inst::curl::downloadToBuffer(ourUrlList[urlItr], 0x100, 0x103) == "HEAD") {

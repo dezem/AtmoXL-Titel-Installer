@@ -105,7 +105,7 @@ namespace usbInstStuff {
 
         std::vector<std::string> fileNames;
         for (long unsigned int i = 0; i < ourTitleList.size(); i++) {
-            fileNames.push_back(inst::util::shortenString(inst::util::formatUrlString(ourTitleList[i]), 40, true));
+            fileNames.push_back(inst::util::shortenString(inst::util::formatUrlString(ourTitleList[i]), 30, true));
         }
 
         std::vector<int> previousClockValues;
@@ -116,8 +116,13 @@ namespace usbInstStuff {
         }
 
         try {
-            for (fileItr = 0; fileItr < ourTitleList.size(); fileItr++) {
-                inst::ui::instPage::setTopInstInfoText("inst.info_page.top_info0"_lang + fileNames[fileItr] + "inst.usb.source_string"_lang);
+            unsigned int titleCount = ourTitleList.size();
+            for (fileItr = 0; fileItr < titleCount; fileItr++) {
+                if (titleCount > 1) {
+                    inst::ui::instPage::setTopInstInfoText("inst.info_page.top_info0"_lang + "(" + std::to_string(fileItr+1) + "/"  + std::to_string(titleCount) + ") " + fileNames[fileItr] + "inst.usb.source_string"_lang);
+                } else {
+                    inst::ui::instPage::setTopInstInfoText("inst.info_page.top_info0"_lang + fileNames[fileItr] + "inst.usb.source_string"_lang);
+                }
                 std::unique_ptr<tin::install::Install> installTask;
 
                 if (ourTitleList[fileItr].compare(ourTitleList[fileItr].size() - 3, 2, "xc") == 0) {

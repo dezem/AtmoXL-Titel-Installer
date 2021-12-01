@@ -66,8 +66,13 @@ namespace hddInstStuff {
 
         try
         {
-            for (titleItr = 0; titleItr < ourTitleList.size(); titleItr++) {
-                inst::ui::instPage::setTopInstInfoText("inst.info_page.top_info0"_lang + inst::util::shortenString(ourTitleList[titleItr].filename().string(), 40, true) + "inst.hdd.source_string"_lang);
+            unsigned int titleCount = ourTitleList.size();
+            for (titleItr = 0; titleItr < titleCount; titleItr++) {
+                if (titleCount > 1) {
+                    inst::ui::instPage::setTopInstInfoText("inst.info_page.top_info0"_lang + "(" + std::to_string(titleItr+1) + "/"  + std::to_string(titleCount) + ") " + inst::util::shortenString(ourTitleList[titleItr].filename().string(), 30, true) + "inst.hdd.source_string"_lang);
+                } else {
+                    inst::ui::instPage::setTopInstInfoText("inst.info_page.top_info0"_lang + inst::util::shortenString(ourTitleList[titleItr].filename().string(), 30, true) + "inst.hdd.source_string"_lang);
+                }
                 std::unique_ptr<tin::install::Install> installTask;
 
                 if (ourTitleList[titleItr].extension() == ".xci" || ourTitleList[titleItr].extension() == ".xcz") {
