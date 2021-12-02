@@ -17,6 +17,8 @@ namespace inst::ui {
     static std::string getFreeSpaceOldText = getFreeSpaceText;
     static std::string* getBatteryChargeText = inst::util::getBatteryCharge();
     static std::string* getBatteryChargeOldText = getBatteryChargeText;
+    static std::vector <int> lastIndex;
+    static int subPathCounter = 0;
 
     sdInstPage::sdInstPage() : Layout::Layout() {
         this->SetBackgroundColor(COLOR("#670000FF"));
@@ -97,6 +99,7 @@ namespace inst::ui {
     void sdInstPage::followDirectory() {
         int selectedIndex = this->menu->GetSelectedIndex();
         int dirListSize = this->ourDirectories.size();
+        int selectNewIndex = 0;
         if (this->currentDir != "sdmc:/") {
             dirListSize++;
             selectedIndex--;
@@ -104,10 +107,21 @@ namespace inst::ui {
         if (selectedIndex < dirListSize) {
             if (this->menu->GetItems()[this->menu->GetSelectedIndex()]->GetName() == ".." && this->menu->GetSelectedIndex() == 0) {
                 this->drawMenuItems(true, this->currentDir.parent_path());
+                if (subPathCounter > 0) {
+                    subPathCounter--;
+                    selectNewIndex = lastIndex[subPathCounter];
+                    lastIndex.pop_back();
+                }
             } else {
                 this->drawMenuItems(true, this->ourDirectories[selectedIndex]);
+                if (subPathCounter > 0) {
+                    lastIndex.push_back(selectedIndex + 1);
+                } else {
+                    lastIndex.push_back(selectedIndex);
+                }
+                subPathCounter++;
             }
-            this->menu->SetSelectedIndex(0);
+            this->menu->SetSelectedIndex(selectNewIndex);
         }
     }
 
@@ -137,7 +151,12 @@ namespace inst::ui {
 
     void sdInstPage::onInput(u64 Down, u64 Up, u64 Held, pu::ui::Touch Pos) {
         if (Down & HidNpadButton_B) {
-            mainApp->LoadLayout(mainApp->mainPage);
+            if (subPathCounter > 0) {
+                this->menu->SetSelectedIndex(0);
+                this->followDirectory();
+            } else {
+                mainApp->LoadLayout(mainApp->mainPage);
+            }
         }
         if ((Down & HidNpadButton_A) || (pu::ui::Application::GetTouchState().count == 0 && prev_touchcount == 1)) {
             prev_touchcount = 0;
