@@ -31,7 +31,7 @@
             "title": "不支持 Applet 模式",
             "desc": "在 Applet 模式下使用 AtmoXL-Titel-Installer 可能会遇到问题，\n如果遇到问题，请切换 AtmoXL-Titel-Installer 的运行模式！\n(退回主界面，按住 \ue0e5 并打开任意游戏，进入 hbmenu 后再打开 AtmoXL-Titel-Installer 即可)"
         },
-        "buttons": "\ue0e0 选择    \ue0e1 退出"
+        "buttons": "\ue0e0 选择    \ue0ef 退出"
     },
     "inst": {
         "net": {

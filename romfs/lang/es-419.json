@@ -31,7 +31,7 @@
             "title": "Modo Applet no soportado",
             "desc": "Puede que experimentes problemas al utilizar AtmoXL-Titel-Installer en modo Applet.\nSi tienes problemas, por favor ejecuta AtmoXL-Titel-Installer utilizando un título que tengas instalado\n(mantén pulsado R mientras abres un juego)!"
         },
-        "buttons": "\ue0e0 Seleccionar    \ue0e1 Salir"
+        "buttons": "\ue0e0 Seleccionar    \ue0ef Salir"
     },
     "inst": {
         "net": {

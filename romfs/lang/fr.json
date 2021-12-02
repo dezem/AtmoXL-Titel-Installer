@@ -31,7 +31,7 @@
             "title": "Le mode Applet n'est pas compatible",
             "desc": "Vous pouvez rencontrer des problèmes en utilisant AtmoXL-Titel-Installer en mode Applet.\n\n Si vous avez des problèmes, veuillez lancer AtmoXL-Titel-Installer en mode 'non-Applet' (Maintenez R pendant le démarrage d'un jeu)!"
         },
-        "buttons": "\ue0e0 Select    \ue0e1 Quitter"
+        "buttons": "\ue0e0 Select    \ue0ef Quitter"
     },
     "inst": {
         "net": {

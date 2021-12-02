@@ -31,7 +31,7 @@
             "title": "Applet Mode not supported",
             "desc": "You may experience issues using AtmoXL-Titel-Installer in Applet Mode. If you do\nhave problems, please switch to running AtmoXL-Titel-Installer over an installed\ntitle (hold R while starting a game)!"
         },
-        "buttons": "\ue0e0 Select    \ue0e1 Exit"
+        "buttons": "\ue0e0 Select    \ue0ef Exit"
     },
     "inst": {
         "net": {

@@ -140,7 +140,7 @@ namespace inst::ui {
     }
 
     void MainPage::onInput(u64 Down, u64 Up, u64 Held, pu::ui::Touch Pos) {
-        if (((Down & HidNpadButton_Plus) || (Down & HidNpadButton_Minus) || (Down & HidNpadButton_B)) && mainApp->IsShown()) {
+        if ((Down & HidNpadButton_Plus) && mainApp->IsShown()) {
             mainApp->FadeOut();
             mainApp->Close();
         }

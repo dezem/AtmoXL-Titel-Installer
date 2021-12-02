@@ -31,7 +31,7 @@
             "title": "애플릿 모드는 지원되지 않음",
             "desc": "애플릿 모드에서 AtmoXL-Titel-Installer를 실행하면 설치 오류가 발생할 수 있습니다.\nhbmenu 모드에서 AtmoXL-Titel-Installer를 실행하세요(게임을 시작할 때 R을 길게 누르기)!"
         },
-        "buttons": "\ue0e0 선택    \ue0e1 취소"
+        "buttons": "\ue0e0 선택    \ue0ef 취소"
     },   
     "inst": {
         "net": {

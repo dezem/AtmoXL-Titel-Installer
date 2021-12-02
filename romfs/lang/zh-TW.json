@@ -31,7 +31,7 @@
             "title": "不支援Applet模式",
             "desc": "在Applet模式下執行AtmoXL-Titel-Installer可能會產生安裝錯誤。\n請在hbmenu模式(啟動任何一個遊戲時按住R)，再執行AtmoXL-Titel-Installer！"
         },
-        "buttons": "\ue0e0 選擇    \ue0e1 退出"
+        "buttons": "\ue0e0 選擇    \ue0ef 退出"
     },   
     "inst": {
         "net": {

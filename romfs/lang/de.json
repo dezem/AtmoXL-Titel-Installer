@@ -31,7 +31,7 @@
             "title": "Applet-Modus wird nicht unterstützt",
             "desc": "Es kann zu Problemen bei der Verwendung des AtmoXL-Titel-Installer im Applet-Modus kommen.\nWenn du Probleme hast, starte den AtmoXL-Titel-Installer über einen installierten Titel (halte R gedrückt, während du ein Spiel startest)!"
         },
-        "buttons": "\ue0e0 Auswählen    \ue0e1 Beenden"
+        "buttons": "\ue0e0 Auswählen    \ue0ef Beenden"
     },
     "inst": {
         "net": {

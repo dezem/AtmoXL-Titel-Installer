@@ -31,7 +31,7 @@
             "title": "アプレットモードはサポートされていません",
             "desc": "アプレットモードでAtmoXL-Titel-Installerを使用すると問題が発生する場合があります。\n問題が発生した場合は、インストール済みのタイトルでAtmoXL-Titel-Installerを実行するように切り替えてください\n(ゲームの開始中にRを押したままにしてください)!"
         },
-        "buttons": "\ue0e0 選択    \ue0e1 終了"
+        "buttons": "\ue0e0 選択    \ue0ef 終了"
     },
     "inst": {
         "net": {
