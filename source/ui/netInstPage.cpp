@@ -133,6 +133,7 @@ namespace inst::ui {
         } else {
             mainApp->CallForRender(); // If we re-render a few times during this process the main screen won't flicker
             sourceString = "inst.net.source_string"_lang;
+            netConnected = true;
             this->pageInfoText->SetText("inst.net.top_info"_lang);
             this->butText->SetText("inst.net.buttons1"_lang);
             this->drawMenuItems(true);
@@ -172,28 +173,30 @@ namespace inst::ui {
             netInstStuff::OnUnwound();
             mainApp->LoadLayout(mainApp->mainPage);
         }
-        if ((Down & HidNpadButton_A) || (pu::ui::Application::GetTouchState().count == 0 && prev_touchcount == 1)) {
-            prev_touchcount = 0;
-            this->selectTitle(this->menu->GetSelectedIndex());
-            if (this->menu->GetItems().size() == 1 && this->selectedUrls.size() == 1) {
+        if (netConnected) {
+            if ((Down & HidNpadButton_A) || (pu::ui::Application::GetTouchState().count == 0 && prev_touchcount == 1)) {
+                prev_touchcount = 0;
+                this->selectTitle(this->menu->GetSelectedIndex());
+                if (this->menu->GetItems().size() == 1 && this->selectedUrls.size() == 1) {
+                    this->startInstall(false);
+                }
+            }
+            if ((Down & HidNpadButton_Y)) {
+                if (this->selectedUrls.size() == this->menu->GetItems().size()) this->drawMenuItems(true);
+                else {
+                    for (long unsigned int i = 0; i < this->menu->GetItems().size(); i++) {
+                        if (this->menu->GetItems()[i]->GetIcon() == "romfs:/images/icons/check-box-outline.png") continue;
+                        else this->selectTitle(i);
+                    }
+                    this->drawMenuItems(false);
+                }
+            }
+            if (Down & HidNpadButton_Plus) {
+                if (this->selectedUrls.size() == 0) {
+                    this->selectTitle(this->menu->GetSelectedIndex());
+                }
                 this->startInstall(false);
             }
-        }
-        if ((Down & HidNpadButton_Y)) {
-            if (this->selectedUrls.size() == this->menu->GetItems().size()) this->drawMenuItems(true);
-            else {
-                for (long unsigned int i = 0; i < this->menu->GetItems().size(); i++) {
-                    if (this->menu->GetItems()[i]->GetIcon() == "romfs:/images/icons/check-box-outline.png") continue;
-                    else this->selectTitle(i);
-                }
-                this->drawMenuItems(false);
-            }
-        }
-        if (Down & HidNpadButton_Plus) {
-            if (this->selectedUrls.size() == 0) {
-                this->selectTitle(this->menu->GetSelectedIndex());
-            }
-            this->startInstall(false);
         }
         if (pu::ui::Application::GetTouchState().count == 1)
             prev_touchcount = 1;

@@ -48,6 +48,7 @@ const unsigned int MAX_URLS = 256;
 const int REMOTE_INSTALL_PORT = 2000;
 static int m_serverSocket = 0;
 static int m_clientSocket = 0;
+bool netConnected = false;
 
 namespace inst::ui {
     extern MainApplication *mainApp;
@@ -251,6 +252,7 @@ namespace netInstStuff{
             std::string ourIPAddress = inst::util::getIPAddress();
             inst::ui::mainApp->netinstPage->pageInfoText->SetText("inst.net.top_info1"_lang + ourIPAddress);
             inst::ui::mainApp->CallForRender();
+            netConnected = false;
             LOG_DEBUG("%s %s\n", "Switch IP is ", ourIPAddress.c_str());
             LOG_DEBUG("%s\n", "Waiting for network");
             LOG_DEBUG("%s\n", "B to cancel");
