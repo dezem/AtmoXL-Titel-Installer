@@ -57,9 +57,11 @@
             "top_info": "Select what files you want to install from the server, then press the Plus button!",
             "top_info1": "Waiting for a connection... Your Switch's IP Address is: ",
             "failed": "Failed to perform remote install!",
+            "index_error": "Failed to retrieve file list",
+            "index_error_info": "Ensure that the URL points to a valid web directory index or Tinfoil style JSON.",
             "transfer_interput": "An error occured during data transfer. Check your network connection.",
             "source_string": " over local network",
-            "buttons": "\ue0e3 Install Over Internet    \ue0e2 Help    \ue0e1 Cancel",
+            "buttons": "\ue0e3 Install Over Internet    \ue0f0 Install From HTTP Directory    \ue0e2 Help    \ue0e1 Cancel",
             "buttons1": "\ue0e0 Select File    \ue0e3 Select All    \ue0ef Install File(s)    \ue0e1 Cancel"
         },
         "sd": {
