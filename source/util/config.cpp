@@ -7,6 +7,7 @@ namespace inst::config {
     std::string gAuthKey;
     std::string lastNetUrl;
     std::vector<std::string> updateInfo;
+    std::string httpIndexUrl;
     int languageSetting;
     bool autoUpdate;
     bool deletePrompt;
@@ -29,7 +30,8 @@ namespace inst::config {
             {"overClock", overClock},
             {"usbAck", usbAck},
             {"validateNCAs", validateNCAs},
-            {"lastNetUrl", lastNetUrl}
+            {"lastNetUrl", lastNetUrl},
+            {"httpIndexUrl", httpIndexUrl}
         };
         std::ofstream file(inst::config::configPath);
         file << std::setw(4) << j << std::endl;
@@ -51,6 +53,7 @@ namespace inst::config {
             usbAck = j["usbAck"].get<bool>();
             validateNCAs = j["validateNCAs"].get<bool>();
             lastNetUrl = j["lastNetUrl"].get<std::string>();
+            httpIndexUrl = j["httpIndexUrl"].get<std::string>();
         }
         catch (...) {
             // If loading values from the config fails, we just load the defaults and overwrite the old config
@@ -65,6 +68,7 @@ namespace inst::config {
             usbAck = false;
             validateNCAs = true;
             lastNetUrl = "https://";
+            httpIndexUrl = "http://";
             setConfig();
         }
     }
