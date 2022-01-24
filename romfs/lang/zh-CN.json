@@ -57,9 +57,11 @@
             "top_info": "在服务器中选择将要安装的文件，然后按 \ue0ef 以安装！",
             "top_info1": "正在等待连接… Switch 的 IP 地址是：",
             "failed": "远程安装失败！",
+            "index_error": "检索文件列表失败",
+            "index_error_info": "确保 URL 指向有效的 Web 目录索引或 Tinfoil 样式 JSON.",
             "transfer_interput": "数据传输发生错误，请检查网络连接状态。",
             "source_string": "使用网络安装文件",
-            "buttons": "\ue0e3 网络安装    \ue0e2 帮助    \ue0e1 取消",
+            "buttons": "\ue0e3 网络安装    \ue0f0 从 HTTP 目录安装    \ue0e2 帮助    \ue0e1 取消",
             "buttons1": "\ue0e0 选择    \ue0e3 全选    \ue0ef 安装    \ue0e1 取消"
         },
         "sd": {

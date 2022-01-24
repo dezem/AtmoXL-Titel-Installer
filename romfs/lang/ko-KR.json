@@ -57,9 +57,11 @@
             "top_info": "서버에서 설치할 파일을 선택한 후 + 버튼을 누릅니다.",
             "top_info1": "연결 대기 중... 스위치 호스트 IP: ",
             "failed": "원격 설치 실패!",
+            "index_error": "파일 목록을 검색하지 못했습니다.",
+            "index_error_info": "URL이 유효한 웹 디렉토리 인덱스 또는 Tinfoil 스타일 JSON을 가리키는지 확인하십시오.",
             "transfer_interput": "파일 전송 중 오류가 발생했습니다. 네트워크 연결이 정상인지 확인하세요.",
             "source_string": " 근거리 통신망을 통해 설치",
-            "buttons": "\ue0e3 네트워크를 통해 설치    \ue0e2 도움말    \ue0e1 취소",
+            "buttons": "\ue0e3 네트워크를 통해 설치    \ue0f0 HTTP 디렉토리에서 설치    \ue0e2 도움말    \ue0e1 취소",
             "buttons1": "\ue0e0 파일 선택    \ue0e3 모두 선택    \ue0ef 선택한 파일 설치    \ue0e1 취소"
         },
         "sd": {

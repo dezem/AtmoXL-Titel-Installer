@@ -57,9 +57,11 @@
             "top_info": "Wähle Dateien zur Installation vom Server aus und drücke dann \ue0b3 !",
             "top_info1": "Warte auf eine Verbindung... Die IP Adresse deiner Switch ist: ",
             "failed": "Ferninstallation fehlgeschlagen!",
+            "index_error": "Dateiliste konnte nicht abgerufen werden",
+            "index_error_info": "Stellen Sie sicher, dass die URL auf einen gültigen Webverzeichnisindex oder JSON im Tinfoil-Stil verweist.",
             "transfer_interput": "Bei der Dateiübertragung ist ein Fehler aufgetreten.",
             "source_string": " über das lokale Netzwerk",
-            "buttons": "\ue0e3 Installation über das Internet    \ue0e2 Hilfe    \ue0e1 Abbrechen",
+            "buttons": "\ue0e3 Installation über das Internet    \ue0f0 Aus dem HTTP-Verzeichnis installieren    \ue0e2 Hilfe    \ue0e1 Abbrechen",
             "buttons1": "\ue0e0 Datei auswählen    \ue0e3 Alle auswählen    \ue0ef Datei(en) installieren    \ue0e1 Abbrechen"
         },
         "sd": {

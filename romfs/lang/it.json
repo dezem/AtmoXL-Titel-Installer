@@ -57,9 +57,11 @@
             "top_info": "Seleziona quali file vuoi installare dal server, poi premi il tasto Più!",
             "top_info1": "Aspettando una connessione... L'indirizzo IP è: ",
             "failed": "Impossibile eseguire l'installazione remota!",
+            "index_error": "Impossibile recuperare l'elenco dei file",
+            "index_error_info": "Assicurati che l'URL punti a un indice di directory Web valido o a un JSON in stile Tinfoil.",
             "transfer_interput": "Si è verificato un errore durante il trasferimento dei dati. Controlla la tua connessione.",
             "source_string": " via rete locale",
-            "buttons": "\ue0e3 Installa via internet    \ue0e2 Aiuto    \ue0e1 Annulla",
+            "buttons": "\ue0e3 Installa via internet    \ue0f0 Installa da directory HTTP    \ue0e2 Aiuto    \ue0e1 Annulla",
             "buttons1": "\ue0e0 Seleziona File    \ue0e3 Seleziona tutto    \ue0ef Installa i File    \ue0e1 Annulla"
         },
         "sd": {

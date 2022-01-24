@@ -57,9 +57,11 @@
             "top_info": "Selecione os ficheiros que deseja instalar através do servidor, depois pressione o botão Mais!",
             "top_info1": "A aguardar ligação... O endereço de IP da Switch é: ",
             "failed": "A instalação remota falhou!",
+            "index_error": "Falha ao recuperar a lista de arquivos",
+            "index_error_info": "Certifique-se de que o URL aponte para um índice de diretório da web válido ou JSON estilo Tinfoil.",
             "transfer_interput": "Ocorreu um erro ao tranferir os dados. Verifique a sua ligação à rede.",
             "source_string": " através de rede local",
-            "buttons": "\ue0e3 Instalar através da Internet    \ue0e2 Ajuda    \ue0e1 Cancelar",
+            "buttons": "\ue0e3 Instalar através da Internet    \ue0f0 Instalar do diretório HTTP    \ue0e2 Ajuda    \ue0e1 Cancelar",
             "buttons1": "\ue0e0 Selecionar Ficheiro    \ue0e3 Selecionar Todos    \ue0ef Instalar Ficheiro(s)    \ue0e1 Cancelar"
         },
         "sd": {
