@@ -300,7 +300,7 @@ namespace netInstStuff{
                     }
 
                     if (!response.empty()) {
-                        if (response[0] == '{')              
+                        if (response[0] == '{')
                             try {
                                 nlohmann::json j = nlohmann::json::parse(response);
                                 for (const auto &file : j["files"])
@@ -320,7 +320,8 @@ namespace netInstStuff{
                                 while (index < response.size()) {
                                     if (response[index] == '"') {
                                         if (link.find("../") == std::string::npos)
-                                            urls.push_back(url + link);
+                                            if (link.find(".nsp") != std::string::npos || link.find(".nsz") != std::string::npos || link.find(".xci") != std::string::npos || link.find(".xcz") != std::string::npos)
+                                                urls.push_back(url + link);
                                         break;
                                     }
                                     link += response[index++];
