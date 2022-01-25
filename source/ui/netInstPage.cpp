@@ -9,6 +9,7 @@
 #include "util/lang.hpp"
 #include "netInstall.hpp"
 #include "nx/fs.hpp"
+#include <regex>
 
 #define COLOR(hex) pu::ui::Color::FromHex(hex)
 
@@ -21,6 +22,7 @@ namespace inst::ui {
     static std::string getFreeSpaceOldText = getFreeSpaceText;
     static std::string* getBatteryChargeText = inst::util::getBatteryCharge();
     static std::string* getBatteryChargeOldText = getBatteryChargeText;
+    static bool hideInstalled = false;
 
     netInstPage::netInstPage() : Layout::Layout() {
         this->SetBackgroundColor(COLOR("#670000FF"));
@@ -59,12 +61,51 @@ namespace inst::ui {
         this->AddThread(std::bind(&netInstPage::updateStatsThread, this));
     }
 
+    void netInstPage::listInstalledTitles() {
+        installedTitles = {};
+        const NcmStorageId storageIDs[]{NcmStorageId_SdCard, NcmStorageId_BuiltInUser};
+        for (const auto storageID : storageIDs) {
+            NcmContentMetaDatabase metaDatabase = {};
+            if(R_SUCCEEDED(ncmOpenContentMetaDatabase(&metaDatabase, storageID))) {
+                auto metaKeys = new NcmContentMetaKey[64000]();
+                s32 written = 0;
+                s32 total = 0;
+                if(R_SUCCEEDED(ncmContentMetaDatabaseList(&metaDatabase, &total, &written, metaKeys, 64000, NcmContentMetaType_Unknown, 0, 0, UINT64_MAX, NcmContentInstallType_Full)) && (written > 0))
+                    for(s32 i = 0; i < written; i++) {
+                        const auto &metaKey = metaKeys[i];
+                        installedTitles.push_back({metaKey.id, metaKey.version});
+                    }
+                delete[] metaKeys;
+                ncmContentMetaDatabaseClose(&metaDatabase);
+            }
+        }
+    }
+
     void netInstPage::drawMenuItems(bool clearItems) {
         if (clearItems) this->selectedUrls = {};
         if (clearItems) this->alternativeNames = {};
         this->menu->ClearItems();
+
+        const std::regex idRegex(".*\\[([0-9a-fA-F]+)]\\[v(\\d+)].*");
+
         for (auto& url: this->ourUrls) {
-            std::string itm = inst::util::shortenString(inst::util::formatUrlString(url), 56, true);
+            std::string formattedURL = inst::util::formatUrlString(url);
+
+            std::smatch match;
+            if (hideInstalled and std::regex_match(formattedURL, match, idRegex)) {
+                u64 id = stol(match[1], nullptr, 16);
+                u32 version = stoi(match[2]);
+                bool installed = false;
+                for (const auto &title: installedTitles)
+                    if (id == title.first and version <= title.second) {
+                        installed = true;
+                        break;
+                    }
+                if (installed)
+                    continue;
+            }
+
+            std::string itm = inst::util::shortenString(formattedURL, 56, true);
             auto ourEntry = pu::ui::elm::MenuItem::New(itm);
             ourEntry->SetColor(COLOR("#FFFFFFFF"));
             ourEntry->SetIcon("romfs:/images/icons/checkbox-blank-outline.png");
@@ -78,11 +119,18 @@ namespace inst::ui {
     }
 
     void netInstPage::selectTitle(int selectedIndex) {
+        long unsigned int urlIndex = 0;
+        for (long unsigned int i = 0; i < this->ourUrls.size(); i++)
+            if (inst::util::shortenString(inst::util::formatUrlString(this->ourUrls[i]), 56, true) == this->menu->GetItems()[selectedIndex]->GetName()) {
+                urlIndex = i;
+                break;
+            }
+
         if (this->menu->GetItems()[selectedIndex]->GetIcon() == "romfs:/images/icons/check-box-outline.png") {
             for (long unsigned int i = 0; i < this->selectedUrls.size(); i++) {
-                if (this->selectedUrls[i] == this->ourUrls[selectedIndex]) this->selectedUrls.erase(this->selectedUrls.begin() + i);
+                if (this->selectedUrls[i] == this->ourUrls[urlIndex]) this->selectedUrls.erase(this->selectedUrls.begin() + i);
             }
-        } else this->selectedUrls.push_back(this->ourUrls[selectedIndex]);
+        } else this->selectedUrls.push_back(this->ourUrls[urlIndex]);
         this->drawMenuItems(false);
     }
 
@@ -135,7 +183,8 @@ namespace inst::ui {
             sourceString = "inst.net.source_string"_lang;
             netConnected = true;
             this->pageInfoText->SetText("inst.net.top_info"_lang);
-            this->butText->SetText("inst.net.buttons1"_lang);
+            this->butText->SetText(hideInstalled ? "inst.net.buttons1_show"_lang : "inst.net.buttons1"_lang);
+            listInstalledTitles();
             this->drawMenuItems(true);
             this->menu->SetSelectedIndex(0);
             mainApp->CallForRender();
@@ -190,6 +239,12 @@ namespace inst::ui {
                     }
                     this->drawMenuItems(false);
                 }
+            }
+            if (Down & HidNpadButton_X) {
+                hideInstalled = !hideInstalled;
+                this->butText->SetText(hideInstalled ? "inst.net.buttons1_show"_lang : "inst.net.buttons1"_lang);
+                this->drawMenuItems(true);
+                this->menu->SetSelectedIndex(0);
             }
             if (Down & HidNpadButton_Plus) {
                 if (this->selectedUrls.size() == 0) {
