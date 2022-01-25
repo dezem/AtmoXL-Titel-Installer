@@ -57,11 +57,11 @@
             "top_info": "選定要從伺服器安裝的檔案後，請按+鈕",
             "top_info1": "正在等待連線中... 你的Switch主機IP是: ",
             "failed": "遠端安裝失敗！",
-            "index_error": "檢索文件列表失敗",
-            "index_error_info": "確保 URL 指向有效的 Web 目錄索引或 Tinfoil 樣式 JSON.",
+            "index_error": "無法從伺服器擷取資料夾列表",
+            "index_error_info": "請確認URL指向有效的伺服器資料夾索引或Tinfoil來源的JSON",
             "transfer_interput": "檔案傳輸時發生錯誤，請檢查網路連線狀態是否正常",
             "source_string": " 透過區網進行安裝",
-            "buttons": "\ue0e3 透過網路安裝    \ue0f0 從 HTTP 目錄安裝    \ue0e2 說明    \ue0e1 取消",
+            "buttons": "\ue0e3 透過網路安裝    \ue0f0 透過HTTP資料夾安裝    \ue0e2 說明    \ue0e1 取消",
             "buttons1": "\ue0e0 選擇檔案    \ue0e3 全選    \ue0ef 安裝所選的檔案    \ue0e1 取消"
         },
         "sd": {
@@ -188,7 +188,7 @@
         "cancel_desc": "按B鈕取消"
     },
     "misc": {
-        "sd_free": "SD (可用空間)",
+        "sd_free": "SD卡(可用空間)",
         "battery_charge": "電池"
     }
 }
