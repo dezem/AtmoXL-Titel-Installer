@@ -138,7 +138,8 @@ namespace inst::ui {
     }
 
     void sdInstPage::selectNsp(int selectedIndex) {
-        long unsigned int nspIndex = this->menuIndices[selectedIndex];
+        long unsigned int nspIndex = 0;
+        if (this->menuIndices.size() > 0) nspIndex = this->menuIndices[selectedIndex];
 
         int dirListSize = this->ourDirectories.size();
         if (this->currentDir != "sdmc:/") dirListSize++;
