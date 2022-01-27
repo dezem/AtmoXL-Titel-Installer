@@ -53,7 +53,7 @@ namespace inst::ui {
         this->batteryValueText->SetColor(COLOR(getBatteryChargeText[1]));
         this->freeSpaceText = TextBlock::New(700, 49, "misc.sd_free"_lang+": " + getFreeSpaceText, 32);
         this->freeSpaceText->SetColor(COLOR("#FFFFFFFF"));
-        this->butText = TextBlock::New(10, 678, "main.buttons"_lang, 24);
+        this->butText = TextBlock::New(10, 678, "main.buttons"_lang, 22);
         this->butText->SetColor(COLOR("#FFFFFFFF"));
         this->optionMenu = pu::ui::elm::Menu::New(0, 95, 1280, COLOR("#67000000"), 94, 6);
         this->optionMenu->SetOnFocusColor(COLOR("#00000033"));
