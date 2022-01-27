@@ -62,7 +62,8 @@
             "transfer_interput": "An error occured during data transfer. Check your network connection.",
             "source_string": " over local network",
             "buttons": "\ue0e3 Install Over Internet    \ue0f0 Install From HTTP Directory    \ue0e2 Help    \ue0e1 Cancel",
-            "buttons1": "\ue0e0 Select File    \ue0e3 Select All    \ue0ef Install File(s)    \ue0e1 Cancel"
+            "buttons1": "\ue0e0 Select File    \ue0e3 Select All    \ue0ef Install File(s)    \ue0e2 Hide Installed    \ue0e1 Cancel",
+            "buttons1_show": "\ue0e0 Select File    \ue0e3 Select All    \ue0ef Install File(s)    \ue0e2 Show Installed    \ue0e1 Cancel"
         },
         "sd": {
             "help": {
