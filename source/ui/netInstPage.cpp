@@ -90,7 +90,8 @@ namespace inst::ui {
     }
 
     void netInstPage::selectTitle(int selectedIndex) {
-        long unsigned int urlIndex = this->menuIndices[selectedIndex];
+        long unsigned int urlIndex = 0;
+        if (this->menuIndices.size() > 0) urlIndex = this->menuIndices[selectedIndex];
 
         if (this->menu->GetItems()[selectedIndex]->GetIcon() == "romfs:/images/icons/check-box-outline.png") {
             for (long unsigned int i = 0; i < this->selectedUrls.size(); i++) {
