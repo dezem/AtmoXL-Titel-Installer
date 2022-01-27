@@ -62,7 +62,8 @@
             "transfer_interput": "Ha ocurrido un error al transmitir los datos. Comprueba tu conexión de red.",
             "source_string": " a través de red local",
             "buttons": "\ue0e3 Instalar Usando la Internet    \ue0f0 Instalar desde el directorio HTTP    \ue0e2 Ayuda    \ue0e1 Cancelar",
-            "buttons1": "\ue0e0 Selecionar Archivo    \ue0e3 Seleccionar Todos    \ue0ef Instalar Archivo(s)    \ue0e1 Cancelar"
+            "buttons1": "\ue0e0 Selecionar Archivo    \ue0e3 Seleccionar Todos    \ue0ef Instalar Archivo(s)    \ue0e2 Ocultar instalado    \ue0e1 Cancelar",
+            "buttons1_show": "\ue0e0 Selecionar Archivo    \ue0e3 Seleccionar Todos    \ue0ef Instalar Archivo(s)    \ue0e2 Mostrar instalado    \ue0e1 Cancelar"
         },
         "sd": {
             "help": {
@@ -74,7 +75,8 @@
             "delete_info": " instalado. ¿Borrarlo de la tarjeta SD?",
 	    "delete_info_multi": " archivos instalados con éxito. ¿Borrarlos de la tarjeta SD?",
             "delete_desc": "Los archivos originales no hacen falta después de ser instalados",
-            "buttons": "\ue0e0 Selecionar Archivo    \ue0e3 Seleccionar Todo    \ue0ef Instalar Archivo(s)    \ue0e2 Ayuda    \ue0e1 Cancelar"
+            "buttons": "\ue0e0 Selecionar Archivo    \ue0e3 Seleccionar Todo    \ue0ef Instalar Archivo(s)    \ue0e2 Ocultar instalado    \ue0e1 Cancelar",
+            "buttons_show": "\ue0e0 Selecionar Archivo    \ue0e3 Seleccionar Todo    \ue0ef Instalar Archivo(s)    \ue0e2 Mostrar instalado    \ue0e1 Cancelar"
         },
         "usb": {
             "help": {
@@ -98,7 +100,8 @@
             "delete_info": " instalado. ¿Borrarlo de la USB HDD?",
 	    "delete_info_multi": " archivos instalados con éxito. ¿Borrarlos de la USB HDD?",
             "delete_desc": "Los archivos originales no hacen falta después de ser instalados",
-            "buttons": "\ue0e0 Selecionar Archivo    \ue0e3 Seleccionar Todo    \ue0ef Instalar Archivo(s)    \ue0e2 Ayuda    \ue0e1 Cancelar"
+            "buttons": "\ue0e0 Selecionar Archivo    \ue0e3 Seleccionar Todo    \ue0ef Instalar Archivo(s)    \ue0e2 Ocultar instalado    \ue0e1 Cancelar",
+            "buttons_show": "\ue0e0 Selecionar Archivo    \ue0e3 Seleccionar Todo    \ue0ef Instalar Archivo(s)    \ue0e2 Mostrar instalado    \ue0e1 Cancelar"
         },
         "target": {
             "desc0": "¿Dónde debería instalarse ",

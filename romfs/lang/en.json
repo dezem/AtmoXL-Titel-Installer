@@ -75,7 +75,8 @@
             "delete_info": " installed! Delete it from the SD card?",
             "delete_info_multi": " files installed successfully! Delete them from the SD card?",
             "delete_desc": "The original files aren't needed anymore after they've been installed",
-            "buttons": "\ue0e0 Select File    \ue0e3 Select All    \ue0ef Install File(s)    \ue0e2 Help    \ue0e1 Cancel"
+            "buttons": "\ue0e0 Select File    \ue0e3 Select All    \ue0ef Install File(s)    \ue0e2 Hide Installed    \ue0e1 Cancel",
+            "buttons_show": "\ue0e0 Select File    \ue0e3 Select All    \ue0ef Install File(s)    \ue0e2 Show Installed    \ue0e1 Cancel"
         },
         "usb": {
             "help": {
@@ -99,7 +100,8 @@
             "delete_info": " installed! Delete it from the USB HDD?",
             "delete_info_multi": " files installed successfully! Delete them from the USB HDD?",
             "delete_desc": "The original files aren't needed anymore after they've been installed",
-            "buttons": "\ue0e0 Select File    \ue0e3 Select All    \ue0ef Install File(s)    \ue0e2 Help    \ue0e1 Cancel"
+            "buttons": "\ue0e0 Select File    \ue0e3 Select All    \ue0ef Install File(s)    \ue0e2 Hide Installed    \ue0e1 Cancel",
+            "buttons_show": "\ue0e0 Select File    \ue0e3 Select All    \ue0ef Install File(s)    \ue0e2 Show Installed    \ue0e1 Cancel"
         },
         "target": {
             "desc0": "Where should ",

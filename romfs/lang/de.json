@@ -62,7 +62,8 @@
             "transfer_interput": "Bei der Dateiübertragung ist ein Fehler aufgetreten.",
             "source_string": " über das lokale Netzwerk",
             "buttons": "\ue0e3 Installation über das Internet    \ue0f0 Aus dem HTTP-Verzeichnis installieren    \ue0e2 Hilfe    \ue0e1 Abbrechen",
-            "buttons1": "\ue0e0 Datei auswählen    \ue0e3 Alle auswählen    \ue0ef Datei(en) installieren    \ue0e1 Abbrechen"
+            "buttons1": "\ue0e0 Datei auswählen    \ue0e3 Alle auswählen    \ue0ef Datei(en) installieren    \ue0e2 verstecke installierte    \ue0e1 Abbrechen",
+            "buttons1_show": "\ue0e0 Datei auswählen    \ue0e3 Alle auswählen    \ue0ef Datei(en) installieren    \ue0e2 zeige installierte    \ue0e1 Abbrechen"
         },
         "sd": {
             "help": {
@@ -74,7 +75,8 @@
             "delete_info": " installiert! Soll es von der SD-Karte gelöscht werden?",
             "delete_info_multi": " Dateien erfolgreich installiert! Sollen diese von der SD-Karte gelöscht werden?",
             "delete_desc": "Die originalen Dateien werden nach der Installation nicht mehr benötigt",
-            "buttons": "\ue0e0 Datei auswählen    \ue0e3 Alle auswählen    \ue0ef Datei(en) installieren    \ue0e1 Abbrechen"
+            "buttons": "\ue0e0 Datei auswählen    \ue0e3 Alle auswählen    \ue0ef Datei(en) installieren    \ue0e2 verstecke installierte    \ue0e1 Abbrechen",
+            "buttons_show": "\ue0e0 Datei auswählen    \ue0e3 Alle auswählen    \ue0ef Datei(en) installieren    \ue0e2 zeige installierte    \ue0e1 Abbrechen"
         },
         "usb": {
             "help": {
@@ -98,7 +100,8 @@
             "delete_info": " installiert! Soll es von der USB HDD gelöscht werden?",
             "delete_info_multi": " Dateien erfolgreich installiert! Sollen diese von der USB HDD gelöscht werden?",
             "delete_desc": "Die originalen Dateien werden nach der Installation nicht mehr benötigt",
-            "buttons": "\ue0e0 Datei auswählen    \ue0e3 Alle auswählen    \ue0ef Datei(en) installieren    \ue0e1 Abbrechen"
+            "buttons": "\ue0e0 Datei auswählen    \ue0e3 Alle auswählen    \ue0ef Datei(en) installieren    \ue0e2 verstecke installierte    \ue0e1 Abbrechen",
+            "buttons_show": "\ue0e0 Datei auswählen    \ue0e3 Alle auswählen    \ue0ef Datei(en) installieren    \ue0e2 zeige installierte    \ue0e1 Abbrechen"
         },
         "target": {
             "desc0": "Wo soll ",

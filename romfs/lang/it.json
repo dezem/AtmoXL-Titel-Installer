@@ -62,7 +62,8 @@
             "transfer_interput": "Si è verificato un errore durante il trasferimento dei dati. Controlla la tua connessione.",
             "source_string": " via rete locale",
             "buttons": "\ue0e3 Installa via internet    \ue0f0 Installa da directory HTTP    \ue0e2 Aiuto    \ue0e1 Annulla",
-            "buttons1": "\ue0e0 Seleziona File    \ue0e3 Seleziona tutto    \ue0ef Installa i File    \ue0e1 Annulla"
+            "buttons1": "\ue0e0 Seleziona File    \ue0e3 Seleziona tutto    \ue0ef Installa i File    \ue0e2 nascondi Installato    \ue0e1 Annulla",
+            "buttons1_show": "\ue0e0 Seleziona File    \ue0e3 Seleziona tutto    \ue0ef Installa i File    \ue0e2 Mostra Installato    \ue0e1 Annulla"
         },
         "sd": {
             "help": {
@@ -74,7 +75,8 @@
             "delete_info": " installato! Cancellarlo dalla SD?",
             "delete_info_multi": " file installati correttamente! Cancellarli dalla SD?",
             "delete_desc": "I file originali non sono più necessari dopo averli installati",
-            "buttons": "\ue0e0 Seleziona File    \ue0e3 Seleziona tutto    \ue0ef Installa i File    \ue0e2 Aiuto    \ue0e1 Annulla"
+            "buttons": "\ue0e0 Seleziona File    \ue0e3 Seleziona tutto    \ue0ef Installa i File    \ue0e2 nascondi Installato    \ue0e1 Annulla",
+            "buttons_show": "\ue0e0 Seleziona File    \ue0e3 Seleziona tutto    \ue0ef Installa i File    \ue0e2 Mostra Installato    \ue0e1 Annulla"
         },
         "usb": {
             "help": {
@@ -98,7 +100,8 @@
             "delete_info": " installato! Cancellarlo dalla USB HDD?",
             "delete_info_multi": " file installati correttamente! Cancellarli dalla USB HDD?",
             "delete_desc": "I file originali non sono più necessari dopo averli installati",
-            "buttons": "\ue0e0 Seleziona File    \ue0e3 Seleziona tutto    \ue0ef Installa i File    \ue0e2 Aiuto    \ue0e1 Annulla"
+            "buttons": "\ue0e0 Seleziona File    \ue0e3 Seleziona tutto    \ue0ef Installa i File    \ue0e2 nascondi Installato    \ue0e1 Annulla",
+            "buttons_show": "\ue0e0 Seleziona File    \ue0e3 Seleziona tutto    \ue0ef Installa i File    \ue0e2 Mostra Installato    \ue0e1 Annulla"
         },
         "target": {
             "desc0": "Dove vuoi installare ",

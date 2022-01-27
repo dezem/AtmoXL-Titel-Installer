@@ -62,7 +62,8 @@
             "transfer_interput": "파일 전송 중 오류가 발생했습니다. 네트워크 연결이 정상인지 확인하세요.",
             "source_string": " 근거리 통신망을 통해 설치",
             "buttons": "\ue0e3 네트워크를 통해 설치    \ue0f0 HTTP 디렉토리에서 설치    \ue0e2 도움말    \ue0e1 취소",
-            "buttons1": "\ue0e0 파일 선택    \ue0e3 모두 선택    \ue0ef 선택한 파일 설치    \ue0e1 취소"
+            "buttons1": "\ue0e0 파일 선택    \ue0e3 모두 선택    \ue0ef 선택한 파일 설치    \ue0e2 숨기기 설치된    \ue0e1 취소",
+            "buttons1_show": "\ue0e0 파일 선택    \ue0e3 모두 선택    \ue0ef 선택한 파일 설치    \ue0e2 설치된 표시    \ue0e1 취소"
         },
         "sd": {
             "help": {
@@ -74,7 +75,8 @@
             "delete_info": " 설치가 완료되었습니다! SD 메모리 카드에서 파일을 삭제하시겠습니까?",
             "delete_info_multi": " 선택한 파일이 모두 설치되었습니다! SD 메모리 카드에서 선택한 파일을 삭제하시겠습니까?",
             "delete_desc": "설치가 완료되면 원본 파일은 더 이상 사용되지 않습니다.",
-            "buttons": "\ue0e0 파일 선택    \ue0e3 모두 선택    \ue0ef 선택한 파일 설치    \ue0e2 도움말    \ue0e1 취소"
+            "buttons": "\ue0e0 파일 선택    \ue0e3 모두 선택    \ue0ef 선택한 파일 설치    \ue0e2 숨기기 설치된    \ue0e1 취소",
+            "buttons_show": "\ue0e0 파일 선택    \ue0e3 모두 선택    \ue0ef 선택한 파일 설치    \ue0e2 설치된 표시    \ue0e1 취소"
         },
         "usb": {
             "help": {
@@ -98,7 +100,8 @@
             "delete_info": " 설치되었습니다!\nUSB HDD에서 파일을 삭제하시겠습니까?",
             "delete_info_multi": " 선택한 파일이 모두 설치되었습니다!\nUSB HDD에서 파일을 삭제하시겠습니까?",
             "delete_desc": " 설치가 완료되면 원본 파일은 더 이상 사용되지 않습니다. ",
-            "buttons": "\ue0e0 파일 선택    \ue0e3 모두 선택    \ue0ef 선택한 파일 설치    \ue0e2 설명    \ue0e1 취소"
+            "buttons": "\ue0e0 파일 선택    \ue0e3 모두 선택    \ue0ef 선택한 파일 설치    \ue0e2 숨기기 설치된    \ue0e1 취소",
+            "buttons_show": "\ue0e0 파일 선택    \ue0e3 모두 선택    \ue0ef 선택한 파일 설치    \ue0e2 설치된 표시    \ue0e1 취소"
 	    },
         "target": {
             "desc0": " ",
