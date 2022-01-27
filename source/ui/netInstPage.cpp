@@ -65,46 +65,32 @@ namespace inst::ui {
         if (clearItems) this->selectedUrls = {};
         if (clearItems) this->alternativeNames = {};
         this->menu->ClearItems();
+        this->menuIndices = {};
 
-        const std::regex idRegex(".*\\[([0-9a-fA-F]+)]\\[v(\\d+)].*");
+        for (long unsigned int i = 0; i < this->ourUrls.size(); i++) {
+            auto& url = this->ourUrls[i];
 
-        for (auto& url: this->ourUrls) {
             std::string formattedURL = inst::util::formatUrlString(url);
 
-            std::smatch match;
-            if (hideInstalled and std::regex_match(formattedURL, match, idRegex)) {
-                u64 id = stol(match[1], nullptr, 16);
-                u32 version = stoi(match[2]);
-                bool installed = false;
-                for (const auto &title: installedTitles)
-                    if (id == title.first and version <= title.second) {
-                        installed = true;
-                        break;
-                    }
-                if (installed)
-                    continue;
-            }
+            if (hideInstalled and inst::util::isTitleInstalled(formattedURL, installedTitles))
+                continue;
 
             std::string itm = inst::util::shortenString(formattedURL, 56, true);
             auto ourEntry = pu::ui::elm::MenuItem::New(itm);
             ourEntry->SetColor(COLOR("#FFFFFFFF"));
             ourEntry->SetIcon("romfs:/images/icons/checkbox-blank-outline.png");
-            for (long unsigned int i = 0; i < this->selectedUrls.size(); i++) {
-                if (this->selectedUrls[i] == url) {
+            for (long unsigned int j = 0; j < this->selectedUrls.size(); j++) {
+                if (this->selectedUrls[j] == url) {
                     ourEntry->SetIcon("romfs:/images/icons/check-box-outline.png");
                 }
             }
             this->menu->AddItem(ourEntry);
+            this->menuIndices.push_back(i);
         }
     }
 
     void netInstPage::selectTitle(int selectedIndex) {
-        long unsigned int urlIndex = 0;
-        for (long unsigned int i = 0; i < this->ourUrls.size(); i++)
-            if (inst::util::shortenString(inst::util::formatUrlString(this->ourUrls[i]), 56, true) == this->menu->GetItems()[selectedIndex]->GetName()) {
-                urlIndex = i;
-                break;
-            }
+        long unsigned int urlIndex = this->menuIndices[selectedIndex];
 
         if (this->menu->GetItems()[selectedIndex]->GetIcon() == "romfs:/images/icons/check-box-outline.png") {
             for (long unsigned int i = 0; i < this->selectedUrls.size(); i++) {
@@ -164,7 +150,7 @@ namespace inst::ui {
             netConnected = true;
             this->pageInfoText->SetText("inst.net.top_info"_lang);
             this->butText->SetText(hideInstalled ? "inst.net.buttons1_show"_lang : "inst.net.buttons1"_lang);
-            installedTitles = installedTitles = inst::util::listInstalledTitles();
+            installedTitles = inst::util::listInstalledTitles();
             this->drawMenuItems(true);
             this->menu->SetSelectedIndex(0);
             mainApp->CallForRender();

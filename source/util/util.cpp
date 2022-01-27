@@ -439,6 +439,19 @@ namespace inst::util {
         return installedTitles;
     }
     
+    bool isTitleInstalled(std::string filename, const std::vector<std::pair<u64, u32>> &installedTitles) {
+        static const std::regex idRegex(".*\\[([0-9a-fA-F]+)]\\[v(\\d+)].*");
+        std::smatch match;
+        if (std::regex_match(filename, match, idRegex)) {
+            u64 id = stol(match[1], nullptr, 16);
+            u32 version = stoi(match[2]);
+            for (const auto &title: installedTitles)
+                if (id == title.first and version <= title.second)
+                    return true;
+        }
+        return false;
+    }
+
    std::vector<std::string> checkForAppUpdate () {
         try {
             std::string jsonData = inst::curl::downloadToBuffer("https://api.github.com/repos/dezem/AtmoXL-Titel-Installer/releases/latest", 0, 0, 1000L);

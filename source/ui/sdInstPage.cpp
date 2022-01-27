@@ -63,8 +63,7 @@ namespace inst::ui {
         if (ourPath == "sdmc:") this->currentDir = std::filesystem::path(ourPath.string() + "/");
         else this->currentDir = ourPath;
         this->menu->ClearItems();
-
-        const std::regex idRegex(".*\\[([0-9a-fA-F]+)]\\[v(\\d+)].*");
+        this->menuIndices = {};
 
         try {
             this->ourDirectories = util::getDirsAtPath(this->currentDir);
@@ -88,32 +87,24 @@ namespace inst::ui {
             ourEntry->SetIcon("romfs:/images/icons/folder.png");
             this->menu->AddItem(ourEntry);
         }
-        for (auto& file: this->ourFiles) {
+        for (long unsigned int i = 0; i < this->ourFiles.size(); i++) {
+            auto& file = this->ourFiles[i];
+
             std::string itm = file.filename().string();
 
-            std::smatch match;
-            if (hideInstalled and std::regex_match(itm, match, idRegex)) {
-                u64 id = stol(match[1], nullptr, 16);
-                u32 version = stoi(match[2]);
-                bool installed = false;
-                for (const auto &title: installedTitles)
-                    if (id == title.first and version <= title.second) {
-                        installed = true;
-                        break;
-                    }
-                if (installed)
-                    continue;
-            }
+            if (hideInstalled and inst::util::isTitleInstalled(itm, installedTitles))
+                continue;
 
             auto ourEntry = pu::ui::elm::MenuItem::New(itm);
             ourEntry->SetColor(COLOR("#FFFFFFFF"));
             ourEntry->SetIcon("romfs:/images/icons/checkbox-blank-outline.png");
-            for (long unsigned int i = 0; i < this->selectedTitles.size(); i++) {
-                if (this->selectedTitles[i] == file) {
+            for (long unsigned int j = 0; j < this->selectedTitles.size(); j++) {
+                if (this->selectedTitles[j] == file) {
                     ourEntry->SetIcon("romfs:/images/icons/check-box-outline.png");
                 }
             }
             this->menu->AddItem(ourEntry);
+            this->menuIndices.push_back(i);
         }
     }
 
@@ -147,12 +138,7 @@ namespace inst::ui {
     }
 
     void sdInstPage::selectNsp(int selectedIndex) {
-        long unsigned int nspIndex = 0;
-        for (long unsigned int i = 0; i < this->ourFiles.size(); i++)
-            if (this->ourFiles[i].filename().string() == this->menu->GetItems()[selectedIndex]->GetName()) {
-                nspIndex = i;
-                break;
-            }
+        long unsigned int nspIndex = this->menuIndices[selectedIndex];
 
         int dirListSize = this->ourDirectories.size();
         if (this->currentDir != "sdmc:/") dirListSize++;
