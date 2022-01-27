@@ -28,7 +28,6 @@ namespace inst::ui {
             Rectangle::Ref botRect;
             pu::ui::elm::Menu::Ref menu;
             Image::Ref infoImage;
-            void listInstalledTitles();
             void drawMenuItems(bool clearItems);
             void selectTitle(int selectedIndex);
     };

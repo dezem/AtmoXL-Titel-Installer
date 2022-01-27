@@ -417,6 +417,27 @@ namespace inst::util {
         psmExit();
         return batValue;
     }
+
+    std::vector<std::pair<u64, u32>> listInstalledTitles() {
+        std::vector<std::pair<u64, u32>> installedTitles = {};
+        const NcmStorageId storageIDs[]{NcmStorageId_SdCard, NcmStorageId_BuiltInUser};
+        for (const auto storageID : storageIDs) {
+            NcmContentMetaDatabase metaDatabase = {};
+            if(R_SUCCEEDED(ncmOpenContentMetaDatabase(&metaDatabase, storageID))) {
+                auto metaKeys = new NcmContentMetaKey[64000]();
+                s32 written = 0;
+                s32 total = 0;
+                if(R_SUCCEEDED(ncmContentMetaDatabaseList(&metaDatabase, &total, &written, metaKeys, 64000, NcmContentMetaType_Unknown, 0, 0, UINT64_MAX, NcmContentInstallType_Full)) && (written > 0))
+                    for(s32 i = 0; i < written; i++) {
+                        const auto &metaKey = metaKeys[i];
+                        installedTitles.push_back({metaKey.id, metaKey.version});
+                    }
+                delete[] metaKeys;
+                ncmContentMetaDatabaseClose(&metaDatabase);
+            }
+        }
+        return installedTitles;
+    }
     
    std::vector<std::string> checkForAppUpdate () {
         try {

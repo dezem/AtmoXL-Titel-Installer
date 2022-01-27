@@ -61,26 +61,6 @@ namespace inst::ui {
         this->AddThread(std::bind(&netInstPage::updateStatsThread, this));
     }
 
-    void netInstPage::listInstalledTitles() {
-        installedTitles = {};
-        const NcmStorageId storageIDs[]{NcmStorageId_SdCard, NcmStorageId_BuiltInUser};
-        for (const auto storageID : storageIDs) {
-            NcmContentMetaDatabase metaDatabase = {};
-            if(R_SUCCEEDED(ncmOpenContentMetaDatabase(&metaDatabase, storageID))) {
-                auto metaKeys = new NcmContentMetaKey[64000]();
-                s32 written = 0;
-                s32 total = 0;
-                if(R_SUCCEEDED(ncmContentMetaDatabaseList(&metaDatabase, &total, &written, metaKeys, 64000, NcmContentMetaType_Unknown, 0, 0, UINT64_MAX, NcmContentInstallType_Full)) && (written > 0))
-                    for(s32 i = 0; i < written; i++) {
-                        const auto &metaKey = metaKeys[i];
-                        installedTitles.push_back({metaKey.id, metaKey.version});
-                    }
-                delete[] metaKeys;
-                ncmContentMetaDatabaseClose(&metaDatabase);
-            }
-        }
-    }
-
     void netInstPage::drawMenuItems(bool clearItems) {
         if (clearItems) this->selectedUrls = {};
         if (clearItems) this->alternativeNames = {};
@@ -184,7 +164,7 @@ namespace inst::ui {
             netConnected = true;
             this->pageInfoText->SetText("inst.net.top_info"_lang);
             this->butText->SetText(hideInstalled ? "inst.net.buttons1_show"_lang : "inst.net.buttons1"_lang);
-            listInstalledTitles();
+            installedTitles = installedTitles = inst::util::listInstalledTitles();
             this->drawMenuItems(true);
             this->menu->SetSelectedIndex(0);
             mainApp->CallForRender();
@@ -208,6 +188,7 @@ namespace inst::ui {
             return;
         }
         netInstStuff::installTitleNet(this->selectedUrls, dialogResult, this->alternativeNames, sourceString);
+        inst::util::listInstalledTitles();
         return;
     }
 

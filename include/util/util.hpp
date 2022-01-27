@@ -24,5 +24,6 @@ namespace inst::util {
     void lightningStart();
     void lightningStop();
     std::string* getBatteryCharge();
+    std::vector<std::pair<u64, u32>> listInstalledTitles();
     std::vector<std::string> checkForAppUpdate();
 }
