@@ -21,6 +21,8 @@ namespace inst::ui {
             std::vector<std::string> ourUrls;
             std::vector<std::string> selectedUrls;
             std::vector<std::string> alternativeNames;
+            std::vector<std::pair<u64, u32>> installedTitles;
+            std::vector<long unsigned int> menuIndices;
             TextBlock::Ref butText;
             Rectangle::Ref topRect;
             Rectangle::Ref infoRect;

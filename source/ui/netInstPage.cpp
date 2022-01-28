@@ -9,6 +9,7 @@
 #include "util/lang.hpp"
 #include "netInstall.hpp"
 #include "nx/fs.hpp"
+#include <regex>
 
 #define COLOR(hex) pu::ui::Color::FromHex(hex)
 
@@ -21,6 +22,7 @@ namespace inst::ui {
     static std::string getFreeSpaceOldText = getFreeSpaceText;
     static std::string* getBatteryChargeText = inst::util::getBatteryCharge();
     static std::string* getBatteryChargeOldText = getBatteryChargeText;
+    static bool hideInstalled = false;
 
     netInstPage::netInstPage() : Layout::Layout() {
         this->SetBackgroundColor(COLOR("#670000FF"));
@@ -38,7 +40,7 @@ namespace inst::ui {
         this->freeSpaceText->SetColor(COLOR("#FFFFFFFF"));
         this->pageInfoText = TextBlock::New(10, 109, "", 30);
         this->pageInfoText->SetColor(COLOR("#FFFFFFFF"));
-        this->butText = TextBlock::New(10, 678, "", 24);
+        this->butText = TextBlock::New(10, 678, "", 22);
         this->butText->SetColor(COLOR("#FFFFFFFF"));
         this->menu = pu::ui::elm::Menu::New(0, 156, 1280, COLOR("#FFFFFF00"), 84, (506 / 84));
         this->menu->SetOnFocusColor(COLOR("#00000033"));
@@ -63,26 +65,39 @@ namespace inst::ui {
         if (clearItems) this->selectedUrls = {};
         if (clearItems) this->alternativeNames = {};
         this->menu->ClearItems();
-        for (auto& url: this->ourUrls) {
-            std::string itm = inst::util::shortenString(inst::util::formatUrlString(url), 56, true);
+        this->menuIndices = {};
+
+        for (long unsigned int i = 0; i < this->ourUrls.size(); i++) {
+            auto& url = this->ourUrls[i];
+
+            std::string formattedURL = inst::util::formatUrlString(url);
+
+            if (hideInstalled and inst::util::isTitleInstalled(formattedURL, installedTitles))
+                continue;
+
+            std::string itm = inst::util::shortenString(formattedURL, 56, true);
             auto ourEntry = pu::ui::elm::MenuItem::New(itm);
             ourEntry->SetColor(COLOR("#FFFFFFFF"));
             ourEntry->SetIcon("romfs:/images/icons/checkbox-blank-outline.png");
-            for (long unsigned int i = 0; i < this->selectedUrls.size(); i++) {
-                if (this->selectedUrls[i] == url) {
+            for (long unsigned int j = 0; j < this->selectedUrls.size(); j++) {
+                if (this->selectedUrls[j] == url) {
                     ourEntry->SetIcon("romfs:/images/icons/check-box-outline.png");
                 }
             }
             this->menu->AddItem(ourEntry);
+            this->menuIndices.push_back(i);
         }
     }
 
     void netInstPage::selectTitle(int selectedIndex) {
+        long unsigned int urlIndex = 0;
+        if (this->menuIndices.size() > 0) urlIndex = this->menuIndices[selectedIndex];
+
         if (this->menu->GetItems()[selectedIndex]->GetIcon() == "romfs:/images/icons/check-box-outline.png") {
             for (long unsigned int i = 0; i < this->selectedUrls.size(); i++) {
-                if (this->selectedUrls[i] == this->ourUrls[selectedIndex]) this->selectedUrls.erase(this->selectedUrls.begin() + i);
+                if (this->selectedUrls[i] == this->ourUrls[urlIndex]) this->selectedUrls.erase(this->selectedUrls.begin() + i);
             }
-        } else this->selectedUrls.push_back(this->ourUrls[selectedIndex]);
+        } else this->selectedUrls.push_back(this->ourUrls[urlIndex]);
         this->drawMenuItems(false);
     }
 
@@ -135,7 +150,8 @@ namespace inst::ui {
             sourceString = "inst.net.source_string"_lang;
             netConnected = true;
             this->pageInfoText->SetText("inst.net.top_info"_lang);
-            this->butText->SetText("inst.net.buttons1"_lang);
+            this->butText->SetText(hideInstalled ? "inst.net.buttons1_show"_lang : "inst.net.buttons1"_lang);
+            installedTitles = inst::util::listInstalledTitles();
             this->drawMenuItems(true);
             this->menu->SetSelectedIndex(0);
             mainApp->CallForRender();
@@ -159,6 +175,7 @@ namespace inst::ui {
             return;
         }
         netInstStuff::installTitleNet(this->selectedUrls, dialogResult, this->alternativeNames, sourceString);
+        inst::util::listInstalledTitles();
         return;
     }
 
@@ -191,6 +208,18 @@ namespace inst::ui {
                     this->drawMenuItems(false);
                 }
             }
+            if (Down & HidNpadButton_X) {
+                hideInstalled = !hideInstalled;
+                this->butText->SetText(hideInstalled ? "inst.net.buttons1_show"_lang : "inst.net.buttons1"_lang);
+                this->drawMenuItems(true);
+                this->menu->SetSelectedIndex(0);
+            }
+
+            if (Down & HidNpadButton_ZL)
+                this->menu->SetSelectedIndex(std::max(0, this->menu->GetSelectedIndex() - 6));
+            if (Down & HidNpadButton_ZR)
+                this->menu->SetSelectedIndex(std::min((s32)this->menu->GetItems().size() - 1, this->menu->GetSelectedIndex() + 6));
+
             if (Down & HidNpadButton_Plus) {
                 if (this->selectedUrls.size() == 0) {
                     this->selectTitle(this->menu->GetSelectedIndex());

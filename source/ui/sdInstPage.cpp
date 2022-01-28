@@ -7,6 +7,7 @@
 #include "util/config.hpp"
 #include "util/lang.hpp"
 #include "nx/fs.hpp"
+#include <regex>
 
 #define COLOR(hex) pu::ui::Color::FromHex(hex)
 
@@ -19,6 +20,7 @@ namespace inst::ui {
     static std::string* getBatteryChargeOldText = getBatteryChargeText;
     static std::vector <int> lastIndex;
     static int subPathCounter = 0;
+    static bool hideInstalled = false;
 
     sdInstPage::sdInstPage() : Layout::Layout() {
         this->SetBackgroundColor(COLOR("#670000FF"));
@@ -36,7 +38,7 @@ namespace inst::ui {
         this->freeSpaceText->SetColor(COLOR("#FFFFFFFF"));
         this->pageInfoText = TextBlock::New(10, 109, "inst.sd.top_info"_lang, 30);
         this->pageInfoText->SetColor(COLOR("#FFFFFFFF"));
-        this->butText = TextBlock::New(10, 678, "inst.sd.buttons"_lang, 24);
+        this->butText = TextBlock::New(10, 678, "inst.sd.buttons"_lang, 22);
         this->butText->SetColor(COLOR("#FFFFFFFF"));
         this->menu = pu::ui::elm::Menu::New(0, 156, 1280, COLOR("#FFFFFF00"), 84, (506 / 84));
         this->menu->SetOnFocusColor(COLOR("#00000033"));
@@ -52,6 +54,7 @@ namespace inst::ui {
         this->Add(this->pageInfoText);
         this->Add(this->menu);
         this->updateStatsThread();
+        installedTitles = inst::util::listInstalledTitles();
         this->AddThread(std::bind(&sdInstPage::updateStatsThread, this));
     }
 
@@ -61,6 +64,8 @@ namespace inst::ui {
         if (ourPath == "sdmc:") this->currentDir = std::filesystem::path(ourPath.string() + "/");
         else this->currentDir = ourPath;
         this->menu->ClearItems();
+        this->menuIndices = {};
+
         try {
             this->ourDirectories = util::getDirsAtPath(this->currentDir);
             this->ourFiles = util::getDirectoryFiles(this->currentDir, {".nsp", ".nsz", ".xci", ".xcz"});
@@ -83,17 +88,24 @@ namespace inst::ui {
             ourEntry->SetIcon("romfs:/images/icons/folder.png");
             this->menu->AddItem(ourEntry);
         }
-        for (auto& file: this->ourFiles) {
+        for (long unsigned int i = 0; i < this->ourFiles.size(); i++) {
+            auto& file = this->ourFiles[i];
+
             std::string itm = file.filename().string();
+
+            if (hideInstalled and inst::util::isTitleInstalled(itm, installedTitles))
+                continue;
+
             auto ourEntry = pu::ui::elm::MenuItem::New(itm);
             ourEntry->SetColor(COLOR("#FFFFFFFF"));
             ourEntry->SetIcon("romfs:/images/icons/checkbox-blank-outline.png");
-            for (long unsigned int i = 0; i < this->selectedTitles.size(); i++) {
-                if (this->selectedTitles[i] == file) {
+            for (long unsigned int j = 0; j < this->selectedTitles.size(); j++) {
+                if (this->selectedTitles[j] == file) {
                     ourEntry->SetIcon("romfs:/images/icons/check-box-outline.png");
                 }
             }
             this->menu->AddItem(ourEntry);
+            this->menuIndices.push_back(i);
         }
     }
 
@@ -129,11 +141,15 @@ namespace inst::ui {
     void sdInstPage::selectNsp(int selectedIndex) {
         int dirListSize = this->ourDirectories.size();
         if (this->currentDir != "sdmc:/") dirListSize++;
+
+        long unsigned int nspIndex = 0;
+        if (this->menuIndices.size() > 0) nspIndex = this->menuIndices[selectedIndex - dirListSize];
+
         if (this->menu->GetItems()[selectedIndex]->GetIcon() == "romfs:/images/icons/check-box-outline.png") {
             for (long unsigned int i = 0; i < this->selectedTitles.size(); i++) {
-                if (this->selectedTitles[i] == this->ourFiles[selectedIndex - dirListSize]) this->selectedTitles.erase(this->selectedTitles.begin() + i);
+                if (this->selectedTitles[i] == this->ourFiles[nspIndex]) this->selectedTitles.erase(this->selectedTitles.begin() + i);
             }
-        } else if (this->menu->GetItems()[selectedIndex]->GetIcon() == "romfs:/images/icons/checkbox-blank-outline.png") this->selectedTitles.push_back(this->ourFiles[selectedIndex - dirListSize]);
+        } else if (this->menu->GetItems()[selectedIndex]->GetIcon() == "romfs:/images/icons/checkbox-blank-outline.png") this->selectedTitles.push_back(this->ourFiles[nspIndex]);
         else {
             this->followDirectory();
             return;
@@ -148,6 +164,7 @@ namespace inst::ui {
         } else dialogResult = mainApp->CreateShowDialog("inst.target.desc00"_lang + std::to_string(this->selectedTitles.size()) + "inst.target.desc01"_lang, "common.cancel_desc"_lang, {"inst.target.opt0"_lang, "inst.target.opt1"_lang}, false);
         if (dialogResult == -1) return;
         nspInstStuff::installNspFromFile(this->selectedTitles, dialogResult);
+        installedTitles = inst::util::listInstalledTitles();
     }
 
     void sdInstPage::onInput(u64 Down, u64 Up, u64 Held, pu::ui::Touch Pos) {
@@ -178,8 +195,21 @@ namespace inst::ui {
                 this->drawMenuItems(false, currentDir);
             }
         }
+        /* Remove help...need space
         if ((Down & HidNpadButton_X)) {
             inst::ui::mainApp->CreateShowDialog("inst.sd.help.title"_lang, "inst.sd.help.desc"_lang, {"common.ok"_lang}, true);
+        }*/
+
+        if (Down & HidNpadButton_ZL)
+            this->menu->SetSelectedIndex(std::max(0, this->menu->GetSelectedIndex() - 6));
+        if (Down & HidNpadButton_ZR)
+            this->menu->SetSelectedIndex(std::min((s32)this->menu->GetItems().size() - 1, this->menu->GetSelectedIndex() + 6));
+
+        if (Down & HidNpadButton_X) {
+            hideInstalled = !hideInstalled;
+            this->butText->SetText(hideInstalled ? "inst.sd.buttons_show"_lang : "inst.sd.buttons"_lang);
+            this->drawMenuItems(true, currentDir);
+            this->menu->SetSelectedIndex(0);
         }
         if (Down & HidNpadButton_Plus) {
             if (this->selectedTitles.size() == 0 && this->menu->GetItems()[this->menu->GetSelectedIndex()]->GetIcon() == "romfs:/images/icons/checkbox-blank-outline.png") {

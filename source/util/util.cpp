@@ -16,6 +16,7 @@
 #include "util/usb_comms_awoo.h"
 #include "util/json.hpp"
 #include "nx/usbhdd.h"
+#include "util/error.hpp"
 
 namespace inst::util {
     void initApp () {
@@ -30,9 +31,14 @@ namespace inst::util {
         awoo_usbCommsInitialize();
 
 		nx::hdd::init();
+
+        if(R_FAILED(ncmInitialize()))
+            LOG_DEBUG("Failed to initialize ncm\n");
     }
 
     void deinitApp () {
+        ncmExit();
+
 		nx::hdd::exit();
         socketExit();
         awoo_usbCommsExit();
@@ -411,7 +417,41 @@ namespace inst::util {
         psmExit();
         return batValue;
     }
+
+    std::vector<std::pair<u64, u32>> listInstalledTitles() {
+        std::vector<std::pair<u64, u32>> installedTitles = {};
+        const NcmStorageId storageIDs[]{NcmStorageId_SdCard, NcmStorageId_BuiltInUser};
+        for (const auto storageID : storageIDs) {
+            NcmContentMetaDatabase metaDatabase = {};
+            if(R_SUCCEEDED(ncmOpenContentMetaDatabase(&metaDatabase, storageID))) {
+                auto metaKeys = new NcmContentMetaKey[64000]();
+                s32 written = 0;
+                s32 total = 0;
+                if(R_SUCCEEDED(ncmContentMetaDatabaseList(&metaDatabase, &total, &written, metaKeys, 64000, NcmContentMetaType_Unknown, 0, 0, UINT64_MAX, NcmContentInstallType_Full)) && (written > 0))
+                    for(s32 i = 0; i < written; i++) {
+                        const auto &metaKey = metaKeys[i];
+                        installedTitles.push_back({metaKey.id, metaKey.version});
+                    }
+                delete[] metaKeys;
+                ncmContentMetaDatabaseClose(&metaDatabase);
+            }
+        }
+        return installedTitles;
+    }
     
+    bool isTitleInstalled(std::string filename, const std::vector<std::pair<u64, u32>> &installedTitles) {
+        static const std::regex idRegex(".*\\[([0-9a-fA-F]+)]\\[v(\\d+)].*");
+        std::smatch match;
+        if (std::regex_match(filename, match, idRegex)) {
+            u64 id = stol(match[1], nullptr, 16);
+            u32 version = stoi(match[2]);
+            for (const auto &title: installedTitles)
+                if (id == title.first and version <= title.second)
+                    return true;
+        }
+        return false;
+    }
+
    std::vector<std::string> checkForAppUpdate () {
         try {
             std::string jsonData = inst::curl::downloadToBuffer("https://api.github.com/repos/dezem/AtmoXL-Titel-Installer/releases/latest", 0, 0, 1000L);
