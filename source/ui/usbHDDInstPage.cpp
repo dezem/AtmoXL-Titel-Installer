@@ -56,6 +56,7 @@ namespace inst::ui {
     }
 
     void usbHDDInstPage::drawMenuItems(bool clearItems, std::filesystem::path ourPath) {
+        subPathCounter = 0;
         if (clearItems) this->selectedTitles = {};
 		this->currentDir = ourPath;
 

@@ -56,6 +56,7 @@ namespace inst::ui {
     }
 
     void sdInstPage::drawMenuItems(bool clearItems, std::filesystem::path ourPath) {
+        subPathCounter = 0;
         if (clearItems) this->selectedTitles = {};
         if (ourPath == "sdmc:") this->currentDir = std::filesystem::path(ourPath.string() + "/");
         else this->currentDir = ourPath;
