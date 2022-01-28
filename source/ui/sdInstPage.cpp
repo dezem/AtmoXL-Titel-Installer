@@ -197,6 +197,12 @@ namespace inst::ui {
         if ((Down & HidNpadButton_X)) {
             inst::ui::mainApp->CreateShowDialog("inst.sd.help.title"_lang, "inst.sd.help.desc"_lang, {"common.ok"_lang}, true);
         }*/
+
+        if (Down & HidNpadButton_ZL)
+            this->menu->SetSelectedIndex(std::max(0, this->menu->GetSelectedIndex() - 6));
+        if (Down & HidNpadButton_ZR)
+            this->menu->SetSelectedIndex(std::min((s32)this->menu->GetItems().size() - 1, this->menu->GetSelectedIndex() + 6));
+
         if (Down & HidNpadButton_X) {
             hideInstalled = !hideInstalled;
             this->butText->SetText(hideInstalled ? "inst.sd.buttons_show"_lang : "inst.sd.buttons"_lang);
