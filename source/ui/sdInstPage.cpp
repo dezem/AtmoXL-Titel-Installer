@@ -138,11 +138,12 @@ namespace inst::ui {
     }
 
     void sdInstPage::selectNsp(int selectedIndex) {
-        long unsigned int nspIndex = 0;
-        if (this->menuIndices.size() > 0) nspIndex = this->menuIndices[selectedIndex];
-
         int dirListSize = this->ourDirectories.size();
         if (this->currentDir != "sdmc:/") dirListSize++;
+
+        long unsigned int nspIndex = 0;
+        if (this->menuIndices.size() > 0) nspIndex = this->menuIndices[selectedIndex - dirListSize];
+
         if (this->menu->GetItems()[selectedIndex]->GetIcon() == "romfs:/images/icons/check-box-outline.png") {
             for (long unsigned int i = 0; i < this->selectedTitles.size(); i++) {
                 if (this->selectedTitles[i] == this->ourFiles[nspIndex]) this->selectedTitles.erase(this->selectedTitles.begin() + i);
