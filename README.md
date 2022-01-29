@@ -37,7 +37,7 @@ Use your wanted HEX colors -> https://www.w3schools.com/colors/colors_picker.asp
 - DarkMatterCore, XorTroll and Rhys Koedijk for [libusbhsfs](https://github.com/DarkMatterCore/libusbhsfs)
 - TheLogicMaster for contributing 
   [HTTP Directory Indexing](https://github.com/dezem/AtmoXL-Titel-Installer/pull/18) 
-  https://github.com/dezem/AtmoXL-Titel-Installer/pull/19 
-  https://github.com/dezem/AtmoXL-Titel-Installer/pull/22
-  https://github.com/dezem/AtmoXL-Titel-Installer/pull/24
+  [Net install hide installed content option](https://github.com/dezem/AtmoXL-Titel-Installer/pull/19)
+  [Page up and page down for fast scrolling](https://github.com/dezem/AtmoXL-Titel-Installer/pull/22)
+  [Update for new font render](https://github.com/dezem/AtmoXL-Titel-Installer/pull/24)
 
