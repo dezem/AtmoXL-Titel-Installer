@@ -2,6 +2,7 @@
 A No-Bullshit NSP, NSZ, XCI, and XCZ Installer for Nintendo Switch
 
 ![AtmoXL-Titel-Installer Main](https://raw.githubusercontent.com/dezem/AtmoXL-Titel-Installer/master/AtmoXL-Titel-Installer-Main.jpg)
+![AtmoXL-Titel-Installer Main Color](https://raw.githubusercontent.com/dezem/AtmoXL-Titel-Installer/master/AtmoXL-Titel-Installer-Main-Color.jpg)
 
 ## Features
 - Installs NSP/NSZ/XCI/XCZ files and split NSP/XCI files from your SD card
