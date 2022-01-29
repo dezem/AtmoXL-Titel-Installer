@@ -2,7 +2,6 @@
 A No-Bullshit NSP, NSZ, XCI, and XCZ Installer for Nintendo Switch
 
 ![AtmoXL-Titel-Installer Main](https://raw.githubusercontent.com/dezem/AtmoXL-Titel-Installer/master/AtmoXL-Titel-Installer-Main.jpg)
-![AtmoXL-Titel-Installer Main Color](https://raw.githubusercontent.com/dezem/AtmoXL-Titel-Installer/master/AtmoXL-Titel-Installer-Main-Color.jpg)
 
 ## Features
 - Installs NSP/NSZ/XCI/XCZ files and split NSP/XCI files from your SD card
@@ -16,6 +15,18 @@ A No-Bullshit NSP, NSZ, XCI, and XCZ Installer for Nintendo Switch
 - Uses [XorTroll's Plutonium](https://github.com/XorTroll/Plutonium) for a pretty graphical interface
 - Works on Atmosphere and SX OS
 
+## Coloring support
+![AtmoXL-Titel-Installer Main Color](https://raw.githubusercontent.com/dezem/AtmoXL-Titel-Installer/master/AtmoXL-Titel-Installer-Main-Color.jpg)
+
+To use this, you must place the "themecolor.json" at ATI dir.
+
+[Download themecolor.json](https://raw.githubusercontent.com/dezem/AtmoXL-Titel-Installer/master/themecolor.json)
+
+https://github.com/dezem/AtmoXL-Titel-Installer/blob/dc82b2aba0b5902bd141204a38dc607fcaaa85bb/themecolor.json#L1-L8
+
+Use your wanted HEX colors -> https://www.w3schools.com/colors/colors_picker.asp
+
+
 ## Thanks to
 - Huntereb for [Awoo-Installer](https://github.com/Huntereb/Awoo-Installer)
 - HookedBehemoth for A LOT of contributions
@@ -24,4 +35,9 @@ A No-Bullshit NSP, NSZ, XCI, and XCZ Installer for Nintendo Switch
 - blawar and nicoboss for [NSZ](https://github.com/nicoboss/nsz) support
 - blawar for [tinleaf](https://github.com/blawar/tinleaf)
 - DarkMatterCore, XorTroll and Rhys Koedijk for [libusbhsfs](https://github.com/DarkMatterCore/libusbhsfs)
-- TheLogicMaster for contributing [HTTP Directory Indexing](https://github.com/dezem/AtmoXL-Titel-Installer/pull/18)
+- TheLogicMaster for contributing 
+  [HTTP Directory Indexing](https://github.com/dezem/AtmoXL-Titel-Installer/pull/18) 
+  https://github.com/dezem/AtmoXL-Titel-Installer/pull/19 
+  https://github.com/dezem/AtmoXL-Titel-Installer/pull/22
+  https://github.com/dezem/AtmoXL-Titel-Installer/pull/24
+
