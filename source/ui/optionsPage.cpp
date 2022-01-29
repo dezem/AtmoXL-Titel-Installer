@@ -214,7 +214,7 @@ namespace inst::ui {
                     this->setMenuText();
                     break;
                 case 7:
-                    for (unsigned int i = 0; i < sizeof(languageStrings) / sizeof(languageStrings[0]); i++)
+                    for (int i = 0; i < 11; i++)
                     {
                         languageList.push_back(languageStrings[i]);
                     }
