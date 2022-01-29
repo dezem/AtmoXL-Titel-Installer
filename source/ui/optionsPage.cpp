@@ -16,7 +16,7 @@
 
 namespace inst::ui {
     extern MainApplication *mainApp;
-    std::vector<std::string> languageStrings = {"English", "日本語", "Français", "Deutsch", "Italiano", "Español", "한국전통", "Português", "Русский", "簡体中文","繁體中文"};
+    std::vector<std::string> languageStrings = {"English", "日本語", "Français", "Deutsch", "Italiano", "Español", "한국전통", "Português", "Русский", "简体中文","繁體中文"};
     static s32 prev_touchcount = 0;
     static std::string getFreeSpaceText = nx::fs::GetFreeStorageSpace();
     static std::string getFreeSpaceOldText = getFreeSpaceText;
@@ -31,15 +31,20 @@ namespace inst::ui {
         this->infoRect = Rectangle::New(0, 95, 1280, 60, COLOR("#17090980"));
         this->botRect = Rectangle::New(0, 660, 1280, 60, COLOR("#17090980"));
         this->titleImage = Image::New(0, 0, "romfs:/images/logo.png");
-        this->appVersionText = TextBlock::New(490, 29, "v" + inst::config::appVersion, 42);
+        this->appVersionText = TextBlock::New(490, 29, "v" + inst::config::appVersion);
+        this->appVersionText->SetFont("DefaultFont@42");
         this->appVersionText->SetColor(COLOR("#FFFFFFFF"));
-        this->batteryValueText = TextBlock::New(700, 9, "misc.battery_charge"_lang+": " + getBatteryChargeText[0], 32);
+        this->batteryValueText = TextBlock::New(700, 9, "misc.battery_charge"_lang+": " + getBatteryChargeText[0]);
+        this->batteryValueText->SetFont("DefaultFont@32");
         this->batteryValueText->SetColor(COLOR(getBatteryChargeText[1]));
-        this->freeSpaceText = TextBlock::New(700, 49, "misc.sd_free"_lang+": " + getFreeSpaceText, 32);
+        this->freeSpaceText = TextBlock::New(700, 49, "misc.sd_free"_lang+": " + getFreeSpaceText);
+        this->freeSpaceText->SetFont("DefaultFont@32");
         this->freeSpaceText->SetColor(COLOR("#FFFFFFFF"));
-        this->pageInfoText = TextBlock::New(10, 109, "options.title"_lang, 30);
+        this->pageInfoText = TextBlock::New(10, 109, "options.title"_lang);
+        this->pageInfoText->SetFont("DefaultFont@30");
         this->pageInfoText->SetColor(COLOR("#FFFFFFFF"));
-        this->butText = TextBlock::New(10, 678, "options.buttons"_lang, 22);
+        this->butText = TextBlock::New(10, 678, "options.buttons"_lang);
+        this->butText->SetFont("DefaultFont@22");
         this->butText->SetColor(COLOR("#FFFFFFFF"));
         this->menu = pu::ui::elm::Menu::New(0, 156, 1280, COLOR("#FFFFFF00"), 84, (506 / 84));
         this->menu->SetOnFocusColor(COLOR("#00000033"));
@@ -169,7 +174,7 @@ namespace inst::ui {
             std::string keyboardResult;
             int rc;
             std::vector<std::string> downloadUrl;
-            std::vector<std::string> languageList;
+            std::vector<pu::String> languageList;
             switch (this->menu->GetSelectedIndex()) {
                 case 0:
                     inst::config::ignoreReqVers = !inst::config::ignoreReqVers;
@@ -209,7 +214,10 @@ namespace inst::ui {
                     this->setMenuText();
                     break;
                 case 7:
-                    languageList = languageStrings;
+                    for (unsigned int i = 0; i < sizeof(languageStrings) / sizeof(languageStrings[0]); i++)
+                    {
+                        languageList.push_back(languageStrings[i]);
+                    }
                     languageList.push_back("options.language.system_language"_lang);
                     rc = inst::ui::mainApp->CreateShowDialog("options.language.title"_lang, "options.language.desc"_lang, languageList, false);
                     if (rc == -1) break;
