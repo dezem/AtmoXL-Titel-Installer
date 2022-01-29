@@ -4,7 +4,7 @@
             "sd": "安装 SD 卡内的文件",
             "net": "使用网络安装文件",
             "usb": "使用 USB 安装文件",
-			"hdd": "安装 USB 移动硬盘内的文件",
+            "hdd": "安装 USB 移动硬盘内的文件",
             "set": "设置",
             "exit": "退出"
         },
@@ -20,11 +20,11 @@
             "warn": {
                 "title": "警告！",
                 "desc": "USB 安装功能可能在某些设备或软件环境下无法正常使用。\n如果您在使用 USB 安装中遇到问题，请不要心急！\n建议使用 NS-USBloader 来进行 USB 安装，\n或者在主机已连接到网络的情况下进行网络远程安装！\n\n多尝试各种方法，终会成功。",
-                "opt1": "不再显示这条警告"
+                "opt1": "不再提示"
             },
             "error": {
                 "title": "USB 未连接",
-                "desc": "请通过 USB 连接一台支持的设备如电脑"
+                "desc": "请通过 USB 连接一台受支持的设备"
             }
         },
         "applet": {
@@ -42,25 +42,25 @@
             "src": {
                 "title": "要从哪里安装文件？",
                 "opt0": "链接",
-                "opt1": "Google 网盘"
+                "opt1": "Google Drive"
             },
             "url": {
                 "hint": "输入文件链接 (URL)",
                 "invalid": "链接 (URL) 无效！",
-                "source_string": "安装链接 (URL)的文件"
+                "source_string": "从链接 (URL) 安装文件"
             },
             "gdrive": {
-                "hint": "输入 Google 网盘公共文件 ID",
-                "alt_name": "Google 网盘文件",
-                "source_string": "安装Google 网盘内的文件"
+                "hint": "输入 Google Drive 公共文件 ID",
+                "alt_name": "Google Drive 文件",
+                "source_string": "从 Google Drive 安装文件"
             },
             "top_info": "在服务器中选择将要安装的文件，然后按 \ue0ef 以安装！",
             "top_info1": "正在等待连接… Switch 的 IP 地址是：",
             "failed": "远程安装失败！",
             "index_error": "检索文件列表失败",
-            "index_error_info": "确保 URL 指向有效的 Web 目录索引或 Tinfoil 样式 JSON.",
+            "index_error_info": "确保 URL 指向有效的网络目录索引或 Tinfoil 样式的 JSON",
             "transfer_interput": "数据传输发生错误，请检查网络连接状态。",
-            "source_string": "使用网络安装文件",
+            "source_string": "使用本地网络安装文件",
             "buttons": "\ue0e3 网络安装    \ue0f0 从 HTTP 目录安装    \ue0e2 帮助    \ue0e1 取消",
             "buttons1": "\ue0e0 选择    \ue0e3 全选    \ue0ef 安装    \ue0e2 隐藏已安装    \ue0e1 取消",
             "buttons1_show": "\ue0e0 选择    \ue0e3 全选    \ue0ef 安装    \ue0e2 显示已安装    \ue0e1 取消"
@@ -71,9 +71,9 @@
                 "desc": "复制 NSP、NSZ、XCI 或 XCZ 文件到 SD 卡，\n浏览并选择将要安装的文件，然后按 \ue0ef 以安装。"
             },
             "top_info": "先选择要安装的文件，然后按 \ue0ef 进行安装！",
-            "source_string": "安装SD 卡内的文件",
+            "source_string": "安装 SD 卡内的文件",
             "delete_info": " 安装完成！是否要从 SD 卡中删除安装文件？",
-            "delete_info_multi": " 批量安装完成！是否要从 SD 卡中删除所有安装文件？",
+            "delete_info_multi": " 批量安装完成！是否要从 SD 卡中删除本次所有安装文件？",
             "delete_desc": "安装完成后不再需要使用安装文件",
             "buttons": "\ue0e0 选择    \ue0e3 全选    \ue0ef 安装    \ue0e2 隐藏已安装    \ue0e1 取消",
             "buttons_show": "\ue0e0 选择    \ue0e3 全选    \ue0ef 安装    \ue0e2 显示已安装    \ue0e1 取消"
@@ -98,7 +98,7 @@
             "top_info": "选择将要安装的文件，然后按 \ue0ef 以安装！",
             "source_string": "安装 USB 移动硬盘内的文件",
             "delete_info": " 安装完成！是否要从 USB 移动硬盘中删除安装文件？",
-            "delete_info_multi": " 批量安装完成！是否要从 USB 移动硬盘中删除所有安装文件？",
+            "delete_info_multi": " 批量安装完成！是否要从 USB 移动硬盘中删除本次所有安装文件？",
             "delete_desc": "安装完成后不再需要使用安装文件",
             "buttons": "\ue0e0 选择    \ue0e3 全选    \ue0ef 安装    \ue0e2 隐藏已安装    \ue0e1 取消",
             "buttons_show": "\ue0e0 选择    \ue0e3 全选    \ue0ef 安装    \ue0e2 显示已安装    \ue0e1 取消"
@@ -113,23 +113,23 @@
         },
         "info_page": {
             "top_info0": "正在安装 ",
-            "preparing": "初始化安装过程...",
+            "preparing": "正在准备安装...",
             "failed": "安装失败 ",
             "failed_desc": "未完整安装的部分可以从系统设置中删除。",
             "complete": "安装完成",
             "desc0": " 个文件安装完成！",
             "desc1": " 安装完成！",
-            "downloading": "传输中……",
+            "downloading": "传输中...",
             "at": " 大约 "
         },
         "nca_verify": {
             "title": "检测到无效的 NCA 签名！",
-            "desc": "请确保签名无效的安装文件来源可靠。\n当安装整合了更新和 DLC 的文件时，总会显示此警告。\n您可以在 AtmoXL-Titel-Installer 设置中禁用此验证。\n\n是否继续安装？",
-            "opt1": "确认安装，我理解可能造成的后果",
-            "error": "文件的 NCA 签名不正确："
+            "desc": "请确保签名无效的安装文件来源可靠。\n当安装文件整合了更新包和 DLC 时，总会显示此警告。\n您可以在 AtmoXL-Titel-Installer 设置中禁用此验证。\n\n是否继续安装？",
+            "opt1": "是的，我理解其中的风险",
+            "error": "请求的 NCA 签名不正确："
         },
         "finished": [
-            "尽情享受您“合法复制”的游戏吧！",
+            "尽情享受您“合法备份”的游戏吧！",
             "我相信您在试玩游戏后，将更有兴趣购买它！",
             "您会喜加一的，对吧？任天堂感谢您！",
             "能绕过 DRM 验证很棒，不是吗？",
@@ -140,12 +140,12 @@
     },
     "options": {
         "menu_items": {
-            "ignore_firm": "安装时不检测游戏最低固件版本要求",
+            "ignore_firm": "忽略软件的最低固件版本要求",
             "nca_verify": "安装前验证 NCA 签名",
-            "boost_mode": "安装游戏的过程中超频",
+            "boost_mode": "安装时启用“增速模式”(解锁 CPU 频率)",
             "ask_delete": "安装完成后询问是否删除原始文件",
             "enableSound": "安装完成后播放提示音",
-            "enableLightning": "安装完成后让 Home 键指示灯闪烁提示",
+            "enableLightning": "安装完成后 Home 键指示灯闪烁提示",
             "auto_update": "自动检查 AtmoXL-Titel-Installer 是否有更新",
             "language": "显示语言：",
             "check_update": "检查 AtmoXL-Titel-Installer 更新",
@@ -157,27 +157,27 @@
             "opt1": "是的，我不怕变砖"
         },
         "update": {
-            "title": "发现可用的更新版本",
+            "title": "发现可用的新版本",
             "desc0": "AtmoXL-Titel-Installer ",
-            "desc1": " 存在可用更新！是否立刻进行更新？",
+            "desc1": " 存在可用更新！是否立即更新？",
             "opt0": "更新",
             "top_info": "正在更新 AtmoXL-Titel-Installer ",
             "bot_info": "正在下载 AtmoXL-Titel-Installer ",
             "bot_info2": "正在解压 AtmoXL-Titel-Installer ",
             "complete": "更新完成！",
             "failed": "更新失败！",
-            "end_desc": "软件将会自行关闭，手动打开后使用新版本。",
+            "end_desc": "软件将会自动关闭，手动打开以使用新版本。",
             "title_check_fail": "没有发现更新",
             "desc_check_fail": "当前 AtmoXL-Titel-Installer 已是最新版！"
         },
         "credits": {
-            "title": "感谢所有为这个程序提供帮助的个人或团体！",
-            "desc": "-感谢 Huntereb 开发了 Awoo Installer \n- 感谢 HookedBehemoth 贡献了诸多代码\n- 感谢 Adubbz 及其他贡献者开发了 Tinfoil\n- 感谢 XorTroll 开发了 Plutonium 框架和 Goldleaf\n- 感谢 blawar 和 nicoboss 添加了 NSZ 支持\n- 感谢来自 AtlasNX 的诸多组件\n- 感谢来自 RetroNX 的诸多组件\n- 感谢 namako8982 提供了 Momiji 插图\n- 感谢 TheXzoron (baka)"
+            "title": "感谢以下人员！",
+            "desc": "- Huntereb for Awoo Installer\n- HookedBehemoth for A LOT of contributions\n- Adubbz and other contributors for Tinfoil\n- XorTroll for Plutonium and Goldleaf\n- blawar (wife strangulator) and nicoboss for NSZ support\n- The kind folks at the AtlasNX Discuck (or at least some of them)\n- The also kind folks at the RetroNX Discuck (of no direct involvement)\n- TheXzoron for being a baka"
         },
         "language": {
             "title": "选择 AtmoXL-Titel-Installer 的显示语言",
             "desc": "软件将在更改显示语言后关闭，按 \ue0e1 取消更改。",
-            "system_language": "跟随系统设置"
+            "system_language": "跟随系统"
         },
         "title": "更改 AtmoXL-Titel-Installer 的设置！",
         "buttons": "\ue0e0 选择/更改    \ue0e1 取消"
@@ -192,6 +192,6 @@
     },
     "misc": {
         "sd_free": "SD 卡(可用空间)",
-        "battery_charge": "电池"
+        "battery_charge": "电量"
     }
 }

@@ -20,7 +20,7 @@ namespace Language {
             setMakeLanguage(lcode, &ourLang);
             setExit();
             langInt = (int)ourLang;
-        } 
+        }
         switch (langInt) {
             case 0:
                 languagePath = "romfs:/lang/jp.json";
@@ -42,13 +42,9 @@ namespace Language {
             case 6:
             case 15:
                 languagePath = "romfs:/lang/zh-CN.json";
-                // the default font will miss some chinese character, so use a chinese font (simplified)
-                pu::ui::render::SetDefaultFontFromShared(pu::ui::render::SharedFont::ChineseSimplified);
                 break;
             case 7:
                 languagePath = "romfs:/lang/ko-KR.json";
-                // the default font will miss korean character, so use korean font
-                pu::ui::render::SetDefaultFontFromShared(pu::ui::render::SharedFont::Korean);
                 break;
             case 8:
                 languagePath = "romfs:/lang/nl.json";
@@ -61,12 +57,13 @@ namespace Language {
                 break;
             case 11:
                 languagePath = "romfs:/lang/zh-TW.json";
-                // the default font will miss some chinese character, so use a chinese font (traditional)
-                pu::ui::render::SetDefaultFontFromShared(pu::ui::render::SharedFont::ChineseTraditional);
                 break;
             default:
                 languagePath = "romfs:/lang/en.json";
         }
+        pu::ui::render::AddDefaultFontFromShared(22);
+        pu::ui::render::AddDefaultFontFromShared(32);
+        pu::ui::render::AddDefaultFontFromShared(42);
         if (std::filesystem::exists(languagePath)) ifs = std::ifstream(languagePath);
         else ifs = std::ifstream("romfs:/lang/en.json");
         if (!ifs.good()) {
