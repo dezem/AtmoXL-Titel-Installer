@@ -33,10 +33,10 @@ namespace inst::ui {
         this->freeSpaceText->SetColor(COLOR("#FFFFFFFF"));
         this->pageInfoText = TextBlock::New(10, 109, "");
         this->pageInfoText->SetFont("DefaultFont@30");
-        this->pageInfoText->SetColor(COLOR("#FFFFFFFF"));
+        this->pageInfoText->SetColor(COLOR(inst::config::themeColorTextTopInfo));
         this->installInfoText = TextBlock::New(15, 568, "");
         this->installInfoText->SetFont("DefaultFont@22");
-        this->installInfoText->SetColor(COLOR("#FFFFFFFF"));
+        this->installInfoText->SetColor(COLOR(inst::config::themeColorTextInstall));
         this->installBar = pu::ui::elm::ProgressBar::New(10, 600, 850, 40, 100.0f);
         this->installBar->SetColor(COLOR("#222222FF"));
         this->Add(this->topRect);

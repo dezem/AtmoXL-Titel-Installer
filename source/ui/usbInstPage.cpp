@@ -36,10 +36,10 @@ namespace inst::ui {
         this->freeSpaceText->SetColor(COLOR("#FFFFFFFF"));
         this->pageInfoText = TextBlock::New(10, 109, "");
         this->pageInfoText->SetFont("DefaultFont@30");
-        this->pageInfoText->SetColor(COLOR("#FFFFFFFF"));
+        this->pageInfoText->SetColor(COLOR(inst::config::themeColorTextTopInfo));
         this->butText = TextBlock::New(10, 678, "");
         this->butText->SetFont("DefaultFont@22");
-        this->butText->SetColor(COLOR("#FFFFFFFF"));
+        this->butText->SetColor(COLOR(inst::config::themeColorTextBottomInfo));
         this->menu = pu::ui::elm::Menu::New(0, 156, 1280, COLOR("#FFFFFF00"), 84, (506 / 84));
         this->menu->SetOnFocusColor(COLOR("#00000033"));
         this->menu->SetScrollbarColor(COLOR("#17090980"));
@@ -65,7 +65,7 @@ namespace inst::ui {
         for (auto& url: this->ourTitles) {
             std::string itm = inst::util::shortenString(inst::util::formatUrlString(url), 56, true);
             auto ourEntry = pu::ui::elm::MenuItem::New(itm);
-            ourEntry->SetColor(COLOR("#FFFFFFFF"));
+            ourEntry->SetColor(COLOR(inst::config::themeColorTextFile));
             ourEntry->SetIcon("romfs:/images/icons/checkbox-blank-outline.png");
             for (long unsigned int i = 0; i < this->selectedTitles.size(); i++) {
                 if (this->selectedTitles[i] == url) {

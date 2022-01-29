@@ -23,6 +23,7 @@ namespace inst::util {
         if (!std::filesystem::exists("sdmc:/switch")) std::filesystem::create_directory("sdmc:/switch");
         if (!std::filesystem::exists(inst::config::appDir)) std::filesystem::create_directory(inst::config::appDir);
         inst::config::parseConfig();
+        inst::config::parseThemeColorConfig();
 
         socketInitializeDefault();
         #ifdef __DEBUG__

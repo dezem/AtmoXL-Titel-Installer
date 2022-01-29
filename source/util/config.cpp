@@ -8,6 +8,12 @@ namespace inst::config {
     std::string lastNetUrl;
     std::vector<std::string> updateInfo;
     std::string httpIndexUrl;
+    std::string themeColorTextTopInfo;
+    std::string themeColorTextBottomInfo;
+    std::string themeColorTextMenu;
+    std::string themeColorTextFile;
+    std::string themeColorTextDir;
+    std::string themeColorTextInstall;
     int languageSetting;
     bool autoUpdate;
     bool deletePrompt;
@@ -70,6 +76,59 @@ namespace inst::config {
             lastNetUrl = "https://";
             httpIndexUrl = "http://";
             setConfig();
+        }
+    }
+
+    void parseThemeColorConfig() {
+        try {
+            std::ifstream file(inst::config::themecolorPath);
+            nlohmann::json j;
+            file >> j;
+            try {
+                themeColorTextTopInfo = j["themeColorTextTopInfo"].get<std::string>();
+            }
+            catch (...) {
+                themeColorTextTopInfo = "#FFFFFFFF";
+            }
+            try {
+                themeColorTextBottomInfo = j["themeColorTextBottomInfo"].get<std::string>();
+            }
+            catch (...) {
+                themeColorTextBottomInfo = "#FFFFFFFF";
+            }
+            try {
+                themeColorTextMenu = j["themeColorTextMenu"].get<std::string>();
+            }
+            catch (...) {
+                themeColorTextMenu = "#FFFFFFFF";
+            }
+            try {
+                themeColorTextFile = j["themeColorTextFile"].get<std::string>();
+            }
+            catch (...) {
+                themeColorTextFile = "#FFFFFFFF";
+            }
+            try {
+                themeColorTextDir = j["themeColorTextDir"].get<std::string>();
+            }
+            catch (...) {
+                themeColorTextDir = "#FFFFFFFF";
+            }
+            try {
+                themeColorTextInstall = j["themeColorTextInstall"].get<std::string>();
+            }
+            catch (...) {
+                themeColorTextInstall = "#FFFFFFFF";
+            }
+        }
+        catch (...) {
+            // If themecolor.json is missing, load the defaults
+            themeColorTextTopInfo = "#FFFFFFFF";
+            themeColorTextBottomInfo = "#FFFFFFFF";
+            themeColorTextMenu = "#FFFFFFFF";
+            themeColorTextFile = "#FFFFFFFF";
+            themeColorTextDir = "#FFFFFFFF";
+            themeColorTextInstall = "#FFFFFFFF";
         }
     }
 }

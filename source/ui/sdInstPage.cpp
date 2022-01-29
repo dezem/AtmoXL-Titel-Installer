@@ -41,10 +41,10 @@ namespace inst::ui {
         this->freeSpaceText->SetColor(COLOR("#FFFFFFFF"));
         this->pageInfoText = TextBlock::New(10, 109, "inst.sd.top_info"_lang);
         this->pageInfoText->SetFont("DefaultFont@30");
-        this->pageInfoText->SetColor(COLOR("#FFFFFFFF"));
+        this->pageInfoText->SetColor(COLOR(inst::config::themeColorTextTopInfo));
         this->butText = TextBlock::New(10, 678, "inst.sd.buttons"_lang);
         this->butText->SetFont("DefaultFont@22");
-        this->butText->SetColor(COLOR("#FFFFFFFF"));
+        this->butText->SetColor(COLOR(inst::config::themeColorTextBottomInfo));
         this->menu = pu::ui::elm::Menu::New(0, 156, 1280, COLOR("#FFFFFF00"), 84, (506 / 84));
         this->menu->SetOnFocusColor(COLOR("#00000033"));
         this->menu->SetScrollbarColor(COLOR("#17090980"));
@@ -81,7 +81,7 @@ namespace inst::ui {
         if (this->currentDir != "sdmc:/") {
             std::string itm = "..";
             auto ourEntry = pu::ui::elm::MenuItem::New(itm);
-            ourEntry->SetColor(COLOR("#FFFFFFFF"));
+            ourEntry->SetColor(COLOR(inst::config::themeColorTextDir));
             ourEntry->SetIcon("romfs:/images/icons/folder-upload.png");
             this->menu->AddItem(ourEntry);
         }
@@ -89,7 +89,7 @@ namespace inst::ui {
             if (file == "..") break;
             std::string itm = file.filename().string();
             auto ourEntry = pu::ui::elm::MenuItem::New(itm);
-            ourEntry->SetColor(COLOR("#FFFFFFFF"));
+            ourEntry->SetColor(COLOR(inst::config::themeColorTextDir));
             ourEntry->SetIcon("romfs:/images/icons/folder.png");
             this->menu->AddItem(ourEntry);
         }
@@ -102,7 +102,7 @@ namespace inst::ui {
                 continue;
 
             auto ourEntry = pu::ui::elm::MenuItem::New(itm);
-            ourEntry->SetColor(COLOR("#FFFFFFFF"));
+            ourEntry->SetColor(COLOR(inst::config::themeColorTextFile));
             ourEntry->SetIcon("romfs:/images/icons/checkbox-blank-outline.png");
             for (long unsigned int j = 0; j < this->selectedTitles.size(); j++) {
                 if (this->selectedTitles[j] == file) {
