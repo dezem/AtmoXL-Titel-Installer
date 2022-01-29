@@ -455,24 +455,24 @@ void NcaWriter::flushHeader()
 
      if (header.magic == MAGIC_NCA3)
      {
-          if(isOpen())
-          {
-               m_contentStorage->CreatePlaceholder(m_ncaId, *(NcmPlaceHolderId*)&m_ncaId, header.nca_size);
-          }
+         if(isOpen())
+         {
+             m_contentStorage->CreatePlaceholder(m_ncaId, *(NcmPlaceHolderId*)&m_ncaId, header.nca_size);
+         }
      }
      else
      {
-          THROW_FORMAT("Invalid NCA magic");
+         THROW_FORMAT("Invalid NCA magic");
      }
 
      if (header.distribution == 1)
      {
-          header.distribution = 0;
+         header.distribution = 0;
      }
      encryptor.encrypt(m_buffer.data(), &header, sizeof(header), 0, 0x200);
 
      if(isOpen())
      {
-          m_contentStorage->WritePlaceholder(*(NcmPlaceHolderId*)&m_ncaId, 0, m_buffer.data(), m_buffer.size());
+         m_contentStorage->WritePlaceholder(*(NcmPlaceHolderId*)&m_ncaId, 0, m_buffer.data(), m_buffer.size());
      }
 }
