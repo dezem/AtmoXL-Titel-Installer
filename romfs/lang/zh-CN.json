@@ -142,7 +142,7 @@
         "menu_items": {
             "ignore_firm": "忽略软件的最低固件版本要求",
             "nca_verify": "安装前验证 NCA 签名",
-            "boost_mode": "安装时启用“增速模式”(解锁CPU频率)",
+            "boost_mode": "安装时启用“增速模式”(解锁 CPU 频率)",
             "ask_delete": "安装完成后询问是否删除原始文件",
             "enableSound": "安装完成后播放提示音",
             "enableLightning": "安装完成后 Home 键指示灯闪烁提示",
