@@ -39,5 +39,5 @@ Use your wanted HEX colors -> https://www.w3schools.com/colors/colors_picker.asp
   [HTTP Directory Indexing](https://github.com/dezem/AtmoXL-Titel-Installer/pull/18) 
   [Net install hide installed content option](https://github.com/dezem/AtmoXL-Titel-Installer/pull/19)
   [Page up and page down for fast scrolling](https://github.com/dezem/AtmoXL-Titel-Installer/pull/22)
-  [Update for new font render](https://github.com/dezem/AtmoXL-Titel-Installer/pull/24)
+- R-YaTian for contributing [Update for new font render](https://github.com/dezem/AtmoXL-Titel-Installer/pull/24) and others
 
