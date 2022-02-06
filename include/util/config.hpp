@@ -6,7 +6,7 @@ namespace inst::config {
     static const std::string appDir = "sdmc:/switch/AtmoXL-Titel-Installer";
     static const std::string configPath = appDir + "/config.json";
     static const std::string themecolorPath = appDir + "/themecolor.json";
-    static const std::string appVersion = "1.7.0";
+    static const std::string appVersion = "1.7.1";
 
     extern std::string gAuthKey;
     extern std::string lastNetUrl;
