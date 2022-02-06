@@ -27,7 +27,8 @@ https://github.com/dezem/AtmoXL-Titel-Installer/blob/40226852ffc6e6b77a49f17c1b4
 Use your wanted HEX colors -> https://www.w3schools.com/colors/colors_picker.asp
 
 ![AtmoXL-Titel-Installer Main small](https://raw.githubusercontent.com/dezem/AtmoXL-Titel-Installer/master/AtmoXL-Titel-Installer-Main-small.jpg)
-Chose your font size
+Choose your font size, use the themeMenuFontSize from the "themecolor.json"
+Default font size is 84.
 
 
 ## Thanks to
