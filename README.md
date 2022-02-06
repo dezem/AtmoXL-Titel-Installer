@@ -22,7 +22,7 @@ To use this, you must place the "themecolor.json" at ATI dir.
 
 [Download themecolor.json](https://raw.githubusercontent.com/dezem/AtmoXL-Titel-Installer/master/themecolor.json)
 
-https://github.com/dezem/AtmoXL-Titel-Installer/blob/dc82b2aba0b5902bd141204a38dc607fcaaa85bb/themecolor.json#L1-L9
+https://github.com/dezem/AtmoXL-Titel-Installer/blob/40226852ffc6e6b77a49f17c1b49702d7e2c94f0/themecolor.json#L1-L9
 
 Use your wanted HEX colors -> https://www.w3schools.com/colors/colors_picker.asp
 
