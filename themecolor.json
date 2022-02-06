@@ -4,5 +4,6 @@
     "themeColorTextMenu": "#FFFF00",
     "themeColorTextFile": "#66FF33",
     "themeColorTextDir": "#00FFFF",
-    "themeColorTextInstall": "#0000FF"
+    "themeColorTextInstall": "#0000FF",
+    "themeMenuFontSize": 84
 }

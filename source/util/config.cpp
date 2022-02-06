@@ -15,6 +15,7 @@ namespace inst::config {
     std::string themeColorTextDir;
     std::string themeColorTextInstall;
     int languageSetting;
+    int themeMenuFontSize;
     bool autoUpdate;
     bool deletePrompt;
     bool enableSound;
@@ -120,6 +121,12 @@ namespace inst::config {
             catch (...) {
                 themeColorTextInstall = "#FFFFFFFF";
             }
+            try {
+                themeMenuFontSize = j["themeMenuFontSize"].get<int>();
+            }
+            catch (...) {
+                themeMenuFontSize = 84;
+            }
         }
         catch (...) {
             // If themecolor.json is missing, load the defaults
@@ -129,6 +136,7 @@ namespace inst::config {
             themeColorTextFile = "#FFFFFFFF";
             themeColorTextDir = "#FFFFFFFF";
             themeColorTextInstall = "#FFFFFFFF";
+            themeMenuFontSize = 84;
         }
     }
 }

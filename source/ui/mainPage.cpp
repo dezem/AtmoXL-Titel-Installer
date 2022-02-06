@@ -59,7 +59,7 @@ namespace inst::ui {
         this->butText = TextBlock::New(10, 678, "main.buttons"_lang);
         this->butText->SetFont("DefaultFont@22");
         this->butText->SetColor(COLOR(inst::config::themeColorTextBottomInfo));
-        this->optionMenu = pu::ui::elm::Menu::New(0, 95, 1280, COLOR("#67000000"), 94, 6);
+        this->optionMenu = pu::ui::elm::Menu::New(0, 95, 1280, COLOR("#67000000"), inst::config::themeMenuFontSize, (506 / inst::config::themeMenuFontSize));
         this->optionMenu->SetOnFocusColor(COLOR("#00000033"));
         this->optionMenu->SetScrollbarColor(COLOR("#170909FF"));
         this->installMenuItem = pu::ui::elm::MenuItem::New("main.menu.sd"_lang);
