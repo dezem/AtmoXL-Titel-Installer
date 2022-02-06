@@ -22,9 +22,12 @@ To use this, you must place the "themecolor.json" at ATI dir.
 
 [Download themecolor.json](https://raw.githubusercontent.com/dezem/AtmoXL-Titel-Installer/master/themecolor.json)
 
-https://github.com/dezem/AtmoXL-Titel-Installer/blob/dc82b2aba0b5902bd141204a38dc607fcaaa85bb/themecolor.json#L1-L8
+https://github.com/dezem/AtmoXL-Titel-Installer/blob/dc82b2aba0b5902bd141204a38dc607fcaaa85bb/themecolor.json#L1-L9
 
 Use your wanted HEX colors -> https://www.w3schools.com/colors/colors_picker.asp
+
+![AtmoXL-Titel-Installer Main small](https://raw.githubusercontent.com/dezem/AtmoXL-Titel-Installer/master/AtmoXL-Titel-Installer-Main-small.jpg)
+Chose your font size
 
 
 ## Thanks to
