@@ -64,7 +64,6 @@ namespace inst::ui {
     }
 
     void usbHDDInstPage::drawMenuItems(bool clearItems, std::filesystem::path ourPath) {
-        subPathCounter = 0;
         if (clearItems) this->selectedTitles = {};
 		this->currentDir = ourPath;
 
@@ -176,6 +175,8 @@ namespace inst::ui {
         if (dialogResult == -1) return;
         hddInstStuff::installNspFromFile(this->selectedTitles, dialogResult);
         installedTitles = inst::util::listInstalledTitles();
+        subPathCounter = 0;
+        lastIndex.clear();
     }
 
     void usbHDDInstPage::onInput(u64 Down, u64 Up, u64 Held, pu::ui::Touch Pos) {
