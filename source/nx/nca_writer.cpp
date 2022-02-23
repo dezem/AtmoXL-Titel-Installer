@@ -241,7 +241,7 @@ public:
           m_deflateBuffer.resize(sz);
           m_deflateBuffer.resize(0);
 
-          while (input.pos < input.size)
+          while (input.pos < input.size || output.pos > 0)
           {
                ZSTD_outBuffer output = { buffOut, buffOutSize, 0 };
                size_t const ret = ZSTD_decompressStream(dctx, &output, &input);
