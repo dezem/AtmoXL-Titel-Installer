@@ -238,12 +238,12 @@ public:
      u64 processChunk(const  u8* ptr, u64 sz)
      {
           ZSTD_inBuffer input = { ptr, sz, 0 };
+          ZSTD_outBuffer output = { buffOut, buffOutSize, 0 };
           m_deflateBuffer.resize(sz);
           m_deflateBuffer.resize(0);
 
           while (input.pos < input.size || output.pos > 0)
           {
-               ZSTD_outBuffer output = { buffOut, buffOutSize, 0 };
                size_t const ret = ZSTD_decompressStream(dctx, &output, &input);
 
                if (ZSTD_isError(ret))
