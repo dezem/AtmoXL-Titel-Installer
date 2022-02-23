@@ -244,6 +244,7 @@ public:
 
           while (input.pos < input.size || output.pos > 0)
           {
+               output = { buffOut, buffOutSize, 0 };
                size_t const ret = ZSTD_decompressStream(dctx, &output, &input);
 
                if (ZSTD_isError(ret))
