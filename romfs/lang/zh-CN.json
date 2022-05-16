@@ -120,7 +120,7 @@
             "desc0": " 个文件安装完成！",
             "desc1": " 安装完成！",
             "downloading": "传输中...",
-            "at": " 大约 "
+            "at": " 以 "
         },
         "nca_verify": {
             "title": "检测到无效的 NCA 签名！",
