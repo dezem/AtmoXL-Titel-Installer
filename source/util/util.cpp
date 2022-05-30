@@ -61,14 +61,18 @@ namespace inst::util {
         splExit();
     }
 
-    struct caseInsensitiveLess : public std::binary_function< char,char,bool > {
-        bool operator () (char x, char y) const {
-            return toupper(static_cast< unsigned char >(x)) < toupper(static_cast< unsigned char >(y));
-        }
+    //struct caseInsensitiveLess : public std::binary_function< char,char,bool > {
+        //bool operator () (char x, char y) const {
+            //return toupper(static_cast< unsigned char >(x)) < toupper(static_cast< unsigned char >(y));
+        //}
+    //};
+
+    auto caseInsensitiveLess = [](auto& x, auto& y)->bool { 
+        return toupper(static_cast<unsigned char>(x)) < toupper(static_cast<unsigned char>(y));
     };
 
     bool ignoreCaseCompare(const std::string &a, const std::string &b) {
-        return std::lexicographical_compare(a.begin(), a.end() , b.begin() ,b.end() , caseInsensitiveLess());
+        return std::lexicographical_compare(a.begin(), a.end() , b.begin() ,b.end() , caseInsensitiveLess);
     }
 
     std::vector<std::filesystem::path> getDirectoryFiles(const std::string & dir, const std::vector<std::string> & extensions) {
