@@ -244,7 +244,6 @@ public:
 
           while (input.pos < input.size || output.pos > 0)
           {
-               output = { buffOut, buffOutSize, 0 };
                size_t const ret = ZSTD_decompressStream(dctx, &output, &input);
 
                if (ZSTD_isError(ret))
@@ -254,6 +253,7 @@ public:
                }
 
                append(m_deflateBuffer, (const u8*)buffOut, output.pos);
+               output.pos = 0;
 
                if (m_deflateBuffer.size() >= 0x1000000) // 16 MB
                {

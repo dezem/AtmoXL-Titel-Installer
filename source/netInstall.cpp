@@ -287,9 +287,11 @@ namespace netInstStuff{
 
                 if (kDown & HidNpadButton_Minus) {
                     std::string url = inst::util::softwareKeyboard("inst.net.url.hint"_lang, inst::config::httpIndexUrl, 500);
+                    if (url == "")
+                        url = "https://";
                     inst::config::httpIndexUrl = url;
                     inst::config::setConfig();
-                    
+
                     std::string response;
                     if (inst::util::formatUrlString(url) == "" || url == "https://" || url == "http://")
                         inst::ui::mainApp->CreateShowDialog("inst.net.url.invalid"_lang, "", {"common.ok"_lang}, false);
