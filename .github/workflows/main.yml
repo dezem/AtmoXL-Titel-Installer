@@ -44,6 +44,7 @@ jobs:
         cd libntfs-3g; su -s /bin/bash nobody -c "dkp-makepkg -c -C -f" > /dev/null; sudo -n dkp-pacman -U --needed --noconfirm *.pkg.tar.* > /dev/null; cd ..
         cd liblwext4; su -s /bin/bash nobody -c "dkp-makepkg -c -C -f" > /dev/null; sudo -n dkp-pacman -U --needed --noconfirm *.pkg.tar.* > /dev/null; cd ..
         make BUILD_TYPE=GPL release
+        cp "include/usbhsfs.h" "../include/usbhsfs.h"
 
     - name: Build AtmoXL-Titel-Installer
       run: |
