@@ -1,0 +1,59 @@
+name: Build AtmoXL-Titel-Installer
+
+on: 
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    container: devkitpro/devkita64:latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+
+    - name: Update packages
+      run: |
+        sudo -n apt-get update
+        sudo -n apt-get upgrade -y patch autoconf automake diffutils pkgconf fakeroot git file tar bzip2
+        sudo -n dkp-pacman --noconfirm -U \
+          "https://wii.leseratte10.de/devkitPro/other-stuff/dkp-toolchain-vars-1.0.2-1-any.pkg.tar.xz"
+
+    - name: Silence all git safe directory warnings
+      run: git config --system --add safe.directory '*'
+
+    - name: Checkout latest libnx commit
+      run: |
+        git clone --recurse-submodules https://github.com/switchbrew/libnx.git
+
+    - name: Set workspace permissions
+      run: chmod 777 -R "$GITHUB_WORKSPACE"
+
+    - name: Build and install libnx
+      run: |
+        cd libnx
+        make install -j$(nproc)
+
+    - name: Checkout latest libusbhsfs commit
+      run: |
+        git clone https://github.com/DarkMatterCore/libusbhsfs.git
+
+    - name: Build libusbhsfs dependencies
+      run: |
+        cd libusbhsfs
+        cd libntfs-3g; su -s /bin/bash nobody -c "dkp-makepkg -c -C -f" > /dev/null; sudo -n dkp-pacman -U --needed --noconfirm *.pkg.tar.* > /dev/null; cd ..
+        cd liblwext4; su -s /bin/bash nobody -c "dkp-makepkg -c -C -f" > /dev/null; sudo -n dkp-pacman -U --needed --noconfirm *.pkg.tar.* > /dev/null; cd ..
+        make BUILD_TYPE=GPL release
+
+    - name: Build AtmoXL-Titel-Installer
+      run: |
+        make -j$(nproc)
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: AtmoXL-Titel-Installer
+        path: AtmoXL-Titel-Installer.nro
+        if-no-files-found: error
