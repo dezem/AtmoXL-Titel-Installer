@@ -1,9 +1,6 @@
 name: Build AtmoXL-Titel-Installer
 
-on: 
-  push:
-  pull_request:
-  workflow_dispatch:
+on: [push, pull_request]
 
 jobs:
   Build:
@@ -29,6 +26,10 @@ jobs:
       run: |
         git clone --recurse-submodules https://github.com/switchbrew/libnx.git
 
+    - name: Checkout latest libusbhsfs commit
+      run: |
+        git clone https://github.com/DarkMatterCore/libusbhsfs.git
+
     - name: Set workspace permissions
       run: chmod 777 -R "$GITHUB_WORKSPACE"
 
@@ -37,13 +38,8 @@ jobs:
         cd libnx
         make install -j$(nproc)
 
-    - name: Checkout latest libusbhsfs commit
-      run: |
-        git clone https://github.com/DarkMatterCore/libusbhsfs.git
-
     - name: Build libusbhsfs dependencies
       run: |
-        chmod 777 -R libusbhsfs
         cd libusbhsfs
         cd libntfs-3g; su -s /bin/bash nobody -c "dkp-makepkg -c -C -f" > /dev/null; sudo -n dkp-pacman -U --needed --noconfirm *.pkg.tar.* > /dev/null; cd ..
         cd liblwext4; su -s /bin/bash nobody -c "dkp-makepkg -c -C -f" > /dev/null; sudo -n dkp-pacman -U --needed --noconfirm *.pkg.tar.* > /dev/null; cd ..
