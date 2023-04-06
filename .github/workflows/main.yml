@@ -43,6 +43,7 @@ jobs:
 
     - name: Build libusbhsfs dependencies
       run: |
+        chmod 777 -R libusbhsfs
         cd libusbhsfs
         cd libntfs-3g; su -s /bin/bash nobody -c "dkp-makepkg -c -C -f" > /dev/null; sudo -n dkp-pacman -U --needed --noconfirm *.pkg.tar.* > /dev/null; cd ..
         cd liblwext4; su -s /bin/bash nobody -c "dkp-makepkg -c -C -f" > /dev/null; sudo -n dkp-pacman -U --needed --noconfirm *.pkg.tar.* > /dev/null; cd ..
