@@ -74,7 +74,7 @@ LIBS	+=	-lz -lssh2 -lusbhsfs -lntfs-3g -llwext4 -lmbedtls -lmbedcrypto -lmbedx50
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:= $(PORTLIBS) $(LIBNX) $(CURDIR)/include/Plutonium/Plutonium/Output
+LIBDIRS	:= $(PORTLIBS) $(LIBNX) $(CURDIR)/include/Plutonium/Plutonium/Output $(CURDIR)/libusbhsfs
 
 
 #---------------------------------------------------------------------------------
