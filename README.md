@@ -1,6 +1,12 @@
 # AtmoXL-Titel-Installer
 A No-Bullshit NSP, NSZ, XCI, and XCZ Installer for Nintendo Switch
 
+**PROJECT IS CLOSED, NO MORE UNDER MAINTENANCE**
+
+**I WILL STOP ALL MY WORK FOR ALL PROJECTS**
+
+**THANKS FOR THE TIME**
+
 ![AtmoXL-Titel-Installer Main](https://raw.githubusercontent.com/dezem/AtmoXL-Titel-Installer/master/AtmoXL-Titel-Installer-Main.jpg)
 
 ## Features
